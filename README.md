@@ -1,6 +1,4 @@
-# Disclosed Intelligence
 
-Computational artifact and manuscript for the *Frontiers in Artificial Intelligence* article:
 
 **AI Use and Risk Disclosure by Investment Advisers**
 
