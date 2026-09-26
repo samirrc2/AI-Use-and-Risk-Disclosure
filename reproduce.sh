@@ -6,12 +6,11 @@
 # FROZEN, pseudonymized dataset and checks two runs are byte-identical, by
 # delegating to the audited Code Ocean capsule under capsule/.
 #
-# Stage 2 (only in the full working repository) regenerates the revision
-# analyses and then AUDITS THE MANUSCRIPT against everything generated: every
-# figure in the paper must trace to an artifact, or sit in an allowlist with a
-# reason. Stage 2 needs inputs deliberately not shipped in the capsule
-# (brochure text, website text, the Form ADV frame), so it is skipped when they
-# are absent and the capsule reproduction still stands on its own.
+# Stage 2 (only in the full working repository) builds the coding apps and
+# AUDITS THE MANUSCRIPT. Revision numbers already came from stage 1
+# (capsule/code/src/). Do not re-run analysis/a11 or a13: those are wrappers
+# around the same capsule scripts. Stage 2 still needs brochure text for the
+# coding-app rebuild, so it is skipped when that tree is absent.
 #
 #   bash reproduce.sh              # both stages
 #   bash reproduce.sh --capsule    # stage 1 only, exactly as Code Ocean runs it
@@ -42,9 +41,7 @@ if [ ! -d data/brochure_text/current ]; then
 fi
 
 echo
-echo "== stage 2: revision analyses =="
-"$PY" analysis/a11_revision.py                   # brochure coding frame + revision results
-"$PY" analysis/a13_benchmark_and_determinants.py  # benchmark, determinants, website frame
+echo "== stage 2: coding apps and supplement =="
 "$PY" analysis/a16_build_coding_app.py           # split the frame into the two coding apps
 "$PY" analysis/a15_build_supplement.py
 

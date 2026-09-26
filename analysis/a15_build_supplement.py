@@ -16,7 +16,20 @@ import re
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REV = os.path.join(ROOT, "analysis", "out", "revision")
+
+
+def _revision_dir():
+    cands = [
+        os.path.join(ROOT, "results", "latest", "revision"),
+        os.path.join(ROOT, "analysis", "out", "revision"),
+    ]
+    for c in cands:
+        if os.path.exists(os.path.join(c, "r1_2_coding_examples.csv")):
+            return c
+    return cands[0]
+
+
+REV = _revision_dir()
 # The revision removed all supplementary material from the paper, so this table is an
 # analysis artifact rather than a shipped supplement. It belongs with its siblings under
 # analysis/out/revision/, not in a frontiers/ folder the manuscript no longer references.

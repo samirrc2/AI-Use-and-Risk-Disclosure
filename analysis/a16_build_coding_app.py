@@ -31,7 +31,21 @@ import re
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HV = os.path.join(ROOT, "analysis", "out", "revision", "human_validation")
+
+
+def _revision_hv():
+    """Prefer stage-1 capsule output; fall back to a direct analysis/a11 run."""
+    cands = [
+        os.path.join(ROOT, "results", "latest", "revision", "human_validation"),
+        os.path.join(ROOT, "analysis", "out", "revision", "human_validation"),
+    ]
+    for c in cands:
+        if os.path.exists(os.path.join(c, "adjudication_sheet_BLINDED.csv")):
+            return c
+    return cands[0]
+
+
+HV = _revision_hv()
 OUT = os.path.join(ROOT, "human_validation")
 RUBRIC = os.path.join(ROOT, "pilot", "prompts", "typology_v1.md")
 CODERS = ["1", "2"]          # coder identity is not recorded in the files themselves

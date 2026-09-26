@@ -28,7 +28,20 @@ import sys
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HV = os.path.join(ROOT, "analysis", "out", "revision", "human_validation")
+
+
+def _revision_hv():
+    cands = [
+        os.path.join(ROOT, "results", "latest", "revision", "human_validation"),
+        os.path.join(ROOT, "analysis", "out", "revision", "human_validation"),
+    ]
+    for c in cands:
+        if os.path.exists(os.path.join(c, "adjudication_KEY_do_not_give_to_coders.csv")):
+            return c
+    return cands[0]
+
+
+HV = _revision_hv()
 APP = os.path.join(ROOT, "human_validation")
 LABELS = list("abcde")
 NAMES = {"a": "AI in investment process", "b": "AI in operations/client service",
