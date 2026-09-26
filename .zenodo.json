@@ -1,5 +1,5 @@
 {
-  "title": "Disclosed Intelligence: reproducibility artifact for a large-sample measurement of AI disclosure in U.S. investment adviser fiduciary filings",
+  "title": "AI Use and Risk Disclosure by Investment Advisers: reproducibility artifact for AI use and risk disclosure by U.S. investment advisers",
   "description": "<p>Frozen, pseudonymized dataset and a deterministic, network-free analysis pipeline that reproduces every table, figure, confidence interval, survey-weighted estimate, and the design-weighted independent cross-family validation reported in the article <em>AI Use and Risk Disclosure by Investment Advisers</em>. Includes the frozen stratified sample, primary and validation label sets, population stratum counts, venue/exposure tables, the classification rubric and exposure fingerprint, and the analysis code. Reproduction requires no API keys and no network access.</p>",
   "upload_type": "software",
   "access_right": "open",

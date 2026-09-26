@@ -15,12 +15,13 @@ Capsule mounts:
 |-------|----------|
 | `/code` | `src/`, `scripts/`, `tests/`, `requirements.txt`, `run` |
 | `/data` | frozen pseudonymized inputs (see `data/README.md`) |
-| `/results` | analysis outputs (tables, figures, `metrics_summary.md`) |
+| `/results` | analysis outputs: `tables/`, `figures/`, `figures/publication/` (Figures 1 and 2 as typeset), `revision/`, `metrics_summary.md` |
 
 Default Reproducible Run: `/code/run` → `bash code/scripts/reproduce.sh`
 (analyze the frozen data, then a SHA-256 byte-identical replication check).
 Expect `/results/metrics_summary.md` and **PASS** in
-`/results/latest/replication_check.md`.
+`/results/replication_check.md`. On Code Ocean the run writes straight to
+`/results`; the `latest/` level exists only in a local checkout.
 
 ## Local development
 

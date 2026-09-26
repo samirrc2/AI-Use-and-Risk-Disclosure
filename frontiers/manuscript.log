@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.8)  25 SEP 2026 20:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.8)  25 SEP 2026 20:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -580,10 +580,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package epstopdf Info: Source file: <./logo1.eps>
-(epstopdf)                    date: 2026-09-25 20:18:02
+(epstopdf)                    date: 2026-09-25 20:35:05
 (epstopdf)                    size: 37462 bytes
 (epstopdf)             Output file: <./logo1-eps-converted-to.pdf>
-(epstopdf)                    date: 2026-09-25 20:18:02
+(epstopdf)                    date: 2026-09-25 20:35:05
 (epstopdf)                    size: 25027 bytes
 (epstopdf)             Command: <repstopdf --outfile=./logo1-eps-converted-to.pdf ./logo1.eps>
 (epstopdf)             \includegraphics on input line 35.
@@ -841,7 +841,7 @@ Here is how much of TeX's memory you used:
  18 hyphenation exceptions out of 8191
  87i,10n,131p,2237b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></Users/samirchincholikar/Library/TinyTeX/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manuscript.pdf (20 pages, 473644 bytes).
+Output written on manuscript.pdf (20 pages, 473663 bytes).
 PDF statistics:
  509 PDF objects out of 1000 (max. 8388607)
  440 compressed objects within 5 object streams

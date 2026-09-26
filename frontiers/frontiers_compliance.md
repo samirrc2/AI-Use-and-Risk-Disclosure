@@ -1,14 +1,14 @@
 # Frontiers in Artificial Intelligence — Original Research: compliance checklist
 
-Manuscript: *Disclosed Intelligence* (`manuscript.tex`). **Status legend:** ✅ done · ⚠️ needs your input · ➖ N/A.
+Manuscript: *AI Use and Risk Disclosure by Investment Advisers* (`manuscript.tex`). **Status legend:** ✅ done · ⚠️ needs your input · ➖ N/A.
 Every requirement from the Frontiers author guidelines + the official LaTeX template is mapped below.
 
 | # | Requirement (Frontiers spec) | Our status | Where / note |
 |---|---|---|---|
 | 1 | Use Frontiers template; LaTeX submit `.tex`+`.pdf`+`.bib`+figures | ✅ | `FrontiersinHarvard.cls`; all files delivered in `submission/` |
 | 2 | **Reference style = Harvard (author-date)** for Frontiers in AI | ✅ | `\bibliographystyle{Frontiers-Harvard}`, `\citep/\citet` |
-| 3 | Title: concise, states main result, no abbreviations, includes keywords | ✅ | Title names the finding ("Disclosed Intelligence … AI Disclosure"), no abbreviations |
-| 4 | Running title | ✅ | `\title[Disclosed Intelligence]{…}` |
+| 3 | Title: concise, states main result, no abbreviations, includes keywords | ✅ | Title names the finding ("AI Use and Risk Disclosure …  Disclosure"), no abbreviations |
+| 4 | Running title | ✅ | `\title[AI Use and Risk Disclosure]{…}` |
 | 5 | Author names listed; corresponding author marked `*` | ✅ | `Samir Chincholikar$^{1}$, Robin Chawla$^{2,*}$` |
 | 6 | Affiliation format: Dept, Org, City, State (US/CA/AU), Country — no street/zip | ✅ | $^{1}$Independent Researcher, New York, NY, United States; $^{2}$Independent Researcher, New York, NY, United States — **confirm/adjust if needed** |
 | 7 | Corresponding email in correspondence block | ✅ | robin.chawla.cse14@iitbhu.ac.in |

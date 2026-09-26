@@ -1,4 +1,4 @@
-Disclosed Intelligence — reproduction verification (offline, no network, no keys)
+AI Use and Risk Disclosure by Investment Advisers — reproduction verification (offline, no network, no keys)
 
 Environment : Python 3.12.8-pinned deps (numpy 2.2.6, pandas 2.2.3, scipy 1.14.1,
               statsmodels 0.14.4, matplotlib 3.9.2)

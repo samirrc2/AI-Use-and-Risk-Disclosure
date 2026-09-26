@@ -287,6 +287,10 @@ def figures(m, t1, t4, t5, out):
     matplotlib.use("Agg")
     # SVG clip-path ids are randomised per process unless the hash salt is fixed; without
     # this the vector copies are not byte-reproducible even though the PNGs are.
+    # Deliberately unchanged when the project was retitled: this salt seeds the element
+    # ids matplotlib writes into every SVG. Changing the string changes those ids, which
+    # changes the bytes of every committed figure and breaks the byte-identity check for
+    # no benefit. It is an internal constant, never displayed.
     matplotlib.rcParams["svg.hashsalt"] = "disclosed-intelligence"
     import matplotlib.pyplot as plt
 

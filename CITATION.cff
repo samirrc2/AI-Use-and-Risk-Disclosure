@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this artifact, please cite the article and this software/dataset deposit."
-title: "Disclosed Intelligence: reproducibility artifact"
+title: "AI Use and Risk Disclosure by Investment Advisers: reproducibility artifact"
 abstract: >-
   Frozen dataset and deterministic analysis pipeline that reproduces every table,
   figure, and statistic in "AI Use and Risk Disclosure by Investment Advisers," including the

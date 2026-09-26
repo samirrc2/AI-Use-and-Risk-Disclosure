@@ -1,4 +1,4 @@
-# Freeze receipt — Disclosed Intelligence reproducibility dataset
+# Freeze receipt: AI Use and Risk Disclosure by Investment Advisers
 
 SHA-256 of every frozen input in `data/`. The analysis code is a pure function of these files.
 

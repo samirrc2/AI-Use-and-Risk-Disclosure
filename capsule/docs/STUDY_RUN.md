@@ -5,17 +5,28 @@
 No keys, no network, no cost. From the repository root (or `/code/run` on Code Ocean):
 
 ```bash
-bash reproduce.sh              # analyze frozen data + byte-identical replication check
-bash reproduce.sh --analyze-only
-bash reproduce.sh --test       # unit tests only
+bash code/run                  # analyze frozen data + byte-identical replication check
+bash code/run --analyze-only
+bash code/run --test           # unit tests only
 ```
+
+The run executes, in order: `analyze.py` (prevalences, gradient, weighting, validation,
+figures), `validate_human.py` (two-coder human verification under the two-phase weights),
+`case_table.py` (Table 4's label codes, derived from the frozen labels),
+`publication_figures.py` (Figures 1 and 2 at their typeset resolution),
+`revision_analyses.py` and `benchmark_determinants.py` (robustness, temporal
+falsification, construct ladder, venue-length conditioning), then `replication_check.py`.
+Order matters: `benchmark_determinants.py` reads a file `revision_analyses.py` writes.
 
 Outputs:
 
 - Local: `results/latest/` — `metrics_summary.md`, `tables/`, `figures/`,
   `replication_check.md`
 - Code Ocean: `/results/metrics_summary.md`, `/results/tables/`, `/results/figures/`,
-  and `/results/latest/replication_check.md` (SHA-256 determinism check; expect **PASS**)
+  `/results/figures/publication/`, `/results/revision/`, and
+  `/results/replication_check.md` (SHA-256 determinism check; expect **PASS**).
+  On Code Ocean the run writes straight to `/results`; the `latest/` level exists
+  only in a local checkout.
 
 ## Upstream collection (documented, NOT run here)
 

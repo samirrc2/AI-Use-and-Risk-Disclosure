@@ -43,6 +43,12 @@ the survey-vs-disclosure wedge); **mention = a ∨ b ∨ c ∨ d ∨ e**.
 - **Reliability:** same-family inter-model reproducibility (gpt-4o vs. gpt-4o-mini,
   60 brochures) and independent cross-family validation (180 brochures re-coded by a
   different model family), reported as precision/recall/F1, Cohen's κ, and PABAK.
+- **Human verification:** a targeted two-coder exercise on 158 cases (120 brochures —
+  the 60 model-disagreement cases censused plus a stratified 60 of the agreement cases —
+  and 38 website cases under their own single-phase design). Both coders were blind to the
+  model labels and used the same frozen rubric; each case received one code. Metrics are
+  Horvitz–Thompson weighted for the two-phase frame (agreement 2.0, phase-1 negative
+  4.649, website negative 13.25) and reported separately for the two genres.
 - **Exposure:** an F1–F7 fingerprint distilled from SEC AI-washing orders IA-6573 and
   IA-6574 (`data/prompts/exposure_fingerprints_v1.md`); positives are human-adjudicated
   (Supplement S1).

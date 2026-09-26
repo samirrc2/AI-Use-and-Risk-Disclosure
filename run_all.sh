@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Disclosed Intelligence — end-to-end LIVE pipeline (needs API keys + network).
+# AI Use and Risk Disclosure by Investment Advisers — end-to-end LIVE pipeline (needs API keys + network).
 #
 # To REPRODUCE the published numbers you do NOT need this script: run
 #   cd capsule && bash reproduce.sh          # offline, deterministic, no keys

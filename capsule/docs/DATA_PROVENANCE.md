@@ -54,6 +54,30 @@ rubric (`marketing_labels.csv`), and paired with the brochure result for the 283
 firms present in both venues (`venue_divergence.csv`). (Collection scripts:
 `b01_resolve_sites.py` … `b04_divergence.py`.)
 
+## 7. Files added for the revision
+
+Each was derived from material already described above, re-keyed to `fid`, and added so
+that every number in the revised article has an artifact behind it.
+
+- `doc_lengths.csv` — character count of each classified brochure, taken from the same
+  extracted text as the classification step (Section 2). Used for the venue
+  length-conditioning analysis.
+- `keyword_constructs.csv` — literal-phrase and rubric-scope keyword flags per firm,
+  recomputed over that same extracted text, plus its character count. Used for the
+  construct-sensitivity ladder.
+- `aum_history.csv` — regulatory AUM at 2020, 2022 and 2024 year-end for each sampled
+  firm, read from the same Form ADV Part 1 bulk data as the sampling frame (Section 1).
+  Used for the lagged-stratum falsification test.
+- `human_verification/` — the targeted two-coder exercise. `frame.csv` is the drawn frame
+  (`row_id, fid, stratum, kind`); `brochures.csv` and `websites.csv` are the coders'
+  exports, one code per row; `design.json` records the stratum sizes and the two-phase
+  weights. The coding application itself is **not** shipped: it embeds unredacted brochure
+  passages, and publishing it beside `frame.csv` would reconstruct the withheld crosswalk.
+- `case_examples.csv` — the passages quoted in Table 4 of the article, each with its `fid`.
+  Only the passage text is carried, and only because it is already printed verbatim in the
+  published table; every label code in that table is derived at run time from
+  `labels_primary.csv`, `labels_independent.csv` and `human_verification/`.
+
 ## Pseudonymization
 
 Before inclusion here, every file was re-keyed from CRD to a pseudonym `fid`

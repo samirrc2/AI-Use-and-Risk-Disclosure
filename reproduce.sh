@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ============================================================================
-# Disclosed Intelligence — REPRODUCE (offline, $0, no network, no API keys)
+# AI Use and Risk Disclosure by Investment Advisers — REPRODUCE (offline, $0, no network, no API keys)
 # ============================================================================
 # Stage 1 (always) regenerates every reported number, table and figure from the
 # FROZEN, pseudonymized dataset and checks two runs are byte-identical, by

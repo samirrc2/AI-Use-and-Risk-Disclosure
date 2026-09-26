@@ -1,4 +1,4 @@
-# Disclosed Intelligence
+# AI Use and Risk Disclosure by Investment Advisers
 
 Reproducibility artifact for a manuscript prepared for
 **[Frontiers in Artificial Intelligence](https://www.frontiersin.org/journals/artificial-intelligence)**.
@@ -177,7 +177,7 @@ PASS — all table artifacts byte-identical across runs.
 
 That verdict is from a SHA-256 comparison of every table across two independent
 runs (`results/latest/replication_check.md` locally;
-`/results/latest/replication_check.md` on Code Ocean).
+`/results/replication_check.md` on Code Ocean, which writes straight to `/results`).
 
 ---
 
