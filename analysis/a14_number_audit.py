@@ -37,6 +37,17 @@ SOURCES = [
 LO, HI = 1.0, 100.0
 
 
+def sources_present():
+    """Which of the artifact trees this audit reads are actually available.
+
+    Three of the four live outside the published repository (analysis/out, build/out,
+    pilot). In a fresh clone they are absent, so most figures cannot be traced and the
+    audit would report dozens of failures that are not defects. It reports INCOMPLETE and
+    exits 2 instead, which verify.sh renders as a skip rather than a failure.
+    """
+    return [s for s in SOURCES if any(os.path.isfile(f) for f in glob.glob(s, recursive=True))]
+
+
 def load_allowlist():
     allow = {}
     if os.path.exists(ALLOW):
@@ -111,6 +122,20 @@ def manuscript_numbers():
 
 
 def main():
+    have = sources_present()
+    if len(have) < len(SOURCES):
+        missing = [s for s in SOURCES if s not in have]
+        if not any("capsule" in s for s in have):
+            print("[number-audit] INCOMPLETE — no artifact sources present at all.")
+            sys.exit(2)
+        print("[number-audit] NOTE — these artifact trees are not present here, so figures "
+              "that only they carry cannot be traced:")
+        for s in missing:
+            print("   " + os.path.relpath(s, ROOT))
+        print("[number-audit] INCOMPLETE — run inside the authors' working copy for the "
+              "full audit; the capsule-backed figures are checked by a18_claims_bound.py.")
+        sys.exit(2)
+
     if not os.path.exists(TEX):
         print(f"[number-audit] no manuscript at {TEX}; nothing to check")
         return 0

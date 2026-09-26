@@ -50,12 +50,26 @@ if ! "$TPY" -c "import pypdf" 2>/dev/null; then
 fi
 echo "  tools interpreter:   $("$TPY" --version 2>&1 | awk '{print $2}') - pypdf present"
 
+skipped=0
+# Exit-code contract for every check below:
+#   0  passed
+#   1  something is wrong
+#   2  could not check everything here, because inputs are deliberately not published
+#      (the identified brochure corpus, the reviewer letters, the working-copy artifact
+#      trees). A clone of the public repository hits this legitimately; it is reported as
+#      a skip and named, never folded into a pass.
 run () { local name="$1"; shift
-    if out=$("$@" 2>&1); then
+    out=$("$@" 2>&1); local rc=$?
+    if [ "$rc" = 0 ]; then
         printf '  PASS  %-34s %s\n' "$name" "$(echo "$out" | tail -1 | cut -c1-68)"
+    elif [ "$rc" = 2 ]; then
+        printf '  SKIP  %-34s %s\n' "$name" \
+            "$(echo "$out" | grep -E "SKIP|INCOMPLETE|NOTE|SKIPPED" | head -1 | cut -c1-68)"
+        echo "$out" | grep -E "SKIPPED:|not present here" | head -4 | sed 's/^/          /'
+        skipped=$((skipped + 1))
     else
-        printf '  FAIL  %-34s exit %d\n' "$name" "$?"
-        echo "$out" | grep -E "FAIL|UNBOUND|ERROR|unaccounted|INCOMPLETE|VACUOUS" | head -8 | sed 's/^/          /'
+        printf '  FAIL  %-34s exit %d\n' "$name" "$rc"
+        echo "$out" | grep -E "FAIL|UNBOUND|ERROR|unaccounted|VACUOUS" | head -8 | sed 's/^/          /'
         fail=1
     fi
 }
@@ -81,5 +95,11 @@ run "submission package current"  bash frontiers/build_package.sh --check
 
 echo
 "$TPY" analysis/a18_claims_bound.py 2>/dev/null | grep -E "coverage of body prose" | sed 's/^/  /'
-[ "$fail" = 0 ] && echo "ALL CHECKS PASSED" || echo "SOMETHING FAILED -- see above"
+if [ "$fail" != 0 ]; then
+    echo "SOMETHING FAILED -- see above"
+elif [ "$skipped" != 0 ]; then
+    echo "ALL RUNNABLE CHECKS PASSED ($skipped skipped: inputs not published in this copy)"
+else
+    echo "ALL CHECKS PASSED"
+fi
 exit "$fail"

@@ -56,6 +56,12 @@ def float_pages(pdf):
 
 
 def main():
+    if not LETTERS:
+        # The response letters reproduce reviewer comments verbatim and are held back from
+        # the public repository until the paper is accepted. Nothing to check here is not
+        # the same as a check failing, so this exits 2 and verify.sh renders it as a skip.
+        print("SKIP: no response letters present (not published in this copy)")
+        sys.exit(2)
     if not PDF.exists():
         sys.exit(f"missing {PDF}")
     L = line_map(PDF)

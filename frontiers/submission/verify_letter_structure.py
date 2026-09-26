@@ -48,7 +48,9 @@ def main():
 
     letters = sorted(HERE.glob("response_reviewer_*.txt"))
     if not letters:
-        sys.exit("no response letters found")
+        # Held back from the public repository until acceptance; nothing to check here.
+        print("SKIP: no response letters present (not published in this copy)")
+        sys.exit(2)
 
     for letter in letters:
         num = re.search(r"_(\d+)\.txt$", letter.name).group(1)

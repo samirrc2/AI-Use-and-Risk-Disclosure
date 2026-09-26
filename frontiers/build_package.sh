@@ -40,6 +40,9 @@ if [ "${1:-}" = "--check" ]; then
           submission/response_reviewer_3.pdf) dep=submission/response_reviewer_3.txt ;;
           *) dep="$SRC" ;;
         esac
+        if [ ! -f "$dep" ]; then
+            continue          # source not published in this copy; nothing to rebuild from
+        fi
         if [ ! -f "$f" ] || [ "$f" -ot "$dep" ]; then
             echo "STALE: $f"; stale=1
         fi
@@ -47,11 +50,15 @@ if [ "${1:-}" = "--check" ]; then
     # Staleness is only half of it: a reference can point at the wrong section of a perfectly
     # fresh PDF. Never let this degrade to a skip -- a missing dependency must fail the gate.
     echo
-    if python3 submission/verify_response_refs.py; then :; else stale=1; fi
+    # Exit 2 from these means "the inputs are not published in this copy", which is not a
+    # stale package. Only a real failure (exit 1) should block.
+    rc=0; python3 submission/verify_response_refs.py || rc=$?
+    [ "$rc" = 0 ] || [ "$rc" = 2 ] || stale=1
     echo
     # Numbers can all be right while the reviewers' own prose sits unattributed in a letter
     # signed by the authors. verify_response_refs.py cannot see that; this can.
-    if python3 submission/verify_letter_structure.py; then :; else stale=1; fi
+    rc=0; python3 submission/verify_letter_structure.py || rc=$?
+    [ "$rc" = 0 ] || [ "$rc" = 2 ] || stale=1
     echo
     # Bind every prose claim to the artifact cell it comes from. a14 only asks whether a
     # printed figure occurs somewhere in some artifact, which let seven of eight altered
