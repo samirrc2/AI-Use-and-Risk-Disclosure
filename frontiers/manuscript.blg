@@ -1,47 +1,47 @@
-This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2024)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: manuscript.aux
 The style file: Frontiers-Harvard.bst
 Database file #1: references.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-You've used 36 entries,
+You've used 38 entries,
             3029 wiz_defined-function locations,
-            825 strings with 10441 characters,
-and the built_in function-call counts, 22175 in all, are:
-= -- 1887
-> -- 1029
-< -- 21
-+ -- 493
-- -- 277
-* -- 1595
-:= -- 3334
-add.period$ -- 77
-call.type$ -- 36
-change.case$ -- 272
-chr.to.int$ -- 37
-cite$ -- 72
-duplicate$ -- 1490
-empty$ -- 1598
-format.name$ -- 384
-if$ -- 4444
+            840 strings with 10738 characters,
+and the built_in function-call counts, 23413 in all, are:
+= -- 2001
+> -- 1075
+< -- 23
++ -- 515
+- -- 289
+* -- 1687
+:= -- 3518
+add.period$ -- 83
+call.type$ -- 38
+change.case$ -- 286
+chr.to.int$ -- 39
+cite$ -- 76
+duplicate$ -- 1574
+empty$ -- 1690
+format.name$ -- 406
+if$ -- 4694
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 335
-newline$ -- 235
-num.names$ -- 144
-pop$ -- 699
+missing$ -- 353
+newline$ -- 249
+num.names$ -- 152
+pop$ -- 731
 preamble$ -- 1
-purify$ -- 236
+purify$ -- 248
 quote$ -- 0
-skip$ -- 699
+skip$ -- 735
 stack$ -- 0
-substring$ -- 1060
-swap$ -- 716
+substring$ -- 1128
+swap$ -- 758
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 321
+type$ -- 339
 warning$ -- 0
-while$ -- 154
+while$ -- 164
 width$ -- 0
-write$ -- 525
+write$ -- 557

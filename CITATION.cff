@@ -3,8 +3,7 @@ message: "If you use this artifact, please cite the article and this software/da
 title: "Disclosed Intelligence: reproducibility artifact"
 abstract: >-
   Frozen dataset and deterministic analysis pipeline that reproduces every table,
-  figure, and statistic in "Disclosed Intelligence: A Large-Sample Measurement of
-  AI Disclosure in U.S. Investment Adviser Fiduciary Filings," including the
+  figure, and statistic in "AI Use and Risk Disclosure by Investment Advisers," including the
   design-weighted independent cross-family validation of the classifier.
 type: software
 authors:
@@ -14,7 +13,7 @@ authors:
   - family-names: Chawla
     given-names: Robin
     orcid: "https://orcid.org/0009-0007-2807-3948"
-repository-code: "https://github.com/samirrc2/disclosed-intelligence"
+repository-code: "https://github.com/samirrc2/AI-Use-and-Risk-Disclosure"
 identifiers:
   - type: doi
     value: "10.24433/CO.3404788.v1"
@@ -32,7 +31,7 @@ keywords:
   - reproducibility
 preferred-citation:
   type: article
-  title: "Disclosed Intelligence: A Large-Sample Measurement of AI Disclosure in U.S. Investment Adviser Fiduciary Filings"
+  title: "AI Use and Risk Disclosure by Investment Advisers"
   authors:
     - family-names: Chincholikar
       given-names: Samir

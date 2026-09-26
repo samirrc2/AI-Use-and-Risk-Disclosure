@@ -1,0 +1,835 @@
+%%% Frontiers in Artificial Intelligence — Original Research
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL manuscript_v1_as_submitted.tex   Fri Sep 25 20:08:28 2026
+%DIF ADD ../manuscript.tex                Fri Sep 25 20:14:09 2026
+%%% "Disclosed Intelligence: A Large-Sample Measurement of AI Disclosure in U.S. Investment Adviser Fiduciary Filings"
+%%% Compile: pdflatex -> bibtex -> pdflatex -> pdflatex
+
+\documentclass[utf8]{FrontiersinHarvard}
+\usepackage{url,hyperref,lineno,microtype,subcaption}
+%DIF 7a7
+\usepackage{amsmath} %DIF > 
+%DIF -------
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{longtable}
+\usepackage[singlespacing]{setspace}
+\linenumbers
+\raggedbottom
+
+\def\keyFont{\fontsize{8}{11}\helveticabold }
+\def\firstAuthorLast{Chincholikar {and} Chawla}
+\def\Authors{Samir Chincholikar\,$^{1}$, Robin Chawla\,$^{2,*}$}
+\def\Address{$^{1}$Independent Researcher, New York, NY, United States \\ $^{2}$Independent Researcher, New York, NY, United States}
+\def\corrAuthor{Robin Chawla}
+\def\corrEmail{robin.chawla.cse14@iitbhu.ac.in}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}} %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+%DIF AMSMATHULEM PREAMBLE %DIF PREAMBLE
+\makeatletter %DIF PREAMBLE
+\let\sout@orig\sout %DIF PREAMBLE
+\renewcommand{\sout}[1]{\ifmmode\text{\sout@orig{\ensuremath{#1}}}\else\sout@orig{#1}\fi} %DIF PREAMBLE
+\makeatother %DIF PREAMBLE
+%DIF COLORLISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+\lstset{extendedchars=\true,inputencoding=utf8}
+
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\setlength{\tabcolsep}{3pt}
+\emergencystretch=3em
+\begin{document}
+\onecolumn
+\firstpage{1}
+
+\DIFdelbegin %DIFDELCMD < \title[Disclosed Intelligence]{%%%
+\DIFdel{Disclosed Intelligence: A Large-Sample Measurement of }\DIFdelend \DIFaddbegin \title[AI Use and Risk Disclosure]{\DIFaddend AI \DIFaddbegin \DIFadd{Use and Risk }\DIFaddend Disclosure \DIFdelbegin \DIFdel{in U.S. }\DIFdelend \DIFaddbegin \DIFadd{by }\DIFaddend Investment \DIFdelbegin \DIFdel{Adviser Fiduciary Filings}\DIFdelend \DIFaddbegin \DIFadd{Advisers}\DIFaddend }
+
+\author[\firstAuthorLast ]{\Authors}
+\address{}
+\correspondance{}
+\extraAuth{}
+
+\maketitle
+
+\begin{abstract}
+\section{}
+\DIFdelbegin \DIFdel{Industry surveys suggest that registered investment advisers (RIAs) are increasingly using artificial }\DIFdelend \DIFaddbegin \DIFadd{Artificial }\DIFaddend intelligence (AI) \DIFdelbegin \DIFdel{, but little is known about what advisers are disclosing to clients about AI in the fiduciary documents they provide. This study measures }\DIFdelend \DIFaddbegin \DIFadd{is increasingly used across investment management, but formal evidence on what advisers disclose about that use remains limited. We study }\DIFaddend AI disclosure in \DIFdelbegin \DIFdel{a large sample of }\DIFdelend \DIFaddbegin \DIFadd{Form ADV Part 2A brochures using a stratified sample of 400 investment advisers registered with the }\DIFaddend U.S. \DIFdelbegin \DIFdel{Form ADV Part 2A brochures, and explores variation in disclosure across adviser characteristics and between fiduciary filings and public marketing. We used the SECForm ADV Part 1 population frame to identify }\DIFdelend \DIFaddbegin \DIFadd{Securities and Exchange Commission (SEC), drawn from a population of }\DIFaddend 16{,}223 \DIFdelbegin \DIFdel{active SEC-registered advisers reporting regulatory assets under management and drew a stratified random sample of 400 firmsby adviser type and AUM quartile. We classified existing brochures for 388 firms using a pre-specified five-label typology covering AI in investment processes, operations and client service, risk disclosure}\DIFdelend \DIFaddbegin \DIFadd{firms. Of these, 388 brochures were available for analysis. We classify disclosures into investment-process use, operational or client-service use, AI-related risk}\DIFaddend , explicit non-use, and named AI vendors\DIFdelbegin \DIFdel{or products. Classification was performed using a frozen large-language-model rubric, evaluated for same-family reproducibility, and independently validated through blinded cross-family recoding of 180 brochures.
+Disclosed AI use was }\DIFdelend \DIFaddbegin \DIFadd{, and validate the resulting measures through blinded cross-model recoding and targeted human review.
+}
+
+\DIFadd{AI use is disclosed in }\DIFaddend 23.7\% of \DIFdelbegin \DIFdel{brochures (95\% CI 19.7--28.2)and was significantly associated with adviser size; private-fund advisers disclosed AI more often than wealth and retail advisers. The survey-weighted estimate for advisers who filed brochures was 22.7\% (95\% CI 18.7--26.6) . The most common AI-related disclosure mode was risk disclosure, accounting for }\DIFdelend \DIFaddbegin \DIFadd{observed brochures, while }\DIFaddend 27.6\% \DIFdelbegin \DIFdel{, which exceeded explicit claims of AI use. The main }\DIFdelend \DIFaddbegin \DIFadd{contain AI-related risk language. The within-brochure difference is statistically significant (McNemar $p = 0.036$), indicating that advisers discuss AI at least as often as a source of risk as a claimed capability. Disclosure also rises sharply across the 2024 assets under management (AUM) strata, from 10.4\% in the smallest quartile to 43.8\% in the largest. Human verification supports the composite }\DIFaddend any-use measure\DIFdelbegin \DIFdel{demonstrated strong cross-family agreement ($\kappa = 0.74$; recall $= 0.84$; precision $= 0.76$).
+Language resembling the conduct described in SEC AI-washing enforcement actions was rare. Five brochures triggered the screening rule, }\DIFdelend \DIFaddbegin \DIFadd{, with precision of 0.76 and sensitivity of 0.81.
+}
+
+\DIFadd{The broader finding is methodological. Estimated prevalence changes materially with construct definition, adviser universe, weighting, and document structure. The same corpus yields estimates of 9.9\%, 13.1\%, }\DIFaddend and \DIFdelbegin \DIFdel{no brochures were identified as containing an unsubstantiated promotional claim. Among the 283 firms that were observed in both venues, 23.0\%disclosed AI use in fiduciary brochures versus 5.7\% on current websites. These findings indicate that disclosure of AI in adviser fiduciary filings is limited, is highly correlated with adviser size and type, and is substantively different from survey-reported adoption. Because survey-reported use and fiduciary disclosure are different constructs and different populations, it is appropriate to interpret their divergence as a contextual benchmark rather than a nondisclosure rate}\DIFdelend \DIFaddbegin \DIFadd{23.7\% under alternative measurement choices. A raw 17.3-percentage-point difference between brochures and websites also disappears after conditioning on document length. AI-disclosure prevalence should therefore be interpreted as the product of both underlying disclosure behavior and the measurement design used to observe it}\DIFaddend .
+
+\tiny
+ \keyFont{ \section{Keywords:} artificial intelligence, generative AI, investment advisers, Form ADV, fiduciary disclosure, text classification, large language models, AI-washing}
+
+ \keyFont{ \section{Word count:} $\approx$8{,}551 (main text, per Frontiers' definition); Figures: 2; Tables: 5 }
+\end{abstract}
+
+\section{Introduction}
+
+Artificial intelligence (AI) has quickly transitioned from experimental technology to operational capability claimed across financial services. Industry surveys suggest significant adoption among registered investment advisers (RIAs), with the Charles Schwab 2026 RIA and AI research study \citep{schwab2026} finding that about 63\% of surveyed firms are using or piloting AI. \DIFdelbegin \DIFdel{Such surveys give important insight into reported adoption, but they do not show what advisers disclose in the regulatory documents given to clients. }\DIFdelend Form ADV Part 2A, or the brochure, is a core narrative disclosure document for \DIFdelbegin \DIFdel{SEC-registered investment advisers }\DIFdelend \DIFaddbegin \DIFadd{investment advisers registered with the U.S. Securities and Exchange Commission (SEC) }\DIFaddend that describes the adviser's business practices, investment strategies, conflicts, and material risks \citep{usSEC2019}. \DIFdelbegin \DIFdel{There is increasing interest in deploying AI in financial services, but there has not been an industry-scale measurement of the prevalence and format of AI disclosures in these fiduciary filings .
+}\DIFdelend \DIFaddbegin \DIFadd{Industry surveys provide evidence on reported AI adoption, but they do not establish what advisers disclose in fiduciary filings or how estimated disclosure prevalence depends on the way AI use is defined and measured. This distinction matters because adoption, self-reported experimentation, and formal disclosure are related but different empirical objects.
+}\DIFaddend 
+
+Measurement of such disclosure \DIFdelbegin \DIFdel{is important }\DIFdelend \DIFaddbegin \DIFadd{matters }\DIFaddend for regulatory and empirical reasons. Artificial intelligence can enter an advisory business through investment research, portfolio construction, trading, risk management, client service, operational processes \DIFdelbegin \DIFdel{, }\DIFdelend or third-party technology, and these uses may raise different disclosure considerations. Regulators have \DIFdelbegin \DIFdel{also started looking into whether firms accurately }\DIFdelend \DIFaddbegin \DIFadd{begun examining whether firms }\DIFaddend represent their AI capabilities \DIFdelbegin \DIFdel{. In March 2024, the U.S. Securities and Exchange Commission filed }\DIFdelend \DIFaddbegin \DIFadd{accurately, and the SEC brought }\DIFaddend its first two \DIFdelbegin \DIFdel{enforcement actions related to misleading statements about the use of AI against Delphia and Global Predictions \mbox{%DIFAUXCMD
+\citep{usSEC2024a,usSEC2024b}}\hskip0pt%DIFAUXCMD
+. The concern is similar to greenwashing, where claimed environmental credentials may be overstated compared to substantiated practices \mbox{%DIFAUXCMD
+\citep{delmas2011,lyon2015}}\hskip0pt%DIFAUXCMD
+. But in the AI context the empirical problem is more than just spotting potentially exaggerated claims . A necessary first step is to develop }\DIFdelend \DIFaddbegin \DIFadd{AI-related enforcement actions in March 2024 \mbox{%DIFAUXCMD
+\citep{usSEC2024a,usSEC2024b}}\hskip0pt%DIFAUXCMD
+. Before exaggerated claims can be identified, however, }\DIFaddend a reproducible way \DIFdelbegin \DIFdel{to ascertain if companies }\DIFdelend \DIFaddbegin \DIFadd{is needed to establish whether firms }\DIFaddend mention AI at all, what \DIFdelbegin \DIFdel{type }\DIFdelend \DIFaddbegin \DIFadd{kind }\DIFaddend of use they disclose, whether AI is \DIFdelbegin \DIFdel{portrayed }\DIFdelend \DIFaddbegin \DIFadd{presented }\DIFaddend as a capability or a risk, and how \DIFdelbegin \DIFdel{such }\DIFdelend disclosure varies across firms.
+
+This study \DIFdelbegin \DIFdel{thus }\DIFdelend takes a measurement-first approach to AI disclosure among U.S. investment advisers. \DIFdelbegin \DIFdel{We consider three substantive research questions. First, what is the prevalence of disclosed AI usein Form ADV Part 2A brochures }\DIFdelend \DIFaddbegin \DIFadd{It asks three substantive questions. How frequently do advisers disclose AI use, }\DIFaddend and how does \DIFdelbegin \DIFdel{prevalence vary by adviser size and type? Second, when advisers talk about AI , is it more likely to be framed as a technology they use or a source of risk? Third, how do AI disclosures in the fiduciary brochure compare to the firms' }\DIFdelend \DIFaddbegin \DIFadd{disclosure vary across the 2024 assets under management (AUM) and adviser-type strata? Does AI appear more often as a claimed capability or as a disclosed risk? And how does disclosure in fiduciary brochures compare with }\DIFaddend public-facing \DIFdelbegin \DIFdel{marketing, and how often do either venue contain language similar to the types of AI claims identified in SEC enforcement actions? All three questions build on a methodological aim: to investigate if a }\DIFdelend \DIFaddbegin \DIFadd{websites? These questions share a common measurement problem. An estimate of AI disclosure depends on what counts as AI use, which documents and advisers are observed, and how reliably the underlying text can be classified. We therefore treat the }\DIFaddend large language model \DIFdelbegin \DIFdel{can serve as a reproducible measurement instrument for AI-related regulatory text if its classifications are compared to an independent blinded re-coding from a different model family}\DIFdelend \DIFaddbegin \DIFadd{(LLM) as a measurement instrument rather than ground truth and evaluate its classifications through same-family reproducibility, blinded cross-family recoding, and targeted human verification}\DIFaddend .
+
+We build the study from the structured data in the SEC Form ADV Part 1, identifying 16{,}223 active SEC-registered advisers reporting regulatory \DIFdelbegin \DIFdel{assets under management}\DIFdelend \DIFaddbegin \DIFadd{AUM}\DIFaddend , and drawing a stratified random sample of 400 firms across adviser type and AUM quartile. We were successful in categorizing the current Form ADV Part 2A brochures for 388 firms. We employ a prespecified five-label typology that differentiates between AI use in investment process, AI use in operations or client service, AI-related risk disclosures, explicit statements of non-use, and references to named AI vendors or products. \DIFaddbegin \DIFadd{Representative positive, negative and borderline cases illustrating the framework are presented with the validation results in Section~4.3. }\DIFaddend The classification rubric and model specification were specified before outcome analysis. We evaluate reproducibility within the same family and then perform a blinded, independent cross-family \DIFdelbegin \DIFdel{re-coding }\DIFdelend \DIFaddbegin \DIFadd{recoding }\DIFaddend of 180 brochures, with validation statistics adjusted for the verification design.
+\DIFdelbegin \DIFdel{This enables the study to consider LLM classification not as an assumed source of ground truth but as a measurement procedure that can be explicitly assessed for its reliability and limitations.
+}\DIFdelend 
+
+\DIFdelbegin \DIFdel{The three main empirical results are as follows. First, }\DIFdelend \DIFaddbegin \DIFadd{Three results follow. Disclosed AI use appears in }\DIFaddend 23.7\% of \DIFdelbegin \DIFdel{classified brochuresreport some form of AI use (95\% CI 19.7--28.2), with disclosure strongly increasing across adviser-size quartiles and more common }\DIFdelend \DIFaddbegin \DIFadd{observed brochures, rising sharply across the 2024 AUM
+quartiles and occurring more frequently }\DIFaddend among private-fund advisers\DIFdelbegin \DIFdel{than wealth and retail advisers. The size trend and adviser-type association are also robust to regression analysis ($p < 0.001$). The survey-weighted estimate for the brochure-filing population is comparable at 22.7\% (95\% CI 18.7--26.6). Second, AI is more frequently mentioned as a risk than as a claimed capability, with 27.6\% of brochures including an }\DIFdelend \DIFaddbegin \DIFadd{. }\DIFaddend AI-related \DIFdelbegin \DIFdel{risk disclosure . Third, language similar to the conduct described in the two SEC AI-washing enforcement actions is not widespread. The enforcement-anchored screening rule triggered on five (1.3\%) of the classified brochures. Individual adjudication revealed that none involved unsubstantiated promotional claims of the kind charged in those actions. For the matched sample of 283 firms with both brochure and current website observations, disclosed use of AI is also much more likely to be found in brochures than in public-facing marketing, }\DIFdelend \DIFaddbegin \DIFadd{risk language is }\DIFaddend at \DIFdelbegin \DIFdel{23.0\% and 5.7\%, respectively}\DIFdelend \DIFaddbegin \DIFadd{least as common as affirmative-use disclosure within the same documents. More broadly, estimated prevalence changes materially with the construct, adviser universe, weighting, and document structure used to measure it}\DIFaddend .
+
+The difference between disclosed AI use observed in our sample and the roughly 63\% adoption found in the industry survey provides useful context but does not reveal a nondisclosure rate. The two measures differ in populations, dates, reporting settings, and constructs. Survey respondents may include experimental, administrative, or internal applications as AI use even where those applications are not material to a client-facing regulatory disclosure. Brochure language may describe algorithmic practices that respondents would not themselves describe as AI. Thus, for purposes of this study, the roughly 39-percentage-point gap is taken as a benchmark divergence between reported adoption and observed fiduciary disclosure, not as evidence that a corresponding proportion of advisers have adopted AI but have not disclosed it. To measure a real within-firm uptake-disclosure gap, information matching the AI usage of the sampled advisers would be necessary.
+
+This study makes \DIFdelbegin \DIFdel{four }\DIFdelend \DIFaddbegin \DIFadd{three }\DIFaddend contributions. First, it \DIFdelbegin \DIFdel{develops a predetermined and reproducible typology to measure AI-related disclosure in investment adviser filings and evaluates the resultant classifications by both same-family reproducibility and independent cross-family validation. Thus, the study contributes to the growing use of large language models as text-annotation tools by explicitly including validation, model dependence, and reproducibility in the research design \mbox{%DIFAUXCMD
+\citep{gilardi2023,tornberg2023,ziems2024,rathje2024,ollion2024}}\hskip0pt%DIFAUXCMD
+. Second, it produces a }\DIFdelend \DIFaddbegin \DIFadd{provides a }\DIFaddend large-sample estimate of disclosed AI use \DIFdelbegin \DIFdel{by }\DIFdelend \DIFaddbegin \DIFadd{among }\DIFaddend SEC-registered investment advisers and documents \DIFdelbegin \DIFdel{systematic variation by adviser size and type using stratified sampling, uncertainty estimates, and population weighting. }\DIFdelend \DIFaddbegin \DIFadd{substantial variation across the 2024 AUM and adviser-type strata. Second, it separates AI as a claimed capability from AI as a disclosed risk and shows, using within-brochure comparisons, that risk language is at least as common as affirmative-use disclosure. }\DIFaddend Third, it \DIFdelbegin \DIFdel{creates an enforcement-based filter for language similar to AI claims the SEC has charged before, and evaluates each positive case on its own, rather than assuming textual similarity equals misconduct. Fourth, it compares AI disclosure across regulatory and marketing venues and provides a reproducibility artifact that contains the frozen sample, classification rubric, prompts, validation materials, and analysis code. }\DIFdelend \DIFaddbegin \DIFadd{shows that AI-disclosure prevalence is itself a measurement result. Estimates move materially with construct definition, sampling universe, weighting, document structure, and classification error. The classification framework is therefore evaluated rather than assumed correct, using blinded cross-family recoding and targeted human verification. The enforcement-anchored screen is retained only as a secondary methodological illustration. }\DIFaddend More generally, the paper extends the established use of financial and regulatory text as a firm-level measurement tool \citep{tetlock2007,loughran2011,hoberg2016,cohenLazy2020,abis2022} to an emerging and policy-relevant dimension of investment-adviser disclosure.
+
+\section{Institutional background and related work}
+
+\subsection{Form ADV and the fiduciary brochure}
+
+Registered investment advisers with the SEC provide information about their business on Form ADV\DIFaddbegin \DIFadd{, the Uniform Application for Investment Adviser Registration}\DIFaddend . Part 1 includes structured, machine-readable information about adviser characteristics, including legal identity, regulatory \DIFdelbegin \DIFdel{assets under management (AUM)}\DIFdelend \DIFaddbegin \DIFadd{AUM}\DIFaddend , client composition, private fund activities, and disciplinary history, and is made available through the SEC's public data infrastructure. Part 2A is the adviser's narrative brochure and describes matters such as advisory services, investment strategies, fees, conflicts of interest, and material risks, subject to applicable filing requirements and exemptions. Part 2A is different from Part 1, which mainly provides standardized firm-level variables, in that it provides narrative descriptions of how an adviser describes its practices and risks to clients.
+
+This distinction makes the brochure a fitting setting for studying disclosed AI use. Advisory firms may engage in AI-related activity through investment research, portfolio construction, trading, risk management, client communications, operational processes, or third-party technology. Not all internal or experimental use of AI needs to be talked about in a regulatory brochure, and so the absence of AI terminology cannot be interpreted as evidence that a firm does not use AI. In contrast, to the extent an adviser explicitly discusses AI-related capabilities, processes, vendors, or risks in its brochure, that language constitutes an observable record of how the firm discusses AI in a formal disclosure context. Thus the object of this study is disclosure, rather than the underlying technology adoption. What we measure is what is written in the advisers' brochures, not whether a particular technology is actually deployed inside the firm.
+
+\subsection{Enforcement of AI-washing}
+
+In March 2024, regulatory scrutiny of AI-related disclosures intensified when the SEC announced settled enforcement actions against two investment advisers for making false or misleading statements about their purported use of AI. The SEC order alleges that Delphia (USA) Inc. did not develop the capabilities it claimed to have developed to use machine learning to analyze aggregate client data in a predictive algorithmic model. Global Predictions Inc. represented itself as the ``first regulated AI financial advisor'' and promoted ``AI-driven forecasts'' that the SEC found were not substantiated as advertised. The two companies agreed to civil penalties of US\$225{,}000 and US\$175{,}000, respectively \citep{usSEC2024a,usSEC2024b}.
+
+These actions are relevant in a specific and limited way to the current study. They show that when firms make claims about AI capabilities that are false, misleading, or not sufficiently substantiated, this can become an enforcement problem. They also give two observable examples of the language of charged conduct. We thus use the orders to build an enforcement-based textual screen for potentially similar language in adviser disclosures and marketing materials. The screen is not designed to determine whether a firm has violated securities laws, and textual similarity alone is not evidence of misconduct. Instead, it raises a flag to check the document, and every positive case is assessed on its own merits against the underlying text. In the analysis, we call this kind of language potential AI-washing exposure language and not violations or proven cases of AI-washing.
+
+\subsection{Related work}
+
+The paper connects three research streams\DIFdelbegin \DIFdel{: }\DIFdelend \DIFaddbegin \DIFadd{, namely }\DIFaddend textual measurement, large language models as annotation tools, and the economics of AI adoption and corporate disclosure. The first treats corporate and regulatory text as data from which firm characteristics that are otherwise hard to observe can be measured. \citet{tetlock2007} shows that textual information can contain economically meaningful signals, and \citet{loughran2011,loughran2016} show that financial language needs domain-specific measurement, as general-purpose linguistic categories can misclassify routine terminology in corporate disclosures. Related work uses filing text to construct measures of product-market similarity and competitive structure \citep{hoberg2016} and finds that changes in disclosure language contain economically relevant information \citep{cohenLazy2020}. Similar to the current design, \citet{abis2022} uses language from the prospectus to differentiate between quantitative and discretionary investment management and connects the text classification with observable fund behavior. More generally, \citet{grimmer2013} and \citet{gentzkow2019} highlight that text-based measures need to be evaluated as measurement tools, not as self-validated outcomes. This study applies that approach to AI disclosure in investment-adviser brochures and centers explicit validation in the research design.
+
+A second body of literature examines whether large language models can reliably execute classification and annotation tasks that have historically been performed by human coders. Prior work demonstrates strong performance across a variety of social-science annotation settings, such as comparisons with crowd workers, zero-shot classification, multilingual measurement, and other computational social-science applications \citep{gilardi2023,tornberg2023,ziems2024,rathje2024}. At the same time, there are methodological concerns about using proprietary and ever-changing models. Model outputs can vary by version, prompt, and model family, and high apparent agreement does not guarantee a classifier has captured the intended construct \citep{bommasani2021,ollion2024}. Such concerns are especially salient when the outputs of LLMs become variables for substantive inference rather than simply tools for exploratory analysis. Thus, from the perspective of the LLM as a measurement instrument, its performance must therefore be evaluated. The classification rubric is prespecified, the primary model and snapshot are fixed, same-family reproducibility is reported separately, and a substantial subset of documents is independently \DIFdelbegin \DIFdel{re-coded }\DIFdelend \DIFaddbegin \DIFadd{recoded }\DIFaddend by a different model family under blinded conditions. This design separates repeatability within a model family from agreement with an independent classifier.
+
+The third strand concerns AI adoption, disclosure incentives, and potentially exaggerated technological claims. There is a growing literature on the economic implications of AI and related predictive technologies for labor demand, productivity, innovation, firm growth, and financial decisions \citep{agrawal2018,dacunto2019,acemoglu2022,eisfeldt2023,noy2023,babina2024,brynjolfsson2025}. Importantly, technological adoption is difficult to observe directly in itself. For instance, \citet{babina2024} derive firm-level AI investment from labor market information. Our setting poses a related, but different, measurement problem. The outcome of interest is not whether a firm has adopted AI, but whether it discloses AI-related activity in a fiduciary filing. The difference is important, because real adoption, self-reported adoption, and formal disclosure need not be the same.
+
+Research on disclosure offers a framework for understanding why such differences may exist. Incentives for firms shape what information to disclose, how specific to be, and when proprietary, reputational, or regulatory concerns impact communication \citep{verrecchia2001,healy2001,leuz2016,blankespoor2020}. More recent work considers strategic disclosure also in settings where increasingly machines are processing corporate filings \citep{cao2024}. The possibility that claimed technological capabilities exceed substantiated capabilities is consistent with the established literature on greenwashing, where organizations can benefit from favorable claims while facing imperfect verification \citep{delmas2011,lyon2015}. This concern has direct relevance to investment advisers in light of the SEC's AI-related enforcement actions in 2024.
+
+Taken together, \DIFdelbegin \DIFdel{the literatures motivate a measurement-centric approach that separates three concepts that could otherwise be conflated: }\DIFdelend \DIFaddbegin \DIFadd{these literatures imply that AI disclosure should be treated as a measured textual construct rather than as a direct proxy for technology adoption or misconduct. We therefore distinguish }\DIFaddend underlying AI adoption, disclosed AI use, and potentially unsubstantiated AI claims. The \DIFdelbegin \DIFdel{latter two are considered in the present study as observable properties of regulatory and marketing text. It does this by applying a pre-specified classification framework to a large, stratified sample of adviser brochures, independently assessing the reliability of the resulting LLM-based measures, and using enforcement-derived language }\DIFdelend \DIFaddbegin \DIFadd{empirical design measures the second directly, treats the third }\DIFaddend only as a screening \DIFdelbegin \DIFdel{mechanism that requires case-level adjudication. This approach offers an empirical baseline for researching AI disclosure , rather than assuming that no disclosure implies no adoption or that promotional language signals misconduct}\DIFdelend \DIFaddbegin \DIFadd{exercise, and evaluates the resulting disclosure measure through independent model and human coding. This structure allows the analysis to ask not only how much AI disclosure is observed, but how much that estimate changes with the choices used to construct it}\DIFaddend .
+
+\section{Materials and methods}
+
+\subsection{Population frame and sampling design}
+
+The sampling frame was built from the SEC's Form ADV Part 1 bulk filing data. We merged 27{,}679 unique Central Registration Depository (CRD) identifiers that appeared in filings from 2011 to 2024 and kept advisers that were active as of December 31, 2024. Of the 16{,}709 active SEC-registered investment advisers, 16{,}223 reported regulatory assets under management (AUM) and were used as the population frame for sampling.
+
+We used a stratified random-sampling design to ensure sufficient representation across adviser business model and firm size. Advisers were divided into two broad categories, private-fund advisers and wealth/retail advisers\DIFdelbegin \DIFdel{; and within }\DIFdelend \DIFaddbegin \DIFadd{. Within }\DIFaddend each category, firms were assigned to AUM quartiles. The two adviser categories were crossed with four AUM quartiles to produce eight sampling strata. We then selected 50 advisers from each stratum using a fixed random seed, yielding an initial sample of 400 firms. The sample was drawn and frozen before retrieval or review of any Form ADV Part 2A brochure.
+
+We decided to allocate evenly across the eight strata to ensure sufficient observations to compare across adviser types and across the AUM distribution. Given the deliberate oversampling of strata with fewer firms, especially larger advisers, unweighted sample proportions are not treated as direct population estimates. We therefore report both design-sample estimates and survey-weighted estimates that reestablish the population distribution across the eight sampling strata.
+
+Structured sampling variables were extracted from the year-end 2024 Part 1 population frame, and brochure retrieval, website observation, classification, and validation were performed in 2026. The temporal difference is an explicit feature and limitation of the research design. Therefore, the frozen 2024 sampling strata are defined by the adviser type and AUM variables, rather than contemporaneous measures of firm characteristics on the exact date on which the 2026 disclosures were observed. The design should therefore be interpreted as capturing current disclosure among a probability sample drawn from the year-end 2024 population of active SEC-registered advisers reporting assets under management.
+
+The target sample size of 400 was chosen to strike a balance between the needs for document collection and validation, and precision. For proportions near 50\%, a sample of \DIFdelbegin \DIFdel{$\sim$}\DIFdelend 400 produces confidence intervals \DIFdelbegin \DIFdel{of $\sim\pm$4 percentage points }\DIFdelend \DIFaddbegin \DIFadd{(CIs) of roughly $\pm 5$ percentage points (pp) }\DIFaddend at the aggregate level. Within individual strata of about 50 observations, expected confidence intervals are wider, generally on the order of $\pm$9 to $\pm$12 percentage points depending on the observed prevalence. Thus, the stratum-level estimates are interpreted mainly for broad patterns, and formal tests of the \DIFdelbegin \DIFdel{size }\DIFdelend \DIFaddbegin \DIFadd{2024 AUM-quartile }\DIFaddend gradient are performed on the combined sample.
+
+\subsection{Form ADV Part 2A collection and analysis sample}
+
+For each sampled adviser, we attempted to obtain the current Form ADV Part 2A brochure filed with the SEC's public filing system. Of the 400 sampled firms, 388 produced a brochure with usable text for the primary classification analysis. Eleven companies were not required to file a Part 2A brochure under the relevant filing circumstances, while one additional brochure could not be converted into usable text. All 12 excluded observations were in the wealth/retail adviser category.
+
+The main estimand is thus AI disclosure among advisers with an observable Form ADV Part 2A brochure, rather than among every adviser in the original Part 1 sampling frame. Firms that are exempt from filing brochures are not considered to have zero AI disclosure, since the lack of a required brochure is conceptually different from a brochure that does not mention AI. As a sensitivity analysis we also examined the effect of classifying unclassified observations as \DIFdelbegin \DIFdel{non-disclosers}\DIFdelend \DIFaddbegin \DIFadd{nondisclosers}\DIFaddend . This does not change the substantive conclusions and changes aggregate prevalence by no more than about three percentage points.
+
+All retrieved source documents were stored with content hashes to keep the exact text analyzed. Document processing was finalized before substantive outcome analysis. The resulting analytical corpus consists of the 388 brochures that were successfully classified.
+
+\subsection{Classification of AI disclosure}
+
+We created and locked in a five-label classification framework to distinguish substantively different forms of AI-related disclosure prior to outcome analysis. The categories were designed to distinguish substantively different forms of AI disclosure.
+
+The first category, \DIFdelbegin \textbf{\DIFdel{investment-process AI}}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \emph{\DIFadd{investment-process AI}}\DIFaddend , includes statements that refer to the use of AI, machine learning, or closely related computational methods in investment research, security selection, portfolio construction, trading, forecasting, or other elements of the investment process. The second category, \DIFdelbegin \textbf{\DIFdel{operations or client-service AI}}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \emph{\DIFadd{operations or client-service AI}}\DIFaddend , tracks the disclosed use of AI in functions such as client interaction, administrative processes, workflow automation, compliance, communications, or other \DIFdelbegin \DIFdel{non-investment }\DIFdelend \DIFaddbegin \DIFadd{noninvestment }\DIFaddend activities. The third category, \DIFdelbegin \textbf{\DIFdel{AI risk factor}}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \emph{\DIFadd{AI risk factor}}\DIFaddend , captures language identifying AI or related technologies as a source of operational, investment, cybersecurity, model, regulatory, or other risk. The fourth category, \DIFdelbegin \textbf{\DIFdel{explicit non-use}}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \emph{\DIFadd{explicit non-use}}\DIFaddend , is made up of positive statements that the adviser does not use AI or does not use AI for a specified activity. The fifth category, \DIFdelbegin \textbf{\DIFdel{named vendor}}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \emph{\DIFadd{named vendor}}\DIFaddend , captures mentions of a specific vendor, platform, model, or product related to AI.
+
+These labels were used to create two composite measures. \DIFdelbegin \textbf{\DIFdel{Any AI use}} %DIFAUXCMD
+\DIFdelend \DIFaddbegin \emph{\DIFadd{Any AI use}} \DIFaddend equals one when a brochure includes AI in investment process, operations/client service, or a named AI vendor or product. We also report any-use prevalence after excluding the vendor category, since a vendor reference may sometimes be a weaker signal of direct firm-level use than an explicit description of an AI-enabled activity. \DIFdelbegin \textbf{\DIFdel{Any AI mention}} %DIFAUXCMD
+\DIFdelend \DIFaddbegin \emph{\DIFadd{Any AI mention}} \DIFaddend covers any of the five labels, including risk disclosures and explicit non-use.
+
+For each positive classification, verbatim quotes from the brochure were needed to provide support. The classification rubric was frozen before the prevalence results were calculated and included inclusion and exclusion criteria and examples for each label. The reproducibility materials include the full rubric, the prompts, the text-window specification, the model snapshot, and the classification date.
+
+\subsection{Primary LLM classification}
+
+The 388 brochures were classified using GPT-4o as the main large language model. To minimize avoidable generation variability, a fixed model snapshot was used with the temperature set to zero. Each brochure was scored using the prespecified rubric, and the model was required to output the relevant binary labels along with supporting text for positive classifications.
+
+The LLM was used as a measurement instrument, not as an assumed ground truth. The study therefore distinguishes primary classification from reliability and validation exercises that follow. This distinction is important because deterministic settings can enhance repeatability without establishing construct validity, and agreement between repeated outputs from the same model family does not provide the same evidence as agreement with an independently generated classification.
+
+To assess within-family reproducibility, 60 brochures were randomly selected and independently reclassified by GPT-4o-mini using the same frozen rubric. Agreement was calculated for each label and also for the composite any-use measure. These statistics are used as measures of same-family reproducibility, not external validation.
+
+\subsection{Independent validation\DIFdelbegin \DIFdel{across families}\DIFdelend }
+
+A separate validation exercise was performed using an independently operated model by another provider and model family\DIFdelbegin \DIFdel{: a }\DIFdelend \DIFaddbegin \DIFadd{. A }\DIFaddend total of 180 brochures were \DIFdelbegin \DIFdel{re-coded }\DIFdelend \DIFaddbegin \DIFadd{recoded }\DIFaddend with Anthropic Claude using the same frozen definitions but without access to the GPT-4o classifications. Thus, this \DIFdelbegin \DIFdel{re-coding }\DIFdelend \DIFaddbegin \DIFadd{recoding }\DIFaddend was blind to the primary labels.
+
+The validation sample was intentionally oversampled for primary-model positives to ensure sufficient observations to estimate classification performance. We included all 123 brochures that the primary model classified as positive on the any-mention measure (any of the five labels a--e), and a fixed-seed random sample of 57 brochures chosen from the 265 corresponding primary-model negatives. So, na\"ive validation statistics would not reproduce the distribution of the full analytic sample, because primary positives and negatives had different probabilities of entering the verification sample.
+
+\DIFdelbegin \DIFdel{We therefore used inverse-probability verification weights in estimating }\DIFdelend \DIFaddbegin \DIFadd{The validation subsample is therefore a two-phase design in which the probability of entering phase two is known by construction, and }\DIFaddend metrics influenced by \DIFdelbegin \DIFdel{the sampling design }\DIFdelend \DIFaddbegin \DIFadd{that design are estimated with Horvitz--Thompson inverse-probability weights \mbox{%DIFAUXCMD
+\citep{horvitz1952,breslow1988}}\hskip0pt%DIFAUXCMD
+}\DIFaddend . Weighted recall, agreement, and Cohen's $\kappa$ \citep{cohen1960} were calculated to represent the full classified sample. Verification weighting does not impact the precision of the any-use measure, because every brochure the primary model labeled as any-use positive falls within the censused \DIFdelbegin \DIFdel{any-mention--positive }\DIFdelend \DIFaddbegin \DIFadd{any-mention positive }\DIFaddend stratum and therefore entered the validation set with certainty. We also report per-label agreement statistics and F1 scores.
+
+Cross-family \DIFdelbegin \DIFdel{re-coding presents a more difficult test than same-family replication, as it }\DIFdelend \DIFaddbegin \DIFadd{recoding }\DIFaddend reduces dependency on a single model architecture and provider\DIFdelbegin \DIFdel{. This is still }\DIFdelend \DIFaddbegin \DIFadd{, but it remains }\DIFaddend model-to-model validation\DIFdelbegin \DIFdel{, not expert human adjudication. We do not claim the independent re-coding to be the ultimate ground truth. Residual disagreement is left as a defined set for subsequent human expert review, }\DIFdelend \DIFaddbegin \DIFadd{. Agreement between two model families does not by itself establish that either is measuring the intended construct. We therefore conducted a targeted human verification exercise on 158 cases. The frame is the complete set of 60 brochures on which the two model families disagreed on any label, a stratified sample of 60 brochures on which they agreed, and 38 website cases so the rubric is assessed in both document genres. The 158-case frame was divided between two domain-knowledgeable coders, both blind to the model labels and using the same prespecified rubric. Each case received one human code. For the 120 brochure cases, disagreement cases enter the verification frame with probability one and agreement cases with a known probability below one, so model performance relative to the human coding is estimated using the corresponding two-phase verification weights. Website cases are evaluated separately. Against the human labels the composite any-use measure returns sensitivity 0.81, specificity 0.94 and precision 0.76 (95\% CI 0.67--0.84). The vendor-excluded composite returns 0.76, 0.92 }\DIFaddend and \DIFdelbegin \DIFdel{this limitation is explicitly considered in the interpretation of the results. }\DIFdelend \DIFaddbegin \DIFadd{0.68. By label, precision is 0.85 for AI-related risk disclosure, 0.84 for named vendors, 0.66 for investment-process use, 0.50 for operations and client service and 0.33 for explicit non-use, while sensitivity is 1.00 for risk disclosure, 0.77 for operations, 0.75 for explicit non-use, 0.73 for named vendors and 0.71 for investment-process use. Operations and explicit non-use carry few positives, so their precision is estimated imprecisely. The 38 website cases were drawn under their own single-phase design. All 18 firms the website classifier labelled positive on any of the five labels were censused, and 20 of the 265 classified-negative sites were drawn at random under the same fixed seed, so a sampled negative carries weight 265/20 = 13.25 and a censused positive weight one. On the 38 website cases any-use precision is 0.81 and sensitivity 0.33. These website figures are estimated separately from the 120 brochure cases and are not combined with them.
+}\DIFaddend 
+
+\subsection{Enforcement-anchored exposure-language screen}
+
+To determine whether adviser communications contain language similar to the disclosures that the SEC has previously found in enforcement actions, we developed a narrow screening method based solely on SEC orders concerning Delphia (USA) Inc. and Global Predictions Inc. Seven textual claim patterns were distilled from the representations cited in those two actions and applied to the brochure corpus.
+
+This procedure was intentionally designed as a high-sensitivity screen and not as a legal classifier. A document was flagged if its language was sufficiently similar to one or more of the enforcement-derived claim patterns as to require manual review. \DIFaddbegin \DIFadd{Similarity is judged on the substance of the claim by a model rater applying the frozen pattern list. No numeric similarity threshold is used, and none was preregistered. The screen's sensitivity against the source enforcement texts was not evaluated, so its false-negative rate is unknown. The seven patterns, the screening code and the adjudication of every positive are in the reproducibility artifact. }\DIFaddend Thus, a positive screen is only potential exposure language and is not evidence of false statements, inadequate substantiation, or a securities-law violation.
+
+The number of flagged documents was small, and each positive case was evaluated in relation to its surrounding text. The cases were then categorized according to whether the language was a false-positive textual match, an AI-related statement with supporting context or risk disclosure, or a potentially unsubstantiated promotional claim similar to the conduct described in the two enforcement orders. Results are reported in aggregate form, without identifying individual advisers.
+
+\subsection{Website collection and cross-venue comparison}
+
+We generated a matched website sample for the sampled advisers to compare fiduciary disclosure with public-facing communication. Firm websites were collected using a standardized retrieval protocol on the homepage and on the main pages describing the firm, its investment approach, services, or technology. We collected up to eight pages per firm with the request rate limited to about one per second. Classification was made on the basis of the principal text rendered available from these pages.
+
+Usable website observations were obtained for 283 of the 400 advisers sampled. The resulting analysis is therefore a matched cross-venue comparison, rather than a full census of the original sample. To determine whether website availability was systematically associated with observed adviser characteristics, we compared firms with usable website data to firms without such data by adviser type, AUM quartile, and AUM level.
+
+The website measure only captures the current principal web presence of the firm at the time of collection. It is not a comprehensive coverage of dynamically rendered content that could not be retrieved, archived website versions, press releases, social media accounts, third-party profiles, or other marketing channels. Thus, the analysis is a comparison of current Form ADV Part 2A disclosure and current principal-site marketing, rather than regulatory disclosure and the full universe of the firm's communications.
+
+\subsection{Statistical analysis}
+
+For each classification label and composite measure, we report the observed prevalence and 95\% confidence intervals. For unweighted binary proportions we use Wilson intervals \citep{wilson1927}, which have better finite-sample coverage than the normal approximation, especially when the prevalence is somewhat low or when the estimates are calculated within smaller strata.
+
+Ordered trend tests are used to test for differences by \DIFdelbegin \DIFdel{adviser size}\DIFdelend \DIFaddbegin \DIFadd{2024 AUM
+quartile}\DIFaddend , with AUM quartile as an ordinal variable. We also estimate a logistic regression with disclosed any-use as the dependent variable and AUM quartile and adviser type as the main predictors. The regression is meant to assess whether the \DIFdelbegin \DIFdel{size }\DIFdelend \DIFaddbegin \DIFadd{2024 AUM-quartile }\DIFaddend gradient holds after controlling for the broad private-fund versus wealth/retail distinction\DIFdelbegin \DIFdel{; it }\DIFdelend \DIFaddbegin \DIFadd{. It }\DIFaddend is not interpreted causally.
+
+Because the equal-allocation sampling design does not reflect the population distribution of the eight sampling strata, a survey-weighted estimate is also calculated. \DIFdelbegin \DIFdel{Stratum weights are calculated from the population counts }\DIFdelend \DIFaddbegin \DIFadd{Let $N_h$ be the population count of stratum $h$ }\DIFaddend in the 16{,}223-adviser Part 1 frame\DIFdelbegin \DIFdel{and adjusted to reflect the brochure-filing population using }\DIFdelend \DIFaddbegin \DIFadd{, $n_h$ the number of firms sampled from it and $c_h$ the number whose brochures were classified. Because not every adviser files a Part 2A brochure, the stratum population is deflated by }\DIFaddend the observed filing rate\DIFdelbegin \DIFdel{within each stratum }\DIFdelend \DIFaddbegin \DIFadd{,
+}\begin{equation}
+\DIFadd{N^{f}_h = N_h \frac{c_h}{n_h}, \qquad W_h = \frac{N^{f}_h}{\sum_h N^{f}_h},
+\label{eq:weights}
+}\end{equation}
+\DIFadd{where $W_h$ is the stratum weight. Writing $\hat{p}_h$ for the observed prevalence in stratum $h$, the survey-weighted estimate and its variance are
+}\begin{equation}
+\DIFadd{\hat{p}_w = \sum_h W_h \hat{p}_h, \qquad
+\widehat{\mathrm{Var}}(\hat{p}_w) = \sum_h W_h^{2}\,\frac{\hat{p}_h(1-\hat{p}_h)}{c_h}.
+\label{eq:weighted}
+}\end{equation}
+\DIFadd{Sampling fractions are small, so the finite-population correction $(N^{f}_h - c_h)/(N^{f}_h - 1)$ moves the standard error (SE) only from 2.02 to 2.00 pp. It is not applied in the reported figures. The filing rate $c_h / n_h$ enters as a fixed multiplier. Resampling it together with the classified brochures in a stratum bootstrap gives 22.6\% (95\% CI 18.8--26.9), essentially unchanged. The regression models are unweighted. A design-weighted specification gives a coefficient on AUM quartile of 0.63 (stratum-bootstrap 95\% CI 0.38--0.94) against 0.67 unweighted. Treating AUM quartile as ordinal imposes linearity, which we test by re-estimating with quartile indicators. The likelihood-ratio test does not reject the linear specification ($\chi^2 = 0.71$, 2 df, $p = 0.70$)}\DIFaddend . \DIFdelbegin \DIFdel{The variance of the stratified design provides an estimate of the associated uncertainty. }\DIFdelend As a further check on sensitivity, we compute an unadjusted population-weighted estimate for the entire 16{,}223-firm frame. This enables us to assess the practical effects of brochure-filing exemptions on the aggregate estimate.
+
+For the matched brochure-website sample, we compute within-firm differences in prevalence across the two venues. We calculate the uncertainty of the venue difference by a paired bootstrap that samples firms, not individual documents, so as to maintain the matched structure of the observations.
+
+All tests are two-tailed. We apply conventional cutoffs to evaluate statistical significance, but the substantive interpretation focuses on effect size, confidence intervals, and robustness across sensitivity analyses rather than significance as such.
+
+\subsection{Robustness and reproducibility}
+
+The empirical design includes a number of \DIFdelbegin \DIFdel{pre-specified }\DIFdelend \DIFaddbegin \DIFadd{prespecified }\DIFaddend or easily replicable checks. We re-estimate any-use prevalence excluding named-vendor references, estimate prevalence using independent cross-family classifications, assess alternative treatment of brochures unavailable for classification, compare design-sample and population-weighted estimates, report same-family and cross-family agreement separately, adjudicate every enforcement-screen positive individually, and re-estimate the principal adviser-type pattern using the independent \DIFdelbegin \DIFdel{coder}\DIFdelend \DIFaddbegin \DIFadd{model-family recoding}\DIFaddend .
+
+Before assessing substantive results, the sampling, classification framework, text-processing rules, prompts, model specification, and principal outcome definitions were frozen. The reproducibility package contains the frozen sample, the classification rubric, the prompts and text-window specification, the model snapshot and classification date, the enforcement-screen fingerprint, the population stratum counts, the weighting and statistical-analysis code, the validation records, the independent cross-family classifications, and the scoring code. A deterministic executable environment is provided to allow the reproduction of the reported tables, figures, confidence intervals, weighted estimates, and validation statistics from the study.
+
+Adviser identifiers are pseudonymized, and the mapping from adviser identifiers to CRD numbers is withheld\DIFdelbegin \DIFdel{; thus the public package }\DIFdelend \DIFaddbegin \DIFadd{. The public package therefore }\DIFaddend supports analytical reproducibility rather than full reconstruction of the original raw-document collection. The underlying Form ADV data is publicly available from the SEC, but producing the exact source-document corpus would require access to the withheld identifier crosswalk.
+
+\section{Results}
+
+\subsection{AI disclosure \DIFdelbegin \DIFdel{: }\DIFdelend prevalence and form}
+
+Of the 388 \DIFdelbegin \DIFdel{advisers with successfully classified Form ADV Part 2A }\DIFdelend \DIFaddbegin \DIFadd{observed }\DIFaddend brochures, 23.7\% \DIFdelbegin \DIFdel{disclosed }\DIFdelend \DIFaddbegin \DIFadd{contain disclosure of }\DIFaddend at least one form of AI use (95\% CI 19.7--28.2\DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend Table~\ref{tab:typology}\DIFdelbegin \DIFdel{, Figure~\ref{fig:typology}}\DIFdelend ). Eliminating references to specific vendors from the composite definition \DIFdelbegin \DIFdel{modestly }\DIFdelend reduced the prevalence to \DIFdelbegin \DIFdel{20.9\% , suggesting that the main estimate is not solely }\DIFdelend \DIFaddbegin \DIFadd{22.4\% (95\% CI 18.6--26.8). Only five brochures rest on a named vendor as their sole evidence of use, so the composite is not }\DIFaddend driven by mentions of third-party AI products. \DIFaddbegin \DIFadd{Because the named-vendor label is also the least reliable under cross-family validation, we report the vendor-excluded measure alongside the composite throughout. Section~4.6 re-estimates every principal result under both definitions. }\DIFaddend The wider any-mention measure, which captured disclosed use, AI-related risk language, explicit non-use, and vendor references, was 31.7\%.
+
+Disclosures related to risks associated with AI occurred more often than affirmative disclosures about AI use. Overall, 27.6\% of the brochures had language that referenced AI, machine learning, or related technology as a source of investment, operational, cybersecurity, model, regulatory, or other risk. The pattern is that AI appears in investment-adviser brochures as a disclosed technological capability, but more often it is something to be warned about. The distinction is important because a risk-factor reference does not imply the adviser itself uses AI. Hence, risk disclosure is reported separately from the any-use measure across the analysis. \DIFaddbegin \DIFadd{Because both indicators are measured on the same brochures and may co-occur, we compare them with a paired test rather than as independent marginals. Of the 388 brochures, 77 carry both risk language and disclosed use, 30 carry risk language only, 15 disclosed use only, and 266 neither. The within-brochure difference is 3.9 percentage points (paired bootstrap 95\% CI 0.5--7.2, exact McNemar $p = 0.036$), and 5.2 percentage points against the vendor-excluded measure ($p = 0.007$). Risk language is therefore more common than affirmative use language within the same document, not merely in aggregate.
+}\DIFaddend 
+
+The survey-weighted estimate of the proportion of brochure-filing advisers that disclosed use of AI was 22.7\% (95\% CI 18.7--26.6\DIFdelbegin \DIFdel{; Table~\ref{tab:weighting}}\DIFdelend \DIFaddbegin \DIFadd{, Table~\ref{tab:gradient}}\DIFaddend ), very similar to the unweighted design-sample estimate of 23.7\%. Weighting straight to the full 16{,}223-adviser population frame, without adjustment for brochure-filing status, produced a similar estimate of 22.3\%. The small difference between these estimates implies that the prevalence rate is not greatly affected by either the equal-allocation stratified sampling design or the small number of brochure-filing exemptions.
+
+\DIFdelbegin \subsection{\DIFdel{Disclosure by size and type of adviser}}
+%DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \DIFadd{The choice of construct matters far more than the choice of estimator. Restricting the measure to brochures containing the literal phrase ``artificial intelligence'' and weighting to the wealth and retail population gives 9.9\%. The classifier-based any-use measure on the same population gives 13.1\%, the same measure across all advisers on the design sample gives 23.7\%, and the broadest any-mention measure gives 31.7\%. Each step changes one decision at a time. Narrowing the construct to the literal phrase costs 3.2 percentage points among wealth and retail advisers, restricting the universe to that group costs 8.3 points, and population weighting a further 2.3. A prevalence figure for these filings is therefore only interpretable alongside the construct, universe and weighting that produced it. Against the classifier on identical text, a literal-phrase keyword rule achieves precision 0.75 and recall 0.74, so a keyword census both misses and invents roughly a quarter of cases. Reported prevalence in this literature is thus a joint statement about construct breadth, universe and weighting, not a property of the filings alone.
+}\DIFaddend 
+
+\DIFaddbegin \subsection{\DIFadd{Disclosure by 2024 AUM quartile and adviser type}}
+
+\DIFaddend The disclosed use of AI \DIFdelbegin \DIFdel{grew substantially with adviser size }\DIFdelend \DIFaddbegin \DIFadd{increased substantially across the 2024 AUM strata }\DIFaddend (Table~\ref{tab:gradient}, Figure~\ref{fig:gradient}). Among private-fund advisers, prevalence increased from 12\% in the lowest AUM quartile to 24\% in the second quartile, 34\% in the third quartile, and 56\% in the highest quartile. The corresponding estimates for wealth and retail advisers were 8.7\%, 8.3\%, 14.6\%, and 30.4\%. Hence, the pattern is not limited to one adviser category\DIFdelbegin \DIFdel{: both }\DIFdelend \DIFaddbegin \DIFadd{. Both }\DIFaddend groups show much higher disclosure \DIFdelbegin \DIFdel{for larger firms}\DIFdelend \DIFaddbegin \DIFadd{in the higher 2024 AUM strata}\DIFaddend , although the gradient is steeper for private-fund advisers.
+
+These patterns were confirmed by ordered trend tests. For private-fund advisers, the linear-by-linear trend across AUM quartiles was strongly positive ($z = 4.82$, \DIFdelbegin \DIFdel{$p < 0.00001$}\DIFdelend \DIFaddbegin \DIFadd{$p < 0.001$}\DIFaddend ). The trend was also significant for wealth and retail advisers ($z = 3.00$, $p = 0.003$) and the combined sample ($z = 5.57$, \DIFdelbegin \DIFdel{$p < 0.0000001$}\DIFdelend \DIFaddbegin \DIFadd{$p < 0.001$}\DIFaddend ).
+
+The same substantive conclusion was reached using a logistic regression with disclosed any-use as the dependent variable. AUM quartile was positively associated with AI disclosure after controlling for adviser type (coefficient $= 0.67$, SE $= 0.12$, $p < 0.001$), and private-fund advisers were more likely to disclose AI than wealth and retail advisers conditional on \DIFdelbegin \DIFdel{size }\DIFdelend \DIFaddbegin \DIFadd{2024 AUM }\DIFaddend quartile (coefficient $= 1.01$, SE $= 0.27$, $p < 0.001$). These coefficients are descriptive associations rather than causal estimates, but they show that the observed \DIFdelbegin \DIFdel{size }\DIFdelend \DIFaddbegin \DIFadd{2024 AUM-quartile }\DIFaddend gradient is not due merely to the different distribution of private-fund and wealth/retail advisers across the AUM strata.
+
+\subsection{Classification reproducibility and independent validation}
+
+The same-family reproducibility exercise showed broad agreement, but also suggested that some substantive categories were harder to classify consistently than others. Cohen's $\kappa$ was 0.95 for AI risk disclosure and 1.00 for named-vendor references. Agreement was also high for the broader any-mention measure ($\kappa = 0.86$). The $\kappa$ values for AI in investment processes and operations or client services were lower, at 0.61 and 0.66, respectively. Same-family agreement for the composite any-use measure was $\kappa = 0.69$.
+
+The independent cross-family validation provided a more demanding test (Table~\ref{tab:validation}\DIFdelbegin \DIFdel{, Figure~\ref{fig:validation}}\DIFdelend ). Taking the verification-sampling design into consideration, the composite any-use measure obtained a precision of 0.76, a recall of 0.84, an F1 score of 0.80, an overall agreement of 90.8\%, and a Cohen's $\kappa$ of 0.74. Hence, the main classifier identified most of the independently identified positive cases and showed substantial agreement with the blinded cross-family \DIFdelbegin \DIFdel{re-coding}\DIFdelend \DIFaddbegin \DIFadd{recoding}\DIFaddend .
+
+Performance varied by classification category. AI risk disclosure showed the strongest classification performance (precision 0.92, recall 0.99, F1 0.95, agreement 97.4\%, $\kappa = 0.93$). Operations or client-service AI yielded precision of 0.81, recall of 0.68, F1 of 0.74, agreement of 96.1\%, and $\kappa = 0.72$. Investment-process AI was more difficult to distinguish consistently (precision 0.69, recall 0.74, F1 0.71, agreement 89.8\%, $\kappa = 0.65$). Explicit non-use resulted in high overall agreement (97.7\%) and low $\kappa$ (0.60), as it was rare. Named-vendor references resulted in 97.4\% agreement and $\kappa = 0.68$.
+
+\DIFaddbegin \DIFadd{Against the 120 human-coded brochure cases the primary classifier returns any-use precision 0.76 (95\% CI 0.67--0.84), sensitivity 0.81 and specificity 0.94, with per-label precision ranging from 0.33 for explicit non-use to 0.85 for risk disclosure. These estimates are weighted to the two-phase verification design. The disagreement counts reported below are descriptive tallies within the 120 reviewed cases and are not an unweighted confusion matrix for the population-level estimates.
+}
+
+\DIFadd{The human coding records separate two kinds of disagreement. At the label-system level, detection disagreements occur when the model and human coder disagree over whether a retrieved passage qualifies under at least one rubric category. These arise in 21 of the 120 cases and run almost entirely in one direction. The model reads a passage as a qualifying disclosure in 20 cases where the coder does not, against 1 in the opposite direction. Boundary disagreements, where both identify qualifying AI-related disclosure but assign it to different functional categories, are more common still at 30 cases. Of these, 13 turn on investment-process use alone, 8 on operations and client service alone, and 3 on both at once, while the remaining 6 turn only on the risk, non-use or vendor labels. The per-label counts show the same pattern. Four of the five labels lean in the same direction: investment-process use has 17 model-only against 10 human-only positives, operations and client service 9 against 2, risk disclosure 13 against none, and explicit non-use 4 against 1. Only the named-vendor label leans the other way, with 3 model-only against 4 human-only. Explicit non-use carries only 8 model positives across the full sample, so its metrics rest on very few cases. The composite any-use measure is therefore more reliable than the functional split within it, and the boundary between investment-process and operational AI carries most of the residual measurement error. Table~\ref{tab:cases} gives representative human-coded cases spanning both error types. }\DIFaddend Adjusted prevalence was about 21.6\% following re-estimation from the independent cross-family classifications for disclosed any-use. This estimate is within the confidence interval of the main 23.7\% estimate and maintains the main adviser-type pattern. Hence, the substantive prevalence finding is not contingent on the assumption of error-free primary LLM classifications.
+
+\subsection{Enforcement-anchored exposure-language screen}
+
+Of the 388 brochures in the classified sample, five (1.3\% of the classified sample\DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend 95\% CI 0.6--3.0) were identified for case-level review using the enforcement-derived screen. The screen was designed to identify textual resemblance, not misconduct, so all five positive cases were examined individually in context.
+
+Two were false-positive textual matches in which the relevant language did not constitute an affirmative promotional claim regarding the adviser's AI capabilities. The other three had actual references to AI or machine-learning activities, but also contained contextual or risk-related language that bolstered or qualified the statements. None was adjudicated as an unsubstantiated promotional claim of the nature alleged in the SEC's two enforcement actions.
+
+The resulting estimate should not be taken as the prevalence of AI-washing. The screen captures only language that appears to be a narrow set of claim patterns that come from two enforcement cases, and the number of positives is small. Rather, the result suggests that language similar to the charged representations was rare in the sampled fiduciary brochures and that the screening procedure did not produce a single instance that could be classified as an unsubstantiated promotional claim based on the text available.
+
+\subsection{Fiduciary disclosure and public-facing marketing}
+
+Current website observations were obtained and usable for 283 sampled advisers. Within this matched sample, disclosed AI was found in 23.0\% of Form ADV Part 2A brochures, but only in 5.7\% of current principal-site marketing materials (Table~\DIFdelbegin \DIFdel{\ref{tab:venue}}\DIFdelend \DIFaddbegin \DIFadd{\ref{tab:vendorpanel}, Panel B, and Figure~\ref{fig:venue}}\DIFaddend ). The \DIFdelbegin \DIFdel{difference is substantial and does not support the interpretation that AI claims are largely confined to promotional material aimed at the public}\DIFdelend \DIFaddbegin \DIFadd{paired bootstrap 95\% confidence interval for the 17.3-point difference is 12.0--22.6}\DIFaddend .
+
+This pattern is supported by the underlying matched observations. Fifty-eight firms disclosed AI usage in their brochure but not on the observed website, with only nine disclosing the opposite pattern. Thus, among firms with both venues visible, disclosure in the brochure only was much more common than disclosure on the website only.
+
+\DIFaddbegin \DIFadd{This raw contrast, however, is confounded by how much text each venue provides. The matched brochures carry 7.3 times the characters of the matched website corpora (26.2 million against 3.6 million, with medians of 62}{\DIFadd{,}}\DIFadd{412 against 6}{\DIFadd{,}}\DIFadd{769). In a stacked model of document-level disclosure with standard errors clustered by firm, the brochure indicator is strongly positive on its own (coefficient 1.61, $p < 0.001$) but is no longer distinguishable from zero once $\log$ document length is included (coefficient $-0.54$, $p = 0.17$), while length itself is strongly positive ($1.14$, $p < 0.001$). Per 100}{\DIFadd{,}}\DIFadd{000 characters, websites in fact return slightly more detections than brochures (0.45 against 0.25), and within the overlapping length band the two venues are close (11.4\% against 8.9\%). Because brochure and website lengths barely overlap, venue and length cannot be separated in this design. We therefore report the venue contrast as a description of what a reader encounters in each document type, and not as evidence that advisers choose to discuss AI more candidly in fiduciary filings than in marketing. The same caution applies to any binary disclosure indicator compared across documents of unequal length.
+}
+
+\DIFaddend The enforcement-anchored exposure-language measure was rare in both venues\DIFdelbegin \DIFdel{: }\DIFdelend \DIFaddbegin \DIFadd{, at }\DIFaddend about 0.7\% of observations in each. The paired bootstrap estimate of the difference was essentially zero (95\% CI approximately \DIFdelbegin \DIFdel{$-0.014$ to $0.014$}\DIFdelend \DIFaddbegin \DIFadd{$-1.4$ to $1.4$ pp}\DIFaddend ). There is no evidence in the matched sample, therefore, that the narrow enforcement-derived language patterns were more prevalent on current websites than in fiduciary brochures.
+
+There was also little evidence of systematic selection on observed sampling characteristics in website availability (Table~\DIFdelbegin \DIFdel{\ref{tab:missingness}}\DIFdelend \DIFaddbegin \DIFadd{\ref{tab:vendorpanel}, Panel C}\DIFaddend ). Coverage did not differ significantly by adviser type ($p = 0.83$) or AUM quartile ($p = 0.50$). The median AUM for firms with usable website observations was approximately US\$419 million and US\$357 million for those without, a difference that was not statistically significant ($p = 0.46$). \DIFaddbegin \DIFadd{Availability is also unrelated to the outcome being compared. Brochure-disclosed any-use is 23.0\% among the 283 firms with usable website text and 25.7\% among the 105 without ($p = 0.67$), with the same null for the vendor-excluded measure ($p = 0.79$) and for risk language ($p = 0.25$). }\DIFaddend None of these comparisons establish that missingness of websites is random conditional on all unobserved characteristics, but they do alleviate concerns that the matched sample is mechanically concentrated among one of the principal adviser categories considered in the study\DIFaddbegin \DIFadd{, or selected on the disclosure outcome itself.
+}
+
+\DIFadd{Targeted human verification indicates that classification is less sensitive on website text than on brochures}\DIFaddend . \DIFaddbegin \DIFadd{Website any-use precision is 0.81 and sensitivity 0.33. The observed website prevalence should therefore be interpreted cautiously, because the classifier may miss a substantial share of qualifying website passages. This measurement difference further limits interpretation of the raw prevalence gap between brochures and websites.
+}\DIFaddend 
+
+\subsection{Robustness of the principal findings}
+
+\DIFdelbegin \DIFdel{Key prevalence and cross-sectional findings are robust to alternative measurement and weighting options. Removing named-vendor references reduces disclosed any-use }\DIFdelend \DIFaddbegin \DIFadd{Table~\ref{tab:vendorpanel}, Panel A, re-estimates every principal result under the vendor-excluded definition. Excluding vendor-only references reduces prevalence modestly, }\DIFaddend from 23.7\DIFdelbegin \DIFdel{\% to 20.9\%, but does not change the substantive conclusion.
+}\DIFdelend \DIFaddbegin \DIFadd{\% to 22.4\%, and leaves the 2024 AUM-quartile gradient, the adviser-type association, both weighting schemes, the paired risk comparison and the cross-venue pattern unchanged. The gradient is marginally steeper under the stricter definition. }\DIFaddend Re-estimation \DIFdelbegin \DIFdel{using the independent }\DIFdelend \DIFaddbegin \DIFadd{from the independent }\DIFaddend cross-family \DIFdelbegin \DIFdel{classifications yields a prevalence of about 21.6\%, also within the primary confidence interval. The alternative treatment of the 12 firms with no classified brochureschanges the aggregate prevalence only modestly. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Weighting does not materially change the result either. The unweighted stratified-sample estimate is 23.7\%, the survey-weighted estimate for brochure-filing advisers is 22.7\%, and direct weighting to the original 16}%DIFDELCMD < {%%%
+\DIFdelend \DIFaddbegin \DIFadd{classifications yields about 21.6\%}\DIFaddend , \DIFdelbegin %DIFDELCMD < }%%%
+\DIFdel{223-adviser population frame yields 22.3\%. The close correspondence across the three estimates suggests that the aggregate finding is not an artifact of the equal-allocation sampling design.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The validation exercises also provide a consistent ordering of measurement reliability. More explicit constructs, particularly AI risk disclosure, had the highest agreement, whereas distinctions such as the precise functional use of AI were less reliable. Importantly for the central result, the any-use measure shows substantial agreement under independent cross-family validation, and the main prevalence }\DIFdelend \DIFaddbegin \DIFadd{within the primary confidence interval, }\DIFaddend and \DIFdelbegin \DIFdel{adviser-type results are not overturned by replacing the primary labels with the independent classifications.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Together, these checks indicate that the central conclusions do not depend on any single label definition, weighting scheme, missing-brochure handling, or LLM classification run. Roughly one-fifth to one-quarter of observed adviser brochures across specifications disclose some form of AI use. Disclosure increases significantly with adviser size. Private-fund advisers disclose AI more often than wealth and retail advisers. AI-related risk language is common relative to affirmative use claims. Current fiduciary brochures include significantly more disclosed AI use than the matched firms' principal websites.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\section{\DIFdel{Discussion}}
+%DIFAUXCMD
+\addtocounter{section}{-1}%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsection{\DIFdel{Main findings}}
+%DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{This study provides large-sample evidence on U.S. investment advisers' artificial intelligence disclosures in Form ADV Part 2A brochures and how those disclosures vary across firms and communication venues. Three findings are especially important. First, disclosed AI use is still limited to a small subset of adviser brochures (23.7\% observed, 22.7\%survey-weighted among brochure-filing advisers). Second, disclosure is systematically different across the advisory industry, increasing sharply with adviser size and being more common among private-fund advisers than wealth and retail advisers. Third, AI is not only a claimed technological capability in fiduciary filings, but it is also a source of risk, with AI-related risk disclosure in 27.6\% of brochures.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The results provide an empirical baseline for disclosure of AI in the U.S. investment adviser industry. They also demonstrate why the disclosure of artificial intelligence cannot be simplified into a binary distinction between AI-using and non-AI-using firms. Advisers disclose AI in a number of ways---its application to investment activities, its use for operational or client-service functions, reliance on third-party products, and the risks of emerging technologies. The resulting disclosure landscape is therefore heterogeneous across firms and in the language firms use to describe AI. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsection{\DIFdel{AI disclosure and reported industry adoption}}
+%DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The extent to which companies are reporting the use of AI in regulatory filings is substantially below the levels of AI adoption reported in industry surveys. This is contrasted to survey evidence that some 63\%of advisers either use or are piloting AI, and to the roughly 23\% of brochures in the present study that disclose some form of AI use. This difference is economically meaningful as a benchmark, but should not be interpreted as a direct estimate of nondisclosure.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The two measures are tapping different constructs. Industry surveys tend to measure self-reported adoption, experimentation, or intended use among participating firms. The present study measures whether AI-related activity appears in a formal fiduciary document. An adviser may use AI for internal administrative purposes, exploratory applications, or other functions without determining that such use is sufficiently material to be included in its brochure. Conversely, a brochure could mention algorithmic processes, machine-learning methods, or third-party technologies that respondents might not classify as AI themselves in responding to a survey.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Other limitations to direct comparison include differences in sampling populations, observation dates, and reporting incentives. The approximately 39-percentage-point gap between the external survey benchmark and observed brochure disclosure should therefore be interpreted as a gap between self-reported adoption and formal disclosure---not as evidence that a similar share of advisers are using AI in practice without disclosure. To identify a real adoption-disclosure gap, we would need matched information on technological use and regulatory disclosure for the same firms at the same point in time. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{This distinction is important because if one conflates adoption with disclosure, the findings could be interpreted in an overly strong regulatory way.
+The evidence here shows that formal disclosure of AI is far less prevalent than survey-reported AI use, but does not address whether undisclosed uses are immaterial, experimental, misreported in surveys, or otherwise outside the scope of brochure disclosure. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsection{\DIFdel{Adviser size and differences in business models}}
+%DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{One of the most robust empirical patterns is the strong correlation between adviser size and AI disclosure. Among private-fund advisers , disclosed AI use increases from }\DIFdelend \DIFaddbegin \DIFadd{the alternative treatment of the }\DIFaddend 12 \DIFdelbegin \DIFdel{\% in the lowest quartile of AUM to 56\% in the highest quartile . Wealth and retail advisers have prevalence rates ranging from around 9\% in the lower quartiles to 30.4\% in the highest quartile. The positive size gradient remains statistically significant when adviser type is added to the regression model. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{There are a few plausible mechanisms that might generate this relationship. Larger firms may be better placed to develop or acquire AI systems, as they have more financial, technical, and organizational resources. They may have more complex investment, risk-management, compliance, and client-service infrastructures, which generate a broader range of activities in which AI-related technologies can be incorporated. Larger organizations may also have increased compliance capacity and more formalized procedures for documenting emerging technologies in regulatory filings.
+}\DIFdelend \DIFaddbegin \DIFadd{unclassified brochures changes the aggregate only modestly. The three weighting schemes lie within 1.4 percentage points of one another.
+}\DIFaddend 
+
+The \DIFdelbegin \DIFdel{current design does not disaggregate these mechanisms, and the observed association should not be taken as causal. There may be a relationship between adviser size and investment strategy, organizational sophistication, client composition, technology budgets, regulatory scrutiny, or other characteristics that independently affect disclosure. Still, the result shows AI disclosure is not evenly distributed across the adviser universe, and that firm size is strongly associated with whether AI is disclosed in fiduciary filings.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{An additional aspect of heterogeneity concerns the adviser type. We find that private-fund advisers are more likely to disclose AI conditional }\DIFdelend \DIFaddbegin \DIFadd{2024 frame against 2026 observations is testable rather than merely acknowledged. Across a two-year interval 77.0\% of sampled advisers remain in the same AUM quartile (Spearman $\rho = 0.89$), and re-estimating the logistic model on deliberately lagged strata leaves the gradient intact. The coefficient }\DIFaddend on AUM quartile \DIFdelbegin \DIFdel{than wealth and retail advisers. Private-fund managers may be more likely to use systematic investment approaches, alternative data, quantitative research processes, or specialized technology infrastructure that generates disclosure-relevant references to machine learning and artificial intelligence. But the type of adviser also encompasses more general differences in investment strategy, client base, organizational structure, and disclosure practice. As such, the finding should be understood as a strong descriptive association, not as an indication that the private-fund business model per se causes greater AI adoption or disclosure}\DIFdelend \DIFaddbegin \DIFadd{is 0.67 on the 2024 stratum, 0.52 on strata rebuilt from 2022 assets and 0.79 from 2020 assets, each at $p < 0.001$}\DIFaddend .
+
+\DIFaddbegin \section{\DIFadd{Discussion}}
+
+\DIFaddend \subsection{AI as a disclosed capability and a disclosed risk}
+
+\DIFdelbegin \DIFdel{The findings also underscore a crucial difference between AI as a claimed capability and AI as a source of risk . }\DIFdelend \DIFaddbegin \DIFadd{AI-related risk language appears in }\DIFaddend 27.6\% of brochures\DIFdelbegin \DIFdel{contain AI-related risk language}\DIFdelend , a higher rate than the \DIFdelbegin \DIFdel{primary }\DIFdelend any-use measure\DIFdelbegin \DIFdel{. This finding suggests that simply including the term AI in a regulatory filing does not necessarily mean the adviser is using the technology. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{, and the difference holds within the same documents. }\DIFaddend Artificial intelligence, machine learning \DIFdelbegin \DIFdel{, generative AI , or other such technologies }\DIFdelend \DIFaddbegin \DIFadd{and generative AI }\DIFaddend can be described in a brochure \DIFaddbegin \DIFadd{precisely }\DIFaddend because those technologies generate cybersecurity, investment, operational, model, legal \DIFdelbegin \DIFdel{, }\DIFdelend or regulatory risks. \DIFdelbegin \DIFdel{Therefore, using any }\DIFdelend \DIFaddbegin \DIFadd{Any }\DIFaddend reference to AI \DIFdelbegin \DIFdel{as a proxy for adoption would overstate the extent of disclosed AI use. This is especially important }\DIFdelend \DIFaddbegin \DIFadd{therefore overstates disclosed use, which matters most }\DIFaddend for automated text analysis, where \DIFdelbegin \DIFdel{simple keyword-based measures may }\DIFdelend \DIFaddbegin \DIFadd{keyword measures }\DIFaddend combine conceptually different statements into a \DIFdelbegin \DIFdel{common indicator. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{This paper describes the }\DIFdelend \DIFaddbegin \DIFadd{single indicator. The }\DIFaddend five-label framework \DIFdelbegin \DIFdel{that addresses this problem }\DIFdelend \DIFaddbegin \DIFadd{addresses this }\DIFaddend by separating investment-process use, operations or client-service use, risk disclosure, explicit non-use \DIFdelbegin \DIFdel{, }\DIFdelend and named-vendor references. The \DIFdelbegin \DIFdel{difference between these categories is not only methodological. The findings suggest that advisers use AI in fiduciary disclosure across multiple communicative functions. Some advisers describe AI as a capability, whereas others discuss it primarily as a source of risk.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The high level of risk disclosure may also be a function of the broader role of }\DIFdelend \DIFaddbegin \DIFadd{prominence of caution is consistent with the institutional function of }\DIFaddend Form ADV Part 2A\DIFdelbegin \DIFdel{as a fiduciary disclosure document. Brochures are designed, in part, }\DIFdelend \DIFaddbegin \DIFadd{, which exists }\DIFaddend to describe material practices, conflicts \DIFdelbegin \DIFdel{, and risks , as opposed to promotional communications. The prominent role of caution with regard to AI in this context is thus consistent with the institutional role of the document, although }\DIFdelend \DIFaddbegin \DIFadd{and risks rather than to promote, though }\DIFaddend the cross-sectional design cannot establish \DIFdelbegin \DIFdel{the reasons }\DIFdelend why individual advisers \DIFdelbegin \DIFdel{opted for }\DIFdelend \DIFaddbegin \DIFadd{chose }\DIFaddend particular language.
+
+\subsection{\DIFdelbegin \DIFdel{Enforcement-related language and cross-venue disclosure}\DIFdelend \DIFaddbegin \DIFadd{Measuring disclosed AI use}\DIFaddend }
+
+The \DIFdelbegin \DIFdel{enforcement-anchored analysis provides a complementary perspective on AI-related representations. The textual screen derived from the two SEC AI-related enforcement actions triggered on only five of the 388 brochures, none of which was adjudicated as containing an unsubstantiated promotional claim of the type described in those actions. Thus, close textual correspondence with the particular representations alleged in those cases was uncommon in the fiduciary filings in the sample.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Results should be interpreted with caution. The screening procedure depends on just two enforcement actions and is unable to capture all possible types of misleading AI representation. Access to internal systems, records, development histories, or other evidence not publicly filed may also be needed to determine whether a statement is false or not adequately substantiated, and no textual classifiercan make such a legal or factual determination from language alone. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The contribution of the enforcement screen is thus methodological, not accusatory. Enforcement actions can be used to develop observable claim patterns that help identify documents for more detailed review, but screen positives need to be evaluated in context. Of the five flagged brochures in the current sample, two were false-positive textual matches and three had bona fide AI or machine-learning references with contextual or risk-related language. None provided sufficient textual evidence to classify the statement as an unsubstantiated promotional claim. The study therefore does not estimate a prevalence of AI-washing across the industry and does not take textual similarity as evidence of misconduct.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{central measurement result is that there is no construct-free prevalence of AI disclosure. The same corpus produces materially different estimates as the definition, adviser universe, and weighting scheme change. Narrowing the measure to the literal phrase ``artificial intelligence,'' restricting the universe to wealth and retail advisers, and then broadening the construct move prevalence between 9.9\%, 13.1\%, and 23.7\%. A literal-phrase rule also has only 0.75 precision and 0.74 recall against the classifier, showing that simple keyword counts both omit qualifying cases and include nonequivalent ones. }\DIFaddend The \DIFaddbegin \DIFadd{same issue appears within the taxonomy. Named-vendor references provide weaker evidence of adviser use than descriptions of an AI-enabled process, while human verification shows that most residual disagreement concerns the boundary between investment-process and operational AI rather than the composite any-use measure itself (Table~\ref{tab:vendorpanel} reports every principal result under the vendor-excluded definition). Document structure adds another layer. Brochures contain far more searchable text than websites, and the apparent venue difference disappears after conditioning on document length. The appropriate object of interpretation is therefore the validated composite disclosure measure, with narrower functional categories and }\DIFaddend cross-venue \DIFdelbegin \DIFdel{analysis further complicates an exclusively promotional interpretation of AI disclosure. We find AI usein 23.0\% of the 283 advisers with both a Form ADV brochure and a current principal website, and in 5.7\% of the 283 websites. Fifty-eight companies demonstrated AI usage in their brochure but not on their website, whereas only nine exhibited the reverse pattern}\DIFdelend \DIFaddbegin \DIFadd{comparisons treated more cautiously}\DIFaddend .
+
+\DIFdelbegin \DIFdel{If advisers had been using AI terminology largely as a marketing device, we might have expected to see more of it in public-facing website content. Instead, the results show significantly more AI disclosure in the fiduciary filing. One possibility is that Form ADV brochures contain more detailed descriptions of investment processes, operational practices, third-party technologies, and associated risks than companies choose to disclose on their main websites. Websites might instead focus more on investment philosophy, client relationships, services, or brand positioning.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{This comparison is still limited by the website-collection procedure. The analysis covers current principal-site content and is not representative of all marketing communications. Social media, advertisements, press releases, archived pages, and inaccessible dynamically rendered material are not comprehensively included. Accordingly, the finding should be considered as evidence of a difference between current fiduciary brochures and current principal websites, rather than a complete comparison between regulatory disclosure and all forms of adviser marketing.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsection{\DIFdel{Methodological implications of LLM-based regulatory measurement}}
+%DIFAUXCMD
+\addtocounter{subsection}{-1}%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{This paper also provides evidence on the use of large language models as a measurement instrument for regulatory text. Classification performance differed substantially among disclosure categories. The most robust independent agreement was produced by explicit AI risk language, with the line between investment-process use and operational use being more difficult to reliably classify. This variation demonstrates how conceptually ambiguous apparently straightforward text labels can be}\DIFdelend \DIFaddbegin \DIFadd{The outcome is disclosed use, not underlying adoption. Formal disclosure sits far below survey-reported adoption, roughly 23\% of brochures against the 63\% of advisers reported to be using or piloting AI, but the two instruments measure different constructs on different populations at different dates. An adviser may use AI administratively without disclosing it, and a brochure may describe algorithmic or machine-learning methods that a survey respondent would not call AI. The gap between survey reports and disclosure is a benchmark divergence, not a nondisclosure rate}\DIFaddend .
+
+\DIFdelbegin \DIFdel{Nevertheless, independent cross-family validation of the primary any-use measure showed substantial agreement (Cohen's $\kappa = 0.74$; recall $= 0.84$; precision $= 0.76$; F1 score $= 0.80$). Re-estimating prevalence from the independent classifications produced a value of about 21.6\%, which lies within the confidence interval of the main estimate of 23.7\% . The main substantive conclusion, therefore, does not depend on perfect agreement between the two classifiers.
+}\DIFdelend \DIFaddbegin \subsection{\DIFadd{Adviser heterogeneity}}
+\DIFaddend 
+
+\DIFdelbegin \DIFdel{We distinguish between intra-family reproducibility and cross-family validation. Repeating the classification with models from the same family can show that the procedure is reasonably stable, but it does little to argue against a model-specific interpretation. A blinded classifier from a different provider or model family creates a more independent test, as validation labels are not created by the same model architecture, nor are they directly conditioned on the original outputs. The stronger agreement for some categories and weaker agreement for others also contains information that would be lost if validation were summarized by one overall accuracy statistic.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{However, cross-family validation is not a definitive ground truth. Models might also share patterns in training data, conceptual biases, or problems understanding ambiguous regulatory language. Hence, human domain-expert adjudication remains an important extension, particularly for the residual disagreement set and the less reliable categories. The results support the use of LLMs to measure regulatory text at scale, provided that the classification procedure is explicitly validated rather than treating model output as inherently correct. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{More broadly, the research design demonstrates how LLM-based classification can be used in empirical financial and regulatory research without obscuring the analytical process.
+}\DIFdelend \DIFaddbegin \DIFadd{Disclosed AI use rises steeply across the 2024 AUM strata, from 12\% to 56\% across AUM quartiles among private-fund advisers and from roughly 9\% to 30.4\% among wealth and retail advisers, and the gradient survives the addition of adviser type to the regression. Private-fund advisers disclose more often conditional on 2024 AUM quartile, which is consistent with systematic investment approaches, alternative data and specialized technology infrastructure generating more disclosure-relevant references. Several mechanisms could produce these patterns, including technical and organizational resources, the breadth of activities in which AI can be embedded, and compliance capacity for documenting emerging technologies in filings. }\DIFaddend The \DIFdelbegin \DIFdel{classification categories were defined before outcome analysis, the model configuration and rubric were fixed, each positive classification was text-supported, independent validation was conducted in a blinded manner, and the verification-sampling design was part of the reported performance metrics. The reproducibility materials also reproduce the output variables and statistical results from the published analytical data. }\DIFdelend \DIFaddbegin \DIFadd{design cannot separate them, and the associations are not causal. What the result establishes is that AI disclosure is unevenly distributed across the adviser universe rather than diffuse.
+}\DIFaddend 
+
+\DIFdelbegin \DIFdel{These procedures are especially important when LLM classifications are used as inputs for substantivestatistical inference. In such settings, model output is not just an aid in reading documents , but part of the measurement process through which empirical claims are generated. Making the classifier explicitly a fallible measurement instrument makes uncertainty, disagreement, and reproducibility visible, not implicit. The results show that the proposed method can scale the analysis of large regulatory corpora while providing a clear basis for evaluating the generated measures}\DIFdelend \DIFaddbegin \subsection{\DIFadd{Cross-venue and enforcement evidence}}
+
+\DIFadd{Among the 283 advisers observed in both venues, 23.0\% of brochures and 5.7\% of websites contain disclosed AI use, and 58 firms disclose in the brochure only against nine in the website only. It is tempting to read this as evidence that AI language is not primarily promotional, but the design cannot support that reading, because the venue indicator is indistinguishable from zero once document length is included and the two length distributions barely overlap. We restrict the claim to what is observed. Raw prevalence differs across the two corpora, with brochures higher.
+}
+
+\DIFadd{The enforcement-anchored screen triggered on five of the 388 brochures. None was adjudicated as an unsubstantiated promotional claim of the type charged in the two orders. The contribution is methodological rather than substantive}\DIFaddend . \DIFaddbegin \DIFadd{Enforcement orders can be distilled into observable claim patterns that flag documents for review, but a textual match is not misconduct, and the screen rests on two actions. We therefore report no estimate of AI-washing prevalence.
+}\DIFaddend 
+
+\section{Limitations and future research}
+
+\subsection{Limitations}
+
+\DIFdelbegin \DIFdel{Several }\DIFdelend \DIFaddbegin \DIFadd{Four }\DIFaddend limitations qualify the \DIFdelbegin \DIFdel{interpretation of the }\DIFdelend findings. First, the study measures disclosed AI use \DIFdelbegin \DIFdel{, not underlying technology adoption. Form ADV Part 2A captures how advisers describe their practices and risks through a regulatory document, but does not provide direct observation }\DIFdelend \DIFaddbegin \DIFadd{rather than underlying adoption. The estimates are properties of documents, not }\DIFaddend of the technologies \DIFdelbegin \DIFdel{actually deployed within the firm.
+One adviser might use AI internally and not mention it in its brochure, while another might describe quantitative, algorithmic, or vendor-supported processes that are on the border of what should be classified as AI. The estimates should therefore be interpreted as measures of disclosure, rather than actual AI adoption.
+}\DIFdelend \DIFaddbegin \DIFadd{firms deploy.
+}\DIFaddend 
+
+Second, the disclosure observations are not contemporaneous with the sampling frame. Adviser type and AUM quartile were determined from the 2024 year-end \DIFdelbegin \DIFdel{population of }\DIFdelend Form ADV Part \DIFdelbegin \DIFdel{1. Brochure }\DIFdelend \DIFaddbegin \DIFadd{1 population, while brochure }\DIFaddend retrieval, website collection \DIFdelbegin \DIFdel{, classification, and validation }\DIFdelend \DIFaddbegin \DIFadd{and classification }\DIFaddend occurred in 2026. \DIFdelbegin \DIFdel{Thus the stratification variables describe firms at the time the probability sample was drawn, not their exact characteristics at the time the later disclosures were observed. In the meantime, firms may have altered their size , business model, registration status, or disclosure practices. Therefore, the results are best interpreted as 2026 disclosure outcomes for advisers sampled from the year-end 2024 population frame. The timing structure preserves the integrity of the frozen probability sample but limits claims about contemporaneous relationships between 2026 AUM and disclosure}\DIFdelend \DIFaddbegin \DIFadd{We therefore describe the size results as associations with sampling-stratum characteristics rather than with contemporaneous adviser size. Section~4.6 reports the empirical magnitude of the problem and a lagged-stratum falsification test}\DIFaddend .
+
+Third, \DIFdelbegin \DIFdel{the validationdesign relies on independent re-coding by LLMs, rather than expert human annotation. The blinded cross-family exercise is a stronger test than repeated classification within the same model family, and shows substantial agreement for the principal }\DIFdelend \DIFaddbegin \DIFadd{measurement error remains after validation. Against the 120 human-coded brochure cases, }\DIFaddend any-use \DIFdelbegin \DIFdel{measure, but agreement between two models does not establish a definitive ground truth. Ambiguous regulatory language may lead to different model families sharing tendencies or failures of interpretation. This limitation is most pertinent to }\DIFdelend \DIFaddbegin \DIFadd{precision is 0.76 (95\% CI 0.67--0.84), sensitivity is 0.81, and specificity is 0.94. The composite measure therefore retains meaningful classification error even after validation, with model-positive/coder-negative passages remaining the
+larger source of uncertainty. Agreement is consistently weaker for }\DIFaddend the investment-process and operations/client-service categories \DIFdelbegin \DIFdel{, which showed less agreement than }\DIFdelend \DIFaddbegin \DIFadd{than for }\DIFaddend AI-related risk disclosure\DIFdelbegin \DIFdel{. Replacing the primary labels with the independent classifications provides reassuringly stable reported prevalence estimates, although an audit by a domain expert would add an additional layer of validation.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Fourth, population weighting relies on the 2024 sampling strata and observed brochure-filing rates. The equal-allocation sample was constructed intentionally to have sufficient observations across adviser type and AUM quartile rather than to reflect the population distribution directly. The survey-weighted estimate of 22.7\% is close to the design-sample estimate of 23.7\% and the estimate of 22.3\% obtained from weighting to the full population frame, but weighting cannot remove measurement errorin the underlying classification nor make up }\DIFdelend \DIFaddbegin \DIFadd{, so the boundary between functional categories carries more uncertainty than the composite any-use measure. The human verification also shares the classifier's retrieval step. Coders judge the same keyword-selected passages the model was shown, not the full brochure, so the exercise bounds error in assigning labels to retrieved text and not error in retrieving it. Weighting cannot remove this error, nor correct }\DIFaddend for changes in firm characteristics \DIFdelbegin \DIFdel{that take place }\DIFdelend after the sampling date.
+\DIFdelbegin \DIFdel{Nevertheless, the similarity between the different weighting methods suggests that the aggregate result is not particularly sensitive to this aspect of the design.
+}\DIFdelend 
+
+\DIFdelbegin \DIFdel{Fifth, the enforcement-anchored exposure-language analysis is necessarily limited. The screening framework is informed by only two SEC enforcement actions, and thus reflects the patterns of claims observed in those actions rather than offering an exhaustive taxonomy of potentially misleading AI representations. The low number of screen positives also makes it difficult to provide a precise estimate of the prevalence of enforcement-relevant language.More importantly, the public record can only tell us so much about whether a technology claim is sufficiently supported. Such a determination may require evidence such as internal technical documentation, model-development records, vendor contracts, compliance materials, or other evidence not found in public filings. Thus, the screen should be viewed as a way to identify text candidates for further review, and not as a classifier of misconduct. }%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Sixth, the website comparison is based on }\DIFdelend \DIFaddbegin \DIFadd{Fourth, the design is cross-sectional and specific to U.S. SEC-registered advisers, and both secondary analyses are bounded. The website comparison covers }\DIFaddend 283 firms with usable current principal-site content \DIFdelbegin \DIFdel{available. Dynamically }\DIFdelend \DIFaddbegin \DIFadd{and excludes dynamically }\DIFaddend rendered pages, \DIFdelbegin \DIFdel{historical versionsof websites}\DIFdelend \DIFaddbegin \DIFadd{archived versions}\DIFaddend , advertisements, \DIFdelbegin \DIFdel{social-media communications, }\DIFdelend \DIFaddbegin \DIFadd{social media and }\DIFaddend press releases, \DIFdelbegin \DIFdel{conference materials, or third-party promotional channels are not fully captured by the analysis. Observable website coverage does not vary much by adviser type, AUM quartile, or median AUM, but there is still the potential for selection on unobserved characteristics. Thus, the }\DIFdelend \DIFaddbegin \DIFadd{so }\DIFaddend cross-venue conclusions should \DIFdelbegin \DIFdel{be confined to the comparison of current Form ADV Part 2A brochures and current principal websites, and not }\DIFdelend \DIFaddbegin \DIFadd{not be }\DIFaddend generalized to all adviser marketing. \DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Finally, the study is cross-sectional and specific to the U.S. setting of SEC-registered investment advisers. The analysis does find relationships between disclosure, size of adviser, and type of adviser, but is not in a position to }\DIFdelend \DIFaddbegin \DIFadd{The enforcement-anchored analysis rests on two enforcement actions and five positives, so it identifies text for review rather than estimating the prevalence of enforcement-relevant language. The findings should not be generalized to state-registered advisers, broker-dealers, banks, or firms in other countries, and the study cannot }\DIFaddend say whether the \DIFaddbegin \DIFadd{observed }\DIFaddend differences are caused by size, business model, regulatory scrutiny \DIFdelbegin \DIFdel{, technological capacity, or other factors.
+The findings should also not be generalized to state-registered advisers, broker-dealers, banks, other asset managers subject to other disclosure regimes, or financial firms in other countries.
+}\DIFdelend \DIFaddbegin \DIFadd{or technological capacity.
+}\DIFaddend 
+
+\subsection{Future research}
+
+\DIFdelbegin \DIFdel{These limitations offer several possibilities for extending the analysis. A natural next step is to build a }\DIFdelend \DIFaddbegin \DIFadd{Three extensions follow directly. A }\DIFaddend longitudinal panel of adviser brochures \DIFdelbegin \DIFdel{and see how AI disclosure evolves over time. Repeating observations would enable researchers to }\DIFdelend \DIFaddbegin \DIFadd{would }\DIFaddend separate persistent firm characteristics from changes in disclosure \DIFdelbegin \DIFdel{behavior and to see whether the rapid }\DIFdelend \DIFaddbegin \DIFadd{behaviour, and show whether the }\DIFaddend diffusion of generative AI \DIFdelbegin \DIFdel{is reflected in }\DIFdelend \DIFaddbegin \DIFadd{reaches }\DIFaddend formal filings with a lag. \DIFdelbegin \DIFdel{Panel designs could also explore transitions into and out of particular disclosure classes, and whether transitions tend to cluster around technological developments, regulatory events, or changes in the characteristics of firms.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Future work could also directly connect formal disclosure to actual AI adoption. }\DIFdelend Matched firm-level data on technology adoption \DIFdelbegin \DIFdel{, internal use, or survey-reported adoption would enable the estimation of }\DIFdelend \DIFaddbegin \DIFadd{would allow }\DIFaddend an adoption-disclosure relationship \DIFdelbegin \DIFdel{rather than comparing unmatched industry benchmarks and regulatory filings. Such a design could distinguish between firms that both use and disclose AI, use AI but do not disclose, disclose AI but do not independently verify its use, and neither use nor disclose AI. This would offer a more direct basis for studying materiality, disclosure incentives, and potential reporting gaps.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Another priority is human validation by experts. The residual disagreement set resulting from the independent cross-family exercise offers a targeted and efficient starting point, since it focuses attention on cases where interpretation is genuinely ambiguous. Domain experts could adjudicate these disagreements and a stratified sample of agreement cases, allowing for human-referenced estimates of sensitivity, specificity, and category-level measurement error. Such validation would also help to clarify difficult distinctions between investment-process AI, operational AI, vendor-supported functionality, and generic descriptions of quantitative methods.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The measurement framework can also be extended from the current probability sample to the entire population of some 16}%DIFDELCMD < {%%%
+\DIFdel{,}%DIFDELCMD < }%%%
+\DIFdel{000 advisers in the sampling frame. Classification across the entire population would allow for a more detailed analysis of adviser features, investment strategies, geographic patterns, private-fund activity, and organizational characteristics that cannot be estimated with precision for individual cells of the current sample. The framework will be especially useful at scale after expert human adjudication has augmented the category definitions.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Finally, future research ought to expand the set of communication venues . Regulatory brochures , main websites, }\DIFdelend \DIFaddbegin \DIFadd{to be estimated rather than benchmarked against an unmatched survey. And widening the set of venues beyond brochures and principal websites, to }\DIFaddend advertisements, social media, press releases \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend investor presentations, \DIFdelbegin \DIFdel{and other public communication vehicles may be targeting different audiences and create different incentives for describing emerging technologies. A longitudinal, multi-venue design could assess }\DIFdelend \DIFaddbegin \DIFadd{would test }\DIFaddend whether AI claims \DIFdelbegin \DIFdel{first }\DIFdelend emerge in promotional communication \DIFdelbegin \DIFdel{and then enter formal disclosures, whether risk language lags changes in actual deployment, and whether regulatory scrutiny affects how advisers describe AI across channels. Such extensions would go beyond documenting the existing disclosuresetting to explaining how technological adoption, communication incentives, and regulation jointly shape the information available to investors}\DIFdelend \DIFaddbegin \DIFadd{before entering formal disclosure}\DIFaddend .
+
+\section{Conclusions}
+
+\DIFdelbegin \DIFdel{This paper offers a large-sample measure of artificial intelligence disclosure in }\DIFdelend \DIFaddbegin \DIFadd{Disclosed AI use appears in roughly a quarter of }\DIFaddend U.S. investment-adviser fiduciary \DIFdelbegin \DIFdel{filings. From a population frame of 16}%DIFDELCMD < {%%%
+\DIFdelend \DIFaddbegin \DIFadd{brochures}\DIFaddend , \DIFdelbegin %DIFDELCMD < }%%%
+\DIFdel{223 active SEC-registered advisers reporting regulatory assets under management, we drew a stratified random sample of 400 firms and classified 388 Form ADV Part 2A brochuresinto a prespecified five-category framework, independently assessing the resulting measures via blinded cross-family validation. AI use is disclosed in 23.7\% of brochures observed and 22.7\% after weighting for population, suggesting that explicit discussion of AI-related use remains concentrated in a minority of adviser filings.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{AI disclosure is also unevenly distributedacross the industry. Larger advisers are considerably more likely to disclose AI, and }\DIFdelend \DIFaddbegin \DIFadd{and it is unevenly distributed. Prevalence rises steeply across the 2024 AUM strata and is higher among }\DIFaddend private-fund \DIFdelbegin \DIFdel{advisers have higher disclosure rates }\DIFdelend than wealth and retail advisers\DIFdelbegin \DIFdel{when controlling for AUM quartile. 27.6\% of brochures contain language related to AI risk , suggesting that AI is included in fiduciary disclosure not solely as a technological capability but also as a source of investment, operational, cybersecurity, model, and regulatory risk. These differences highlight the need to distinguish affirmative use from general mentions of AI when measuring emerging technologies in regulatory text.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The findings also indicate that formal disclosures and public-facing communication offer different views on adviser AI activity. For firms observed on both venues, AI use is documented much more frequently in Form ADV brochures than on current principal websites. Language like the representations identified in the two SEC AI-related enforcement actions is rare. No cases screened from the available text were adjudicated as an unsubstantiated promotional claim of the type described in those orders. These results do not establish the prevalence or absence of AI-washing, but demonstrate how language from enforcement can be integrated into a transparent screening framework without equating textual similarity to misconduct.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{More generally, the study provides a reproducible methodology to quantify new technological practices in large regulatory corpora. The frozen classification rubric, requirements for supporting text, probability sampling, independent validation, design-aware inference, and reproducible analytical materials can be combined to treat LLM-generated classifications as testable measurement outputs rather than assumed ground truth. The resulting evidence provides a baseline for assessing future changes in adviser AI disclosure. Longitudinal data, matched measures of actual AI adoption, wider communication channels, and expert human validation can extend this framework and illuminate the evolution of technological adoption, fiduciary disclosure, and regulatory oversight as AI is increasingly embedded in financial services}\DIFdelend . \DIFaddbegin \DIFadd{AI-related risk language is at least as common as affirmative use language within the same documents, so AI enters these filings as a risk to be disclosed as much as a capability to be described. The headline figure depends materially on how the construct is defined, which advisers are counted, and how much text each document contains. The same corpus supports estimates from roughly 10\% to 24\%, and a binary indicator rises with document length. Prevalence in this literature is therefore a property of a measurement design as much as of the filings it is drawn from.
+}\DIFaddend 
+
+\section*{Conflict of Interest Statement}
+The authors declare that the research was conducted in the absence of any commercial or financial relationships that could be construed as a potential conflict of interest.
+
+\section*{Author Contributions}
+SC: Conceptualization, Data curation, Formal analysis, Investigation, Methodology, Software, Validation, Visualization, Writing -- original draft, Writing -- review \& editing. RC: Conceptualization, Methodology, Project administration, Supervision, Writing -- review \& editing.
+
+\section*{Funding}
+The authors declared that financial support was not received for this work and/or its publication.
+
+\section*{Generative AI Statement}
+Generative AI was used to assist with grammar correction and minor language edits of the authors' own text, and with software scaffolding, development, and coding of the analysis and reproducibility pipeline (Anthropic Claude), in all cases under the authors' direction. Separately, large language models are the study's measurement \DIFdelbegin \DIFdel{instrument---automated }\DIFdelend \DIFaddbegin \DIFadd{instrument, used for automated }\DIFaddend brochure classification and an independent cross-family validation \DIFdelbegin \DIFdel{re-coding---as }\DIFdelend \DIFaddbegin \DIFadd{recoding, as }\DIFaddend described in the Materials and methods\DIFdelbegin \DIFdel{(Section~3.4)}\DIFdelend . The authors reviewed and verified all such output and take full responsibility for the content.
+
+\section*{Acknowledgments}
+The authors thank the U.S. Securities and Exchange Commission for maintaining the public Form ADV and \DIFdelbegin \DIFdel{IAPD }\DIFdelend \DIFaddbegin \DIFadd{Investment Adviser Public Disclosure (IAPD) }\DIFaddend systems on which this study depends. A reproducibility artifact accompanying this article has been released publicly so that the measurement can be independently audited and extended.
+
+\section*{Ethics Statement}
+Ethical approval was not required for this study in accordance with institutional and national requirements. The study does not involve human participants, human tissue, or animal subjects, and does not use personally identifiable or sensitive personal data. It analyzes publicly available regulatory filings (SEC Form ADV) submitted by business entities.
+
+\section*{Data Availability Statement}
+All data and code required to reproduce the study are openly available in a deterministic Code Ocean capsule \citep{capsule2026} (\url{https://doi.org/10.24433/CO.3404788.v1}\DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend MIT license). Within the capsule, the \texttt{/data} directory contains the frozen stratified sample (\texttt{data/sample.csv}\DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{) covering }\DIFaddend 400 sampled firms \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{and }\DIFaddend 388 classified\DIFdelbegin \DIFdel{)}\DIFdelend , the classifier label sets \DIFdelbegin \DIFdel{(}\texttt{\DIFdel{data/labels\_primary.csv}}%DIFAUXCMD
+\DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{for the }\DIFaddend primary gpt-4o labels \DIFdelbegin \DIFdel{; }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend \texttt{data/labels\_\DIFdelbegin \DIFdel{independent}\DIFdelend \DIFaddbegin \DIFadd{primary}\DIFaddend .csv}\DIFaddbegin \DIFadd{)}\DIFaddend , the blinded cross-family \DIFdelbegin \DIFdel{re-coding; }\DIFdelend \DIFaddbegin \DIFadd{recoding (}\DIFaddend \texttt{data/labels\_\DIFdelbegin \DIFdel{secondary\_sub}\DIFdelend \DIFaddbegin \DIFadd{independent}\DIFaddend .csv}\DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{) and }\DIFaddend the same-family subsample \DIFaddbegin \DIFadd{(}\texttt{\DIFadd{data/labels\_secondary\_sub.csv}}\DIFaddend ), the \DIFaddbegin \DIFadd{human verification records for the brochure and website cases with the two-phase frame definition that weights them (}\texttt{\DIFadd{data/human\_verification/}}\DIFadd{), the }\DIFaddend population stratum counts (\texttt{data/population\_strata.csv}), the venue and exposure tables (\texttt{data/venue/}), and the classification rubric and enforcement fingerprint (\texttt{data/prompts/})\DIFdelbegin \DIFdel{; the }\DIFdelend \DIFaddbegin \DIFadd{. The }\DIFaddend analysis, weighting, and validation code is in \texttt{/code} and pre-computed outputs in \texttt{/results}. The capsule regenerates every reported number, table, and figure \DIFaddbegin \DIFadd{from the frozen data, including the illustrative cases in Table~\ref{tab:cases}, whose label codes are derived at run time from the frozen label files, and both published figures at their typeset resolution}\DIFaddend . The source repository \DIFdelbegin \DIFdel{(\url{https://github.com/samirrc2/disclosed-intelligence}) will be made public upon acceptance}\DIFdelend \DIFaddbegin \DIFadd{is openly available at \url{https://github.com/samirrc2/AI-Use-and-Risk-Disclosure}}\DIFaddend . Adviser identifiers are pseudonymized and only aggregate results are reported\DIFdelbegin \DIFdel{; the }\DIFdelend \DIFaddbegin \DIFadd{. The }\DIFaddend crosswalk to CRD identifiers is withheld. The underlying SEC Form ADV Part 1 data, Part 2A brochures, and enforcement releases IA-6573 and IA-6574 are publicly available through the SEC's \DIFdelbegin \DIFdel{Investment Adviser Public Disclosure (IAPD ) }\DIFdelend \DIFaddbegin \DIFadd{IAPD }\DIFaddend system.
+
+\bibliographystyle{Frontiers-Harvard}
+\bibliography{references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% TABLES (Frontiers: built in LaTeX, placed at the end, caption before the table)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[h!]
+\caption{Typology prevalence with Wilson 95\% confidence intervals (gpt-4o classifier\DIFdelbeginFL \DIFdelFL{; }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{, }\DIFaddendFL $n = 388$ classified brochures). Labels are multi-label.}
+\label{tab:typology}
+\centering
+\begin{tabular}{lrr}
+\toprule
+Label & $k / n$ & Prevalence (95\% CI) \\
+\midrule
+(a) AI in investment process & 71 / 388 & 18.3\% (14.8--22.5) \\
+(b) AI in operations / client service & 26 / 388 & 6.7\% (4.6--9.6) \\
+(c) AI as a disclosed risk factor & 107 / 388 & 27.6\% (23.4--32.2) \\
+(d) Explicit prohibition / non-use & 8 / 388 & 2.1\% (1.0--4.0) \\
+(e) Named AI vendor / product & 21 / 388 & 5.4\% (3.6--8.1) \\
+Any use (a $\cup$ b $\cup$ e) & 92 / 388 & 23.7\% (19.7--28.2) \\
+Any mention (a--e) & 123 / 388 & 31.7\% (27.3--36.5) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\caption{\DIFdelbeginFL \DIFdelFL{Brochure-filing }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Disclosed any-use by sampling stratum. Prevalence is the share of classified brochures with Wilson 95\% intervals and }[\DIFaddFL{k/n}]\DIFaddFL{. Filing }\DIFaddendFL population \DIFdelbeginFL \DIFdelFL{counts (exact }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{is the }\DIFaddendFL stratum population deflated by \DIFdelbeginFL \DIFdelFL{the stratum }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{its }\DIFaddendFL brochure-filing rate\DIFdelbeginFL \DIFdelFL{)}\DIFdelendFL , \DIFdelbeginFL \DIFdelFL{classified sample sizes, disclosure rates, }\DIFdelendFL and \DIFdelbeginFL \DIFdelFL{sampling }\DIFdelendFL weights \DIFdelbeginFL \DIFdelFL{. The survey-weighted any-use prevalence is 22.7\% }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{are that population normalised to sum to one }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{95\% CI 18.7--26.6}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Section~3.8}\DIFaddendFL )\DIFdelbeginFL \DIFdelFL{versus the design-based 23.7\%; the unadjusted all-firms universe (16}%DIFDELCMD < {%%%
+\DIFdelFL{,}%DIFDELCMD < }%%%
+\DIFdelFL{223) gives 22.3\%}\DIFdelendFL .}
+\DIFdelbeginFL \DIFdelFL{\label{tab:weighting}
+}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\label{tab:gradient}
+}\DIFaddendFL \centering
+\DIFdelbeginFL %DIFDELCMD < \begin{tabular}{lrrrr}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \small
+\begin{tabular}{lrrlr}
+\DIFaddendFL \toprule
+Stratum & Filing pop.\ $N$ & Class.\ $n$ & Any-use \DIFaddbeginFL \DIFaddFL{(95\% CI) }[\DIFaddFL{k/n}] \DIFaddendFL & Weight \\
+\midrule
+Private fund $\cdot$ Q1 & 769 & 50 & \DIFdelbeginFL \DIFdelFL{12.0\% }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{12\% (6--24) }[\DIFaddFL{6/50}] \DIFaddendFL & 0.049 \\
+Private fund $\cdot$ Q2 & 1{,}060 & 50 & \DIFdelbeginFL \DIFdelFL{24.0\% }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{24\% (14--37) }[\DIFaddFL{12/50}] \DIFaddendFL & 0.068 \\
+Private fund $\cdot$ Q3 & 1{,}604 & 50 & \DIFdelbeginFL \DIFdelFL{34.0\% }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{34\% (22--48) }[\DIFaddFL{17/50}] \DIFaddendFL & 0.103 \\
+Private fund $\cdot$ Q4 & 2{,}449 & 50 & \DIFdelbeginFL \DIFdelFL{56.0\% }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{56\% (42--69) }[\DIFaddFL{28/50}] \DIFaddendFL & 0.157 \\
+Wealth/retail $\cdot$ Q1 & 3{,}271 & 46 & 8.7\% \DIFaddbeginFL \DIFaddFL{(3--20) }[\DIFaddFL{4/46}] \DIFaddendFL & 0.210 \\
+Wealth/retail $\cdot$ Q2 & 2{,}790 & 48 & 8.3\% \DIFaddbeginFL \DIFaddFL{(3--20) }[\DIFaddFL{4/48}] \DIFaddendFL & 0.179 \\
+Wealth/retail $\cdot$ Q3 & 2{,}268 & 48 & 14.6\% \DIFaddbeginFL \DIFaddFL{(7--27) }[\DIFaddFL{7/48}] \DIFaddendFL & 0.145 \\
+Wealth/retail $\cdot$ Q4 & 1{,}397 & 46 & 30.4\% \DIFaddbeginFL \DIFaddFL{(19--45) }[\DIFaddFL{14/46}] \DIFaddendFL & \DIFdelbeginFL \DIFdelFL{0.090 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{0.089 }\DIFaddendFL \\
+\DIFaddbeginFL \midrule
+\DIFaddendFL Total (weighted) & 15{,}606 & 388 & 22.7\% & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\caption{\DIFdelbeginFL \DIFdelFL{Disclosed any-use }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Independent cross-family validation on the blinded 180-brochure verification sample. The reference is a blind recoding }\DIFaddendFL by \DIFdelbeginFL \DIFdelFL{adviser type and AUM quartile: prevalence (Wilson 95\% CI) }%DIFDELCMD < [%%%
+\DIFdelFL{count/denominator}%DIFDELCMD < ]%%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{a different model family}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{Wealth/retail denominators }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Metrics }\DIFaddendFL are \DIFdelbeginFL \DIFdelFL{below 50 because }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Horvitz--Thompson weighted to }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{12 unclassified firms fall in these strata}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{full classified population using the two-phase verification design of Section~3.5}\DIFaddendFL . \DIFaddbeginFL \DIFaddFL{Precision is invariant to that weighting. PABAK is prevalence- and bias-adjusted agreement \mbox{%DIFAUXCMD
+\citep{byrt1993}}\hskip0pt%DIFAUXCMD
+.}\DIFaddendFL }
+\DIFdelbeginFL \DIFdelFL{\label{tab:gradient}
+}%DIFDELCMD < \centering
+%DIFDELCMD < \small
+%DIFDELCMD < \begin{tabular}{lcccc}
+%DIFDELCMD < \toprule
+%DIFDELCMD < %%%
+\DIFdelFL{Adviser type }%DIFDELCMD < & %%%
+\DIFdelFL{Q1 }%DIFDELCMD < & %%%
+\DIFdelFL{Q2 }%DIFDELCMD < & %%%
+\DIFdelFL{Q3 }%DIFDELCMD < & %%%
+\DIFdelFL{Q4 }%DIFDELCMD < \\
+%DIFDELCMD < \midrule
+%DIFDELCMD < %%%
+\DIFdelFL{Private fund }%DIFDELCMD < & %%%
+\DIFdelFL{12\% (6--24) }%DIFDELCMD < [%%%
+\DIFdelFL{6/50}%DIFDELCMD < ] & %%%
+\DIFdelFL{24\% (14--37) }%DIFDELCMD < [%%%
+\DIFdelFL{12/50}%DIFDELCMD < ] & %%%
+\DIFdelFL{34\% (22--48) }%DIFDELCMD < [%%%
+\DIFdelFL{17/50}%DIFDELCMD < ] & %%%
+\DIFdelFL{56\% (42--69) }%DIFDELCMD < [%%%
+\DIFdelFL{28/50}%DIFDELCMD < ] \\
+%DIFDELCMD < %%%
+\DIFdelFL{Wealth / retail }%DIFDELCMD < & %%%
+\DIFdelFL{8.7\% (3--20) }%DIFDELCMD < [%%%
+\DIFdelFL{4/46}%DIFDELCMD < ] & %%%
+\DIFdelFL{8.3\% (3--20) }%DIFDELCMD < [%%%
+\DIFdelFL{4/48}%DIFDELCMD < ] & %%%
+\DIFdelFL{14.6\% (7--27) }%DIFDELCMD < [%%%
+\DIFdelFL{7/48}%DIFDELCMD < ] & %%%
+\DIFdelFL{30.4\% (19--45) }%DIFDELCMD < [%%%
+\DIFdelFL{14/46}%DIFDELCMD < ] \\
+%DIFDELCMD < \bottomrule
+%DIFDELCMD < \end{tabular}
+%DIFDELCMD < \end{table}
+%DIFDELCMD < 
+
+%DIFDELCMD < \begin{table}[h!]
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Independent cross-family validation on the blinded 180-brochure verification sample. Metrics are design-weighted (Horvitz--Thompson) to the full classified population: model-positive brochures (positive on any of labels a--e, i.e.\ any mention; $n = 123$) are censused (inclusion probability 1) and 57 of 265 model-negatives are sampled (inclusion probability 0.215), so each brochure is weighted by the inverse of its inclusion probability. Reference is an independent blind re-coding by a different model family; the primary classifier is gpt-4o. Precision is invariant to the weighting (it conditions on the censused model-positive stratum); recall, $\kappa$, agreement, and prevalence-and-bias-adjusted agreement (PABAK; \mbox{%DIFAUXCMD
+\citealp{byrt1993}}\hskip0pt%DIFAUXCMD
+) are design-weighted. Same-family reproducibility (gpt-4o vs.\ gpt-4o-mini, 60 brochures) is reported in the text.}}
+%DIFAUXCMD
+\DIFdelendFL \label{tab:validation}
+\centering
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+Label / indicator & Prec. & Rec. & F1 & \% agree & $\kappa$ & PABAK \\
+\midrule
+(a) investment process & 0.690 & 0.735 & 0.712 & 89.8\% & 0.650 & 0.796 \\
+(b) operations & 0.808 & 0.677 & 0.737 & 96.1\% & 0.716 & 0.923 \\
+(c) risk factor & 0.916 & 0.990 & 0.951 & 97.4\% & 0.934 & 0.948 \\
+(d) explicit non-use & 0.875 & 0.467 & 0.609 & 97.7\% & 0.598 & 0.954 \\
+(e) named vendor & 0.524 & 1.000 & 0.688 & 97.4\% & 0.675 & 0.948 \\
+Any use (a $\cup$ b $\cup$ e) & 0.761 & 0.837 & 0.797 & 90.8\% & 0.738 & 0.816 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\caption{\DIFdelbeginFL \DIFdelFL{Venue comparison for firms }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Illustrative classification and human-verification cases. Passages are quoted verbatim }\DIFaddendFL with \DIFdelbeginFL \DIFdelFL{both venues ($n = 283$)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{the filing firm's name, its acronym and personal names redacted}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{The difference column }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Prim.\ and Indep.\ are the labels assigned by the two model families, and Hum.\ }\DIFaddendFL is \DIFdelbeginFL \DIFdelFL{Marketing minus Brochure; }\DIFdelendFL the \DIFdelbeginFL \DIFdelFL{bracketed figures are }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{human-coded label where available. A dash denotes no label, and n/}\DIFaddendFL a \DIFdelbeginFL \DIFdelFL{paired bootstrap 95\% CI}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{denotes a case outside the human-verification frame}\DIFaddendFL . \DIFaddbeginFL \DIFaddFL{A detection disagreement is disagreement over whether a passage qualifies at all; a boundary disagreement is over which functional category applies.}\DIFaddendFL }
+\DIFdelbeginFL \DIFdelFL{\label{tab:venue}
+}%DIFDELCMD < \centering
+%DIFDELCMD < \begin{tabular}{lrrr}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\label{tab:cases}
+}\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr0.135\textwidth-5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr0.355\textwidth-5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr0.055\textwidth-5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr0.065\textwidth-5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr0.060\textwidth-5pt\relax}>{\raggedright\arraybackslash}p{\dimexpr0.330\textwidth-5pt\relax}@{}}
+\DIFaddendFL \toprule
+\DIFdelbeginFL \DIFdelFL{Measure ($n = 283$}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Case }& \DIFaddFL{Passage (redacted}\DIFaddendFL ) & \DIFdelbeginFL \DIFdelFL{Brochure }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Prim. }\DIFaddendFL & \DIFdelbeginFL \DIFdelFL{Marketing }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Indep. }\DIFaddendFL & \DIFdelbeginFL \DIFdelFL{Marketing $-$ Brochure }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Hum. }& \DIFaddFL{Why informative }\DIFaddendFL \\
+\midrule
+\DIFdelbeginFL \DIFdelFL{Exposure-language screen (F1--F7) }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Investment-process AI }\DIFaddendFL & \DIFdelbeginFL \DIFdelFL{0.7\% }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The Advisor uses third-party artificial intelligence solutions to support investment research. These tools are used solely as\ldots }\DIFaddendFL & \DIFdelbeginFL \DIFdelFL{0.7\% }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{ac }\DIFaddendFL & \DIFdelbeginFL \DIFdelFL{0.000 ($-0.014$,$+0.014$) }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{ac }& \DIFaddFL{ac }& \DIFaddFL{Explicit statement that the firm uses AI to support investment research. }\DIFaddendFL \\
+\DIFaddbeginFL \DIFaddFL{Operations AI }& \DIFaddFL{utilizes certain artificial intelligence (``AI'') tools to enhance operational efficiency and support internal workflows, which include\ldots }& \DIFaddFL{b }& \DIFaddFL{bd }& \DIFaddFL{bd }& \DIFaddFL{Operational efficiency and internal workflows, not investment decisions. }\\
+\DIFaddFL{AI risk }& \DIFaddFL{Artificial Intelligence Risk. The emergence of recent technology developments in artificial intelligence and machine learning such as\ldots }& \DIFaddFL{bce }& \DIFaddFL{bce }& \DIFaddFL{ce }& \DIFaddFL{Risk framing without evidence of adviser use. }\\
+\DIFaddFL{Explicit non-use }& \DIFaddFL{does not use artificial intelligence (``AI'') to construct portfolios or to make recommendations. Certain third-party vendors may use AI within\ldots }& \DIFaddFL{cd }& \DIFaddFL{cd }& \DIFaddFL{ac }& \DIFaddFL{Affirmative denial naming AI, but the coders read the passage as investment-process use with risk framing and withheld the non-use label; the boundary between a denial and a vendor's use is where this label is contested. }\\
+\DIFaddFL{Named vendor }& \DIFaddFL{ChatGPT and Claude (collectively, ``Machine Learning Technology'') can pose risks to }[\DIFaddFL{firm}]\DIFaddFL{, the Discretionary Vehicles,\ldots }& \DIFaddFL{bce }& \DIFaddFL{bce }& \DIFaddFL{n/a }& \DIFaddFL{Vendors named inside risk language, so labels c and e co-occur. }\\
+\DIFaddFL{Hard negative }& \DIFaddFL{Fundamental analysis is security analysis grounded in basic factors such as company earnings, balance sheet variables and management quality which are used to predict\ldots }& \DIFaddFL{-- }& \DIFaddFL{-- }& \DIFaddFL{n/a }& \DIFaddFL{Conventional fundamental and technical analysis, no AI framing, no label assigned. }\\
+\DIFaddFL{Detection error }& \DIFaddFL{Artificial Intelligence and Machine Learning. Recent technological advances in artificial intelligence and machine learning technologies (collectively, ``AI Technologies''), as well as the rapid growth and widespread use thereof, have the potential to disrupt the markets in which we operate\ldots }& \DIFaddFL{ac }& \DIFaddFL{c }& \DIFaddFL{ac }& \DIFaddFL{Generic AI-risk passage; models differ on whether firm use is established. }\\
+\DIFaddFL{Boundary error }& \DIFaddFL{AI in connection with its investment, research, operational or decision-support processes. For purposes of this disclosure, AI\ldots }& \DIFaddFL{ac }& \DIFaddFL{abcd }& \DIFaddFL{ac }& \DIFaddFL{A single sentence spans investment, research and operational use. }\\
+\bottomrule
+\end{tabular}
+
+\vspace{3pt}
+\parbox{\textwidth}{\scriptsize \DIFaddFL{Here (a) is investment-process AI, (b) operations or client-service AI, (c) AI as a disclosed risk factor, (d) explicit prohibition or non-use, and (e) a named AI vendor or product. A case can carry several labels at once, so \textnormal{ac} means labels (a) and (c) together.}}
+\end{table}
+
+\begin{table}[h!]
+\caption{\DIFaddFL{Robustness of the principal results. Panel A re-estimates each result with the composite defined as investment-process or operations AI only (a $\cup$ b), dropping the named-vendor label. Panel B reports the matched cross-venue comparison, with paired bootstrap 95\% intervals. Panel C reports website coverage, where no coverage difference is significant (type $p = 0.83$, quartile $p = 0.50$, AUM $p = 0.46$).}}
+\DIFaddFL{\label{tab:vendorpanel}
+}\centering
+\small
+\begin{tabular}{lrr}
+\toprule
+\multicolumn{3}{@{}l}{\textit{\DIFaddFL{Panel A. Vendor-excluded definition}}} \\
+\DIFaddFL{Result }& \DIFaddFL{Incl.\ vendor (a $\cup$ b $\cup$ e) }& \DIFaddFL{Excl.\ vendor (a $\cup$ b) }\\
+\midrule
+\DIFaddFL{Overall prevalence }& \DIFaddFL{23.7\% (19.7--28.2) }& \DIFaddFL{22.4\% (18.6--26.8) }\\
+\DIFaddFL{\quad AUM quartile 1 }& \DIFaddFL{10.4\% }& \DIFaddFL{8.3\% }\\
+\DIFaddFL{\quad AUM quartile 2 }& \DIFaddFL{16.3\% }& \DIFaddFL{15.3\% }\\
+\DIFaddFL{\quad AUM quartile 3 }& \DIFaddFL{24.5\% }& \DIFaddFL{23.5\% }\\
+\DIFaddFL{\quad AUM quartile 4 }& \DIFaddFL{43.8\% }& \DIFaddFL{42.7\% }\\
+\DIFaddFL{\quad Private-fund advisers }& \DIFaddFL{31.5\% }& \DIFaddFL{29.0\% }\\
+\DIFaddFL{\quad Wealth and retail advisers }& \DIFaddFL{15.4\% }& \DIFaddFL{15.4\% }\\
+\DIFaddFL{Survey-weighted (brochure filers) }& \DIFaddFL{22.7\% }& \DIFaddFL{21.8\% }\\
+\DIFaddFL{Weighted to full 16}{\DIFaddFL{,}}\DIFaddFL{223-adviser frame }& \DIFaddFL{22.3\% }& \DIFaddFL{21.5\% }\\
+\DIFaddFL{Logistic coefficient, AUM quartile }& \DIFaddFL{$+0.67$ ($p < 0.001$) }& \DIFaddFL{$+0.72$ ($p < 0.001$) }\\
+\DIFaddFL{Logistic coefficient, private fund }& \DIFaddFL{$+1.01$ ($p < 0.001$) }& \DIFaddFL{$+0.89$ ($p < 0.001$) }\\
+\DIFaddFL{Risk language minus disclosed use }& \DIFaddFL{$+3.9$ pp ($p = 0.036$) }& \DIFaddFL{$+5.2$ pp ($p = 0.007$) }\\
+\midrule
+\multicolumn{3}{@{}l}{\textit{\DIFaddFL{Panel B. Cross-venue comparison, matched firms ($n = 283$)}}} \\
+\DIFaddFL{Measure }& \DIFaddFL{Brochure vs website }& \DIFaddFL{Website $-$ brochure }\\
+\midrule
+\DIFaddendFL Any-use disclosure (a $\cup$ b $\cup$ e) & 23.0\% \DIFdelbeginFL %DIFDELCMD < & %%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{vs }\DIFaddendFL 5.7\% & $-17.3$ pp \DIFaddbeginFL \DIFaddFL{($-22.6$, $-12.0$) }\DIFaddendFL \\
+\DIFdelbeginFL %DIFDELCMD < \bottomrule
+%DIFDELCMD < \end{tabular}
+%DIFDELCMD < \end{table}
+%DIFDELCMD < 
+
+%DIFDELCMD < \begin{table}[h!]
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Marketing-corpus coverage (firms with usable website text) by adviser type and AUM quartile, with median regulatory AUM of covered versus uncovered firms. Differences are non-significant (type $\chi^2$ $p = 0.83$; quartile $\chi^2$ $p = 0.50$; AUM Mann--Whitney $p = 0.46$).}}
+%DIFAUXCMD
+\DIFdelFL{\label{tab:missingness}
+}%DIFDELCMD < \centering
+%DIFDELCMD < \begin{tabular}{lrr}
+%DIFDELCMD < \toprule
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Any-use, vendor-excluded (a $\cup$ b) }& \DIFaddFL{21.9\% vs 5.7\% }& \DIFaddFL{$-16.3$ pp ($-21.6$, $-11.3$) }\\
+\DIFaddFL{Exposure-language screen (F1--F7) }& \DIFaddFL{0.7\% vs 0.7\% }& \DIFaddFL{$0.0$ pp ($-1.4$, $+1.4$) }\\
+\midrule
+\multicolumn{3}{@{}l}{\textit{\DIFaddFL{Panel C. Website coverage}}} \\
+\DIFaddendFL Group & Usable / total & Coverage \\
+\midrule
+Private-fund advisers & 140 / 200 & 70.0\% \\
+Wealth \DIFdelbeginFL \DIFdelFL{/}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and }\DIFaddendFL retail advisers & 143 / 200 & 71.5\% \\
+AUM \DIFdelbeginFL \DIFdelFL{quartile Q1 (smallest) }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{quartiles 1 to 4 }\DIFaddendFL & 73\DIFdelbeginFL \DIFdelFL{/ 100 }%DIFDELCMD < & %%%
+\DIFdelFL{73.0\% }%DIFDELCMD < \\
+%DIFDELCMD < %%%
+\DIFdelFL{AUM quartile Q2 }%DIFDELCMD < & %%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{, }\DIFaddendFL 65\DIFdelbeginFL \DIFdelFL{/ 100 }%DIFDELCMD < & %%%
+\DIFdelFL{65.0\% }%DIFDELCMD < \\
+%DIFDELCMD < %%%
+\DIFdelFL{AUM quartile Q3 }%DIFDELCMD < & %%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{, }\DIFaddendFL 71\DIFdelbeginFL \DIFdelFL{/ 100 }%DIFDELCMD < & %%%
+\DIFdelFL{71.0\% }%DIFDELCMD < \\
+%DIFDELCMD < %%%
+\DIFdelFL{AUM quartile Q4 (largest) }%DIFDELCMD < & %%%
+\DIFdelendFL \DIFaddbeginFL \DIFaddFL{, }\DIFaddendFL 74 / 100 & \DIFaddbeginFL \DIFaddFL{73.0, 65.0, 71.0, }\DIFaddendFL 74.0\% \\
+Median regulatory AUM & \multicolumn{2}{r}{covered US \$419M \DIFdelbeginFL \DIFdelFL{\; }\DIFdelendFL vs.\ \DIFdelbeginFL \DIFdelFL{\; }\DIFdelendFL uncovered US \$357M} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% FIGURES (embedded at the end; captions with descriptive text)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[h!]
+\begin{center}\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=12cm]{figures/fig1}\end{center}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Prevalence of each typology label among the 388 classified brochures, with Wilson 95\% confidence intervals. The dominant single label is a risk-factor disclosure (c), not a claim of use; explicit non-use (d) is essentially absent.}}%DIFAUXCMD
+\DIFdelFL{\label{fig:typology}
+}%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < \begin{figure}[h!]
+%DIFDELCMD < \begin{center}%%%
+\DIFdelendFL \includegraphics[width=12cm]{figures/fig2}\end{center}
+\caption{Disclosed any-use of AI by adviser type and AUM quartile. Bars show the within-stratum share of brochures disclosing any use (labels a, b \DIFdelbeginFL \DIFdelFL{, }\DIFdelendFL or e)\DIFdelbeginFL \DIFdelFL{; private-fund }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{. Private-fund }\DIFaddendFL advisers \DIFdelbeginFL \DIFdelFL{(}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{are }\DIFaddendFL solid\DIFdelbeginFL \DIFdelFL{) exceed }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{, }\DIFaddendFL wealth \DIFdelbeginFL \DIFdelFL{/}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{and }\DIFaddendFL retail advisers \DIFdelbeginFL \DIFdelFL{(}\DIFdelendFL hatched\DIFdelbeginFL \DIFdelFL{) at every size quartile, and disclosure rises strongly with size in both types}\DIFdelendFL .}\label{fig:gradient}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}\DIFdelbeginFL %DIFDELCMD < \includegraphics[width=12cm]{figures/fig3}\end{center}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+\DIFdelFL{Independent cross-family validation: design-weighted Cohen's $\kappa$ between the primary classifier (gpt-4o) and a blinded re-coding by a different model family, per label and for the derived any-use indicator (two-phase verification sample, $n = 180$, weighted to the classified population). Shaded bands mark the conventional substantial (0.61--0.80) and almost-perfect ($>0.80$) agreement regions; the risk-factor label is almost-perfect and any-use is comfortably substantial, while the finer investment-process distinction remains the softest construct.}}%DIFAUXCMD
+\DIFdelFL{\label{fig:validation}
+}%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < \begin{figure}[h!]
+%DIFDELCMD < \begin{center}%%%
+\DIFdelendFL \includegraphics[width=9cm]{figures/fig4}\end{center}
+\caption{Disclosed any-use of AI by venue for the 283 firms observed in both venues. \DIFdelbeginFL \DIFdelFL{Contrary to }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The matched brochures carry 7.3 times }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{intuition motivating AI-washing concern}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{text of the matched websites}\DIFaddendFL , \DIFaddbeginFL \DIFaddFL{and }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{fiduciary brochure is the more AI-forward }\DIFdelendFL venue \DIFdelbeginFL \DIFdelFL{: disclosed use is 23.0\% in brochures versus 5.7\% in current website marketing}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{difference does not survive conditioning on document length (Section~4.5)}\DIFaddendFL .}\label{fig:venue}
+\end{figure}
+
+\end{document}

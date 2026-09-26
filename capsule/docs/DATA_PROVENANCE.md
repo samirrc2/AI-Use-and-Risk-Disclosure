@@ -43,8 +43,8 @@ with a verbatim quote required for every positive. (Collection script:
 
 The F1–F7 fingerprint (`data/prompts/exposure_fingerprints_v1.md`), distilled from
 SEC orders IA-6573 (Delphia) and IA-6574 (Global Predictions), was applied to each
-brochure and to marketing text; positives were human-adjudicated (see
-`frontiers/supplements/S1_exposure_adjudication.pdf`).
+brochure and to marketing text; positives were human-adjudicated, and the
+adjudication outcome is reported in the manuscript's enforcement-screen section.
 
 ## 6. Venue corpus → `venue/marketing_*.csv`, `venue/venue_divergence.csv`
 

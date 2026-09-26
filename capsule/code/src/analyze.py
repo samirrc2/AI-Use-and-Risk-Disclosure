@@ -1,7 +1,6 @@
 """
 analyze.py — deterministic reproduction of every numerical result in the article
-"Disclosed Intelligence: A Large-Sample Measurement of AI Disclosure in U.S.
-Investment Adviser Fiduciary Filings" from the frozen, pseudonymized dataset.
+"AI Use and Risk Disclosure by Investment Advisers" from the frozen, pseudonymized dataset.
 
 No network, no API keys, no randomness. Reads data/ (see data/README.md), writes
 results/<run>/: tables/*.csv, figures/*.{png,svg}, and metrics_summary.md
@@ -212,6 +211,21 @@ def t4_validation(d, out):
         tp, fp, fn, tn = confusion(smd, ssd, L)
         k, pk = kappa_pabak(tp, fp, fn, tn)
         srows.append([L, sn, round((tp + tn) / sn, 3), round(k, 3)])
+    # The paper also quotes same-family agreement on the composite any-mention measure
+    # (Section 4.3). Emit it alongside the per-label rows so every published figure has
+    # an artifact behind it.
+    mu = {c: {"x": int(any(smd[c][L] for L in "abcde"))} for c in smd}
+    hu = {c: {"x": int(any(ssd[c][L] for L in "abcde"))} for c in ssd}
+    tp, fp, fn, tn = confusion(mu, hu, "x")
+    k, pk = kappa_pabak(tp, fp, fn, tn)
+    srows.append(["any-mention (a|b|c|d|e)", sn, round((tp + tn) / sn, 3), round(k, 3)])
+    # Section 4.3 also quotes same-family agreement on the composite any-USE measure, which
+    # is a different union from any-mention and was not emitted by any artifact.
+    mu = {c: {"x": int(any(smd[c][L] for L in "abe"))} for c in smd}
+    hu = {c: {"x": int(any(ssd[c][L] for L in "abe"))} for c in ssd}
+    tp, fp, fn, tn = confusion(mu, hu, "x")
+    k, pk = kappa_pabak(tp, fp, fn, tn)
+    srows.append(["any-use (a|b|e)", sn, round((tp + tn) / sn, 3), round(k, 3)])
     sf = pd.DataFrame(srows, columns=["label", "n", "pct_agree", "kappa"])
     sf.to_csv(out / "tables" / "table4b_samefamily.csv", index=False)
     return tab, sf, n, sn
@@ -242,8 +256,13 @@ def t5_venue(d, out):
 
 def exposure_and_missingness(m, d, out):
     be = d["broch_exp"]
-    exp = {"brochure_exposed_k": int(be.exposed.sum()), "brochure_n": len(be),
-           "brochure_exposed_share": round(float(be.exposed.mean()), 4)}
+    # Section 4.4 prints a Wilson interval on the screen's hit rate; emit it rather than
+    # leaving the reader to recompute it.
+    _k, _n = int(be.exposed.sum()), len(be)
+    _p, _lo, _hi = wilson(_k, _n)
+    exp = {"brochure_exposed_k": _k, "brochure_n": _n,
+           "brochure_exposed_share": round(float(be.exposed.mean()), 4),
+           "brochure_exposed_ci": [round(_lo, 4), round(_hi, 4)]}
     json.dump(exp, open(out / "tables" / "exposure_summary.json", "w"), indent=1)
 
     cl = d["crawl"].copy()
@@ -266,6 +285,9 @@ def exposure_and_missingness(m, d, out):
 def figures(m, t1, t4, t5, out):
     import matplotlib
     matplotlib.use("Agg")
+    # SVG clip-path ids are randomised per process unless the hash salt is fixed; without
+    # this the vector copies are not byte-reproducible even though the PNGs are.
+    matplotlib.rcParams["svg.hashsalt"] = "disclosed-intelligence"
     import matplotlib.pyplot as plt
 
     # Figure 1 — typology label prevalence with Wilson 95% CIs
@@ -285,7 +307,8 @@ def figures(m, t1, t4, t5, out):
     ax.invert_yaxis()
     fig.tight_layout()
     for ext in ("png", "svg"):
-        fig.savefig(out / "figures" / f"fig1_typology.{ext}", dpi=150)
+        fig.savefig(out / "figures" / f"fig1_typology.{ext}", dpi=150,
+                    metadata={"Date": None} if ext == "svg" else None)
     plt.close(fig)
 
     # Figure 2 — any-use gradient by stratum
@@ -304,7 +327,8 @@ def figures(m, t1, t4, t5, out):
     ax.legend(frameon=False)
     fig.tight_layout()
     for ext in ("png", "svg"):
-        fig.savefig(out / "figures" / f"fig2_gradient.{ext}", dpi=150)
+        fig.savefig(out / "figures" / f"fig2_gradient.{ext}", dpi=150,
+                    metadata={"Date": None} if ext == "svg" else None)
     plt.close(fig)
 
     # Figure 3 — validation kappa per label + any-use
@@ -320,7 +344,8 @@ def figures(m, t1, t4, t5, out):
     ax.invert_yaxis()
     fig.tight_layout()
     for ext in ("png", "svg"):
-        fig.savefig(out / "figures" / f"fig3_validation.{ext}", dpi=150)
+        fig.savefig(out / "figures" / f"fig3_validation.{ext}", dpi=150,
+                    metadata={"Date": None} if ext == "svg" else None)
     plt.close(fig)
 
     # Figure 4 — venue comparison
@@ -332,13 +357,14 @@ def figures(m, t1, t4, t5, out):
     ax.set_title("Disclosure by venue (n=%d matched)" % t5["n_firms_both_venues"])
     fig.tight_layout()
     for ext in ("png", "svg"):
-        fig.savefig(out / "figures" / f"fig4_venue.{ext}", dpi=150)
+        fig.savefig(out / "figures" / f"fig4_venue.{ext}", dpi=150,
+                    metadata={"Date": None} if ext == "svg" else None)
     plt.close(fig)
 
 
 def write_summary(out, t1, t2res, t3res, t4, t4b, nval, t5, exp, miss):
     L = []
-    L.append("# Reproduction summary — Disclosed Intelligence\n")
+    L.append("# Reproduction summary: AI Use and Risk Disclosure by Investment Advisers\n")
     L.append("Regenerated from the frozen, pseudonymized dataset with no network or API access. "
              "Every value below is computed by `code/src/analyze.py`.\n")
     au = t1[t1.label.str.startswith("Any use")].iloc[0]
@@ -377,18 +403,30 @@ def write_summary(out, t1, t2res, t3res, t4, t4b, nval, t5, exp, miss):
     L.append("## Article map\n")
     L.append("| Output file | Manuscript element |")
     L.append("|---|---|")
+    # Output filenames keep the original submission's numbering; the revised article
+    # renumbered its tables and dropped two figures, so the mapping is stated explicitly.
     L.append("| tables/table1_typology.csv | Table 1 (typology prevalence, Wilson CIs) |")
-    L.append("| tables/table2_gradient.csv, table2_inference.json | Section 4.1-4.2 gradient, trend, logistic regression |")
-    L.append("| tables/table3_weighting.csv, table3_weighting.json | Table 3 (survey weighting) |")
-    L.append("| tables/table4_validation.csv | Table 4 (independent cross-family validation) |")
-    L.append("| tables/table4b_samefamily.csv | Same-family inter-model reproducibility (Section 4.4) |")
-    L.append("| tables/table5_venue.csv, table5_venue.json | Table 5 (venue comparison) |")
-    L.append("| tables/exposure_summary.json | Section 4.5 exposure screen |")
-    L.append("| tables/missingness.json | Marketing-corpus selection analysis |")
-    L.append("| figures/fig1_typology.* | Figure 1 (typology label prevalence, Wilson CIs) |")
-    L.append("| figures/fig2_gradient.* | Figure 2 (disclosed use by type and size) |")
-    L.append("| figures/fig3_validation.* | Figure 3 (validation κ by label) |")
-    L.append("| figures/fig4_venue.* | Figure 4 (disclosure by venue) |")
+    L.append("| tables/table2_gradient.csv | Table 2 (any-use by sampling stratum) and Figure 1 |")
+    L.append("| tables/table2_inference.json | Section 4.2 ordered trend tests and logistic regression |")
+    L.append("| tables/table3_weighting.csv, table3_weighting.json | Table 2 filing populations and stratum weights; Section 4.1 survey-weighted estimates |")
+    L.append("| tables/table4_validation.csv | Table 3 (independent cross-family validation) |")
+    L.append("| tables/table4b_samefamily.csv | Section 4.3 same-family reproducibility |")
+    L.append("| tables/table5_venue.csv, table5_venue.json | Table 5 Panel B (cross-venue comparison) and Figure 2 |")
+    L.append("| tables/table6_human_validation.json | Sections 3.5 and 4.3 targeted human verification |")
+    L.append("| tables/table4_cases.csv | Table 4 (illustrative classification and human-verification cases) |")
+    L.append("| tables/exposure_summary.json | Section 4.4 enforcement-anchored exposure screen |")
+    L.append("| tables/missingness.json | Table 5 Panel C website coverage and selection |")
+    L.append("| revision/ | Section 4.6 robustness, Table 5 Panel A, and the reviewer-requested analyses |")
+    L.append("| figures/publication/figure1.png | Figure 1 as typeset in the article (300 dpi) |")
+    L.append("| figures/publication/figure2.png | Figure 2 as typeset in the article (300 dpi) |")
+    L.append("| figures/fig2_gradient.* | Figure 1 (disclosed any-use by adviser type and AUM quartile) |")
+    L.append("| figures/fig4_venue.* | Figure 2 (disclosed any-use by venue) |")
+    L.append("| figures/fig1_typology.*, figures/fig3_validation.* | Supporting figures; not printed in the revised article |")
+    L.append("")
+    L.append("Table 4's passages ship in data/case_examples.csv because they are printed "
+             "verbatim in the article; its label codes are derived at run time from "
+             "data/labels_primary.csv, data/labels_independent.csv and "
+             "data/human_verification/, so the table is regenerated rather than restated.")
     (out / "metrics_summary.md").write_text("\n".join(L) + "\n")
 
 

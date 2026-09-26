@@ -1,0 +1,20 @@
+{
+ "frame": "model-disagreement census + stratified agreement sample + website cases",
+ "n_brochure": 120,
+ "n_website": 38,
+ "strata": {
+  "disagreement": 60,
+  "agreement": 60,
+  "website": 38
+ },
+ "weights": {
+  "agreement_phase2": 2.0,
+  "negative_phase1": 4.649,
+  "website_negative": 13.25
+ },
+ "coded_once_per_row": true,
+ "rows_per_coder": {
+  "1": 79,
+  "2": 79
+ }
+}

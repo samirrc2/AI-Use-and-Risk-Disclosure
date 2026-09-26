@@ -7,7 +7,7 @@ All code and frozen data required to reproduce every number, table, and figure i
 this article are openly available as an executable, deterministic Code Ocean capsule and in the
 source repository:
 
-- **Source repository:** https://github.com/samirrc2/disclosed-intelligence
+- **Source repository:** https://github.com/samirrc2/AI-Use-and-Risk-Disclosure
 - **Executable capsule (Code Ocean):** https://doi.org/10.24433/CO.3404788.v1
 
 The Code Ocean capsule (DOI above) is the archived, executable version of record; the

@@ -1,0 +1,235 @@
+\begin{thebibliography}{36}
+\providecommand{\natexlab}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup \urlstyle{rm}\Url}\fi
+\providecommand{\selectlanguage}[1]{\relax}
+\providecommand{\bibAnnoteFile}[1]{%
+  \IfFileExists{#1}{\begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ \input{#1}\end{quotation}}{}}
+\providecommand{\bibAnnote}[2]{%
+  \begin{quotation}\noindent\textsc{Key:} #1\\
+  \textsc{Annotation:}\ #2\end{quotation}}
+
+\bibitem[{Abis(2022)}]{abis2022}
+Abis, S. (2022).
+\newblock Man vs. machine: quantitative and discretionary equity management.
+\newblock \emph{Working paper, Columbia Business School (SSRN 3717371)}
+\bibAnnoteFile{abis2022}
+
+\bibitem[{Acemoglu et~al.(2022)Acemoglu, Autor, Hazell, and Restrepo}]{acemoglu2022}
+Acemoglu, D., Autor, D., Hazell, J., and Restrepo, P. (2022).
+\newblock Artificial intelligence and jobs: evidence from online vacancies.
+\newblock \emph{Journal of Labor Economics} 40, S293--S340
+\bibAnnoteFile{acemoglu2022}
+
+\bibitem[{Agrawal et~al.(2018)Agrawal, Gans, and Goldfarb}]{agrawal2018}
+Agrawal, A., Gans, J., and Goldfarb, A. (2018).
+\newblock \emph{Prediction Machines: The Simple Economics of Artificial Intelligence} (Boston, MA: Harvard Business Review Press)
+\bibAnnoteFile{agrawal2018}
+
+\bibitem[{Babina et~al.(2024)Babina, Fedyk, He, and Hodson}]{babina2024}
+Babina, T., Fedyk, A., He, A.~X., and Hodson, J. (2024).
+\newblock Artificial intelligence, firm growth, and product innovation.
+\newblock \emph{Journal of Financial Economics} 151, 103745
+\bibAnnoteFile{babina2024}
+
+\bibitem[{Blankespoor et~al.(2020)Blankespoor, deHaan, and Marinovic}]{blankespoor2020}
+Blankespoor, E., deHaan, E., and Marinovic, I. (2020).
+\newblock Disclosure processing costs, investors' information choice, and equity market outcomes: a review.
+\newblock \emph{Journal of Accounting and Economics} 70, 101344
+\bibAnnoteFile{blankespoor2020}
+
+\bibitem[{Bommasani et~al.(2021)Bommasani, Hudson, Adeli, Altman, Arora, von Arx et~al.}]{bommasani2021}
+Bommasani, R., Hudson, D.~A., Adeli, E., Altman, R., Arora, S., von Arx, S., et~al. (2021).
+\newblock On the opportunities and risks of foundation models.
+\newblock \emph{arXiv preprint arXiv:2108.07258}
+\bibAnnoteFile{bommasani2021}
+
+\bibitem[{Brynjolfsson et~al.(2025)Brynjolfsson, Li, and Raymond}]{brynjolfsson2025}
+Brynjolfsson, E., Li, D., and Raymond, L. (2025).
+\newblock Generative {AI} at work.
+\newblock \emph{Quarterly Journal of Economics} 140, 889--942.
+\newblock \doi{10.1093/qje/qjae044}
+\bibAnnoteFile{brynjolfsson2025}
+
+\bibitem[{Byrt et~al.(1993)Byrt, Bishop, and Carlin}]{byrt1993}
+Byrt, T., Bishop, J., and Carlin, J.~B. (1993).
+\newblock Bias, prevalence and kappa.
+\newblock \emph{Journal of Clinical Epidemiology} 46, 423--429.
+\newblock \doi{10.1016/0895-4356(93)90018-V}
+\bibAnnoteFile{byrt1993}
+
+\bibitem[{Cao et~al.(2024)Cao, Jiang, Yang, and Zhang}]{cao2024}
+Cao, S., Jiang, W., Yang, B., and Zhang, A.~L. (2024).
+\newblock How to talk when a machine is listening: corporate disclosure in the age of {AI}.
+\newblock \emph{Review of Financial Studies} 37, 3603--3642
+\bibAnnoteFile{cao2024}
+
+\bibitem[{{Charles Schwab Advisor Services}(2026)}]{schwab2026}
+{Charles Schwab Advisor Services} (2026).
+\newblock \emph{2026 RIA and AI Research Study}.
+\newblock Tech. rep., Charles Schwab \& Co., San Francisco
+\bibAnnoteFile{schwab2026}
+
+\bibitem[{Chincholikar and Chawla(2026)}]{capsule2026}
+[Dataset] Chincholikar, S. and Chawla, R. (2026).
+\newblock Disclosed intelligence: reproducibility capsule.
+\newblock \doi{10.24433/CO.3404788.v1}.
+\newblock Executable, deterministic compute capsule
+\bibAnnoteFile{capsule2026}
+
+\bibitem[{Cohen(1960)}]{cohen1960}
+Cohen, J. (1960).
+\newblock A coefficient of agreement for nominal scales.
+\newblock \emph{Educational and Psychological Measurement} 20, 37--46.
+\newblock \doi{10.1177/001316446002000104}
+\bibAnnoteFile{cohen1960}
+
+\bibitem[{Cohen et~al.(2020)Cohen, Malloy, and Nguyen}]{cohenLazy2020}
+Cohen, L., Malloy, C., and Nguyen, Q. (2020).
+\newblock Lazy prices.
+\newblock \emph{Journal of Finance} 75, 1371--1415
+\bibAnnoteFile{cohenLazy2020}
+
+\bibitem[{D'Acunto et~al.(2019)D'Acunto, Prabhala, and Rossi}]{dacunto2019}
+D'Acunto, F., Prabhala, N., and Rossi, A.~G. (2019).
+\newblock The promises and pitfalls of robo-advising.
+\newblock \emph{Review of Financial Studies} 32, 1983--2020
+\bibAnnoteFile{dacunto2019}
+
+\bibitem[{Delmas and Burbano(2011)}]{delmas2011}
+Delmas, M.~A. and Burbano, V.~C. (2011).
+\newblock The drivers of greenwashing.
+\newblock \emph{California Management Review} 54, 64--87
+\bibAnnoteFile{delmas2011}
+
+\bibitem[{Eisfeldt et~al.(2023)Eisfeldt, Schubert, and Zhang}]{eisfeldt2023}
+Eisfeldt, A.~L., Schubert, G., and Zhang, M.~B. (2023).
+\newblock \emph{Generative {AI} and firm values}.
+\newblock Tech. Rep. Working Paper 31222, National Bureau of Economic Research
+\bibAnnoteFile{eisfeldt2023}
+
+\bibitem[{Gentzkow et~al.(2019)Gentzkow, Kelly, and Taddy}]{gentzkow2019}
+Gentzkow, M., Kelly, B., and Taddy, M. (2019).
+\newblock Text as data.
+\newblock \emph{Journal of Economic Literature} 57, 535--574.
+\newblock \doi{10.1257/jel.20181020}
+\bibAnnoteFile{gentzkow2019}
+
+\bibitem[{Gilardi et~al.(2023)Gilardi, Alizadeh, and Kubli}]{gilardi2023}
+Gilardi, F., Alizadeh, M., and Kubli, M. (2023).
+\newblock {ChatGPT} outperforms crowd workers for text-annotation tasks.
+\newblock \emph{Proceedings of the National Academy of Sciences} 120, e2305016120.
+\newblock \doi{10.1073/pnas.2305016120}
+\bibAnnoteFile{gilardi2023}
+
+\bibitem[{Grimmer and Stewart(2013)}]{grimmer2013}
+Grimmer, J. and Stewart, B.~M. (2013).
+\newblock Text as data: the promise and pitfalls of automatic content analysis methods for political texts.
+\newblock \emph{Political Analysis} 21, 267--297
+\bibAnnoteFile{grimmer2013}
+
+\bibitem[{Healy and Palepu(2001)}]{healy2001}
+Healy, P.~M. and Palepu, K.~G. (2001).
+\newblock Information asymmetry, corporate disclosure, and the capital markets: a review of the empirical disclosure literature.
+\newblock \emph{Journal of Accounting and Economics} 31, 405--440
+\bibAnnoteFile{healy2001}
+
+\bibitem[{Hoberg and Phillips(2016)}]{hoberg2016}
+Hoberg, G. and Phillips, G. (2016).
+\newblock Text-based network industries and endogenous product differentiation.
+\newblock \emph{Journal of Political Economy} 124, 1423--1465
+\bibAnnoteFile{hoberg2016}
+
+\bibitem[{Leuz and Wysocki(2016)}]{leuz2016}
+Leuz, C. and Wysocki, P.~D. (2016).
+\newblock The economics of disclosure and financial reporting regulation: evidence and suggestions for future research.
+\newblock \emph{Journal of Accounting Research} 54, 525--622
+\bibAnnoteFile{leuz2016}
+
+\bibitem[{Loughran and McDonald(2011)}]{loughran2011}
+Loughran, T. and McDonald, B. (2011).
+\newblock When is a liability not a liability? textual analysis, dictionaries, and 10-{K}s.
+\newblock \emph{Journal of Finance} 66, 35--65
+\bibAnnoteFile{loughran2011}
+
+\bibitem[{Loughran and McDonald(2016)}]{loughran2016}
+Loughran, T. and McDonald, B. (2016).
+\newblock Textual analysis in accounting and finance: a survey.
+\newblock \emph{Journal of Accounting Research} 54, 1187--1230
+\bibAnnoteFile{loughran2016}
+
+\bibitem[{Lyon and Montgomery(2015)}]{lyon2015}
+Lyon, T.~P. and Montgomery, A.~W. (2015).
+\newblock The means and end of greenwash.
+\newblock \emph{Organization \& Environment} 28, 223--249
+\bibAnnoteFile{lyon2015}
+
+\bibitem[{Noy and Zhang(2023)}]{noy2023}
+Noy, S. and Zhang, W. (2023).
+\newblock Experimental evidence on the productivity effects of generative artificial intelligence.
+\newblock \emph{Science} 381, 187--192
+\bibAnnoteFile{noy2023}
+
+\bibitem[{Ollion et~al.(2024)Ollion, Shen, Macanovic, and Chatelain}]{ollion2024}
+Ollion, {\'E}., Shen, R., Macanovic, A., and Chatelain, A. (2024).
+\newblock The dangers of using proprietary large language models for text analysis.
+\newblock \emph{Sociological Methods \& Research} Advance online publication
+\bibAnnoteFile{ollion2024}
+
+\bibitem[{Rathje et~al.(2024)Rathje, Mirea, Sucholutsky, Marjieh, Robertson, and Van~Bavel}]{rathje2024}
+Rathje, S., Mirea, D.-M., Sucholutsky, I., Marjieh, R., Robertson, C.~E., and Van~Bavel, J.~J. (2024).
+\newblock {GPT} is an effective tool for multilingual psychological text analysis.
+\newblock \emph{Proceedings of the National Academy of Sciences} 121, e2308950121
+\bibAnnoteFile{rathje2024}
+
+\bibitem[{Tetlock(2007)}]{tetlock2007}
+Tetlock, P.~C. (2007).
+\newblock Giving content to investor sentiment: the role of media in the stock market.
+\newblock \emph{Journal of Finance} 62, 1139--1168
+\bibAnnoteFile{tetlock2007}
+
+\bibitem[{T{\"o}rnberg(2023)}]{tornberg2023}
+T{\"o}rnberg, P. (2023).
+\newblock {ChatGPT}-4 outperforms experts and crowd workers in annotating political twitter messages with zero-shot learning.
+\newblock \emph{arXiv preprint arXiv:2304.06588}
+\bibAnnoteFile{tornberg2023}
+
+\bibitem[{{U.S. Securities and Exchange Commission}(2019)}]{usSEC2019}
+{U.S. Securities and Exchange Commission} (2019).
+\newblock \emph{Commission Interpretation Regarding Standard of Conduct for Investment Advisers}.
+\newblock Tech. rep., Release No. IA-5248
+\bibAnnoteFile{usSEC2019}
+
+\bibitem[{{U.S. Securities and Exchange Commission}(2024{\natexlab{a}})}]{usSEC2024a}
+{U.S. Securities and Exchange Commission} (2024{\natexlab{a}}).
+\newblock \emph{In re Delphia (USA) Inc.}
+\newblock Tech. rep., Investment Advisers Act Release No. 6573, March 18, 2024
+\bibAnnoteFile{usSEC2024a}
+
+\bibitem[{{U.S. Securities and Exchange Commission}(2024{\natexlab{b}})}]{usSEC2024b}
+{U.S. Securities and Exchange Commission} (2024{\natexlab{b}}).
+\newblock \emph{In re Global Predictions Inc.}
+\newblock Tech. rep., Investment Advisers Act Release No. 6574, March 18, 2024
+\bibAnnoteFile{usSEC2024b}
+
+\bibitem[{Verrecchia(2001)}]{verrecchia2001}
+Verrecchia, R.~E. (2001).
+\newblock Essays on disclosure.
+\newblock \emph{Journal of Accounting and Economics} 32, 97--180
+\bibAnnoteFile{verrecchia2001}
+
+\bibitem[{Wilson(1927)}]{wilson1927}
+Wilson, E.~B. (1927).
+\newblock Probable inference, the law of succession, and statistical inference.
+\newblock \emph{Journal of the American Statistical Association} 22, 209--212
+\bibAnnoteFile{wilson1927}
+
+\bibitem[{Ziems et~al.(2024)Ziems, Held, Shaikh, Chen, Zhang, and Yang}]{ziems2024}
+Ziems, C., Held, W., Shaikh, O., Chen, J., Zhang, Z., and Yang, D. (2024).
+\newblock Can large language models transform computational social science?
+\newblock \emph{Computational Linguistics} 50, 237--291
+\bibAnnoteFile{ziems2024}
+
+\end{thebibliography}

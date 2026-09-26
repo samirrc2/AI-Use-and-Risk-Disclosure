@@ -11,9 +11,30 @@ Runs on the Mac (reads the local 533 MB frame). Reuses the exact s02 column mapp
 Usage:  cd "Paper 10/analysis" && python a07_weighting.py
 """
 import glob, math
+import os
 import pandas as pd, numpy as np
 
-FRAME = glob.glob("../data/frame/**/IA_ADV_Base_A*.csv", recursive=True)[0]
+_MEMBER = ("adv-filing-data-20111105-20241231-part1/"
+           "IA_ADV_Base_A_20111105_20241231.csv")
+_ZIP = "../data/raw/frame/adv-filing-data-20111105-20241231-part1.zip"
+_hits = glob.glob("../data/frame/**/IA_ADV_Base_A*.csv", recursive=True)
+
+
+def _frame_source():
+    """Extracted copy when present, otherwise the member inside the archive.
+
+    data/frame/ is a byte-exact duplicate of that archive and the repository keeps
+    only the archive; see data/frame_README.md.
+    """
+    if _hits:
+        return _hits[0]
+    import zipfile
+    if not os.path.exists(_ZIP):
+        raise SystemExit(f"no Form ADV frame found: neither ../data/frame/ nor {_ZIP}")
+    return zipfile.ZipFile(_ZIP).open(_MEMBER)
+
+
+FRAME = _frame_source()
 CRD, AUM, PF, DATE = "1E1", "5F2c", "7B", "DateSubmitted"
 MIN_YEAR = 2024
 

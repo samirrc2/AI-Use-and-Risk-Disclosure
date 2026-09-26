@@ -1,16 +1,17 @@
 metadata_version: 1
-name: "Disclosed Intelligence"
+name: "AI Use and Risk Disclosure by Investment Advisers"
 description: >
   Reproducibility artifact for the Frontiers in Artificial Intelligence
-  manuscript "Disclosed Intelligence: A Large-Sample Measurement of AI Disclosure
-  in U.S. Investment Adviser Fiduciary Filings." Regenerates every numerical
-  result, table, and figure from a frozen, pseudonymized dataset with no network
-  or API access: the disclosure-typology prevalences with Wilson confidence
-  intervals, the size/type gradient with linear-by-linear trend tests and a
-  firm-level logistic regression, the survey-weighted estimates with design-based
-  intervals, the independent cross-family validation (precision/recall/F1,
-  Cohen's kappa, PABAK), the AI-washing exposure screen, and the
-  brochure-vs-marketing venue comparison. Keys-free Reproducible Run via /code/run.
+  manuscript "AI Use and Risk Disclosure by Investment Advisers." Regenerates
+  every numerical result, table, and figure from a frozen, pseudonymized dataset
+  with no network or API access: the disclosure-typology prevalences with Wilson
+  confidence intervals, the size/type gradient with linear-by-linear trend tests
+  and a firm-level logistic regression, the survey-weighted estimates with
+  design-based intervals, the independent cross-family validation
+  (precision/recall/F1, Cohen's kappa, PABAK), the targeted two-coder human
+  verification with two-phase Horvitz-Thompson weights, the AI-washing exposure
+  screen, and the brochure-vs-marketing venue comparison. Keys-free Reproducible
+  Run via /code/run.
   Code Ocean DOI: https://doi.org/10.24433/CO.3404788.v1
 authors:
   - name: "Samir Chincholikar"

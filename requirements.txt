@@ -9,6 +9,12 @@ scipy>=1.11
 statsmodels>=0.14
 matplotlib>=3.8
 
+# Verification tooling. a17_verify_manuscript.py section 9 checks where floats actually land
+# in the compiled PDF, and frontiers/submission/verify_response_refs.py checks every page and
+# line reference in the reviewer letters against manuscript.pdf. Both need to read the PDF.
+# Without this both report INCOMPLETE rather than passing quietly.
+pypdf>=4.0
+
 # Live capture only — the SEC/IAPD pulls and the LLM classifier passes.
 # NOT needed to reproduce any published number (that path is keys-free; see capsule/).
 requests>=2.31

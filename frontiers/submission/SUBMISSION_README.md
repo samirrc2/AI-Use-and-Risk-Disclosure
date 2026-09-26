@@ -1,8 +1,10 @@
-# Submission package — Disclosed Intelligence
+# Submission package — AI Use and Risk Disclosure by Investment Advisers
 *Frontiers in Artificial Intelligence · Original Research · section: AI in Finance*
+*This is a **revision**. See `README_package.md` for the revision-specific files.*
 
-The manuscript and its compile files live in the parent `frontiers/` folder; this
-folder holds the submission-only extras (individual figures + cover letter).
+The manuscript and its compile files live in the parent `frontiers/` folder. This folder holds
+the submission-only extras: individual figures, the cover letter, the response letters and the
+frozen v1 sources.
 
 ## Upload to the Frontiers submission system
 
@@ -11,25 +13,34 @@ folder holds the submission-only extras (individual figures + cover letter).
 | Manuscript (LaTeX source) | `../manuscript.tex` |
 | Manuscript (compiled PDF) | `../manuscript.pdf` |
 | Bibliography | `../references.bib` |
-| LaTeX class/style (if the portal compiles) | `../FrontiersinHarvard.cls`, `../Frontiers-Harvard.bst`, `../logo1.eps`, `../logo1.pdf`, `../logo2.eps`, `../logos.eps`, `../YM-logo.eps` |
-| Figures (individual, in order) | `Figure1.png` … `Figure4.png` |
-| Cover letter | `cover_letter.pdf` |
-| Supplementary material | `../supplements/S1_exposure_adjudication.pdf`, `../supplements/S2_validation.pdf`, `../supplements/human_coding_kit.zip` |
+| LaTeX class and style, if the portal compiles | `../FrontiersinHarvard.cls`, `../Frontiers-Harvard.bst`, `../logo1.eps`, `../logo1.pdf`, `../logo2.eps`, `../logos.eps`, `../YM-logo.eps` |
+| Figures, individual, in order | `Figure1.png`, `Figure2.png` |
+| Response to Reviewer 1 | paste `r1_portal.txt` into the field, attach `response_reviewer_1.pdf` |
+| Response to Reviewer 3 | paste `r3_portal.txt` into the field, attach `response_reviewer_3.pdf` |
+| Tracked changes | `manuscript_tracked.pdf` |
+| Supplementary material | none. The paper is self-contained; the supplements in the first submission were folded into the main text or the capsule. |
 
-The manuscript has **4 figures and 6 tables** and already embeds all figures/tables at the end,
-so the PDF is complete on its own.
+The manuscript has **5 tables and 2 figures**, all collected at the end of the PDF so it is
+complete on its own. Figures are cited in numerical order: Figure 1 is disclosure by adviser type
+and AUM quartile, Figure 2 is the venue comparison.
+
+The reviewer response fields on the portal cap at 4,000 characters each.
+`r1_portal.txt` is 3,991 characters and `r3_portal.txt` is 3,988. Paste those into the fields and attach
+`response_reviewer_1.pdf` and `response_reviewer_3.pdf` as the full letters.
 
 ## Author / corresponding author
-- Samir Chincholikar (Independent Researcher, New York, NY, United States) — ORCID 0009-0007-2779-3492
-- Robin Chawla (Independent Researcher, New York, NY, United States; **corresponding**) — robin.chawla.cse14@iitbhu.ac.in — ORCID 0009-0007-2807-3948
-
-## Scope statement (paste into the portal — Frontiers requires a summary of ≤200 words)
-
-This manuscript reports the first large-sample, classifier-based measurement of how U.S. registered investment advisers disclose their use of artificial intelligence in Form ADV Part 2A fiduciary brochures. From the 16,223-adviser SEC Form ADV Part 1 population frame we draw a stratified random sample of 400 firms and classify 388 brochures with a pre-specified five-label typology applied by a large language model, validated through an independent, blinded cross-family re-coding with design-weighted metrics. We document the prevalence and form of disclosed AI use, its steep gradient with adviser size and type, the dominance of risk-framing over capability claims, an enforcement-anchored screen for AI-washing exposure language, and a brochure-versus-marketing venue comparison. The study fits the AI in Finance specialty section of Frontiers in Artificial Intelligence: it measures AI adoption and disclosure in financial services and contributes a reproducible template for using large language models as validated measurement instruments for high-stakes regulatory text. Every result regenerates from a public, deterministic Code Ocean capsule. The study measures disclosure behavior, not legal compliance, and makes no claim that any named adviser breached a disclosure obligation.
+- Samir Chincholikar (Independent Researcher) — ORCID 0009-0007-2779-3492
+- Robin Chawla (Independent Researcher; **corresponding**) — robin.chawla.cse14@iitbhu.ac.in — ORCID 0009-0007-2807-3948
 
 ## Before you click submit
-1. Make the GitHub repo public (github.com/samirrc2/disclosed-intelligence). The Code Ocean capsule DOI (10.24433/CO.3404788.v1) is already cited in the Data Availability statement; the capsule is public and reviewers can open it without an account. No Zenodo deposit is used.
-2. Enter word count and figure/table counts on the portal's first-page fields (main text ≈ 9,600 words; 4 figures, 6 tables).
-3. Add per-figure alt text in the portal.
-4. Register the corresponding author on Frontiers.
-5. Paste the scope statement (above) into the portal's scope/relevance field.
+1. **The title has changed.** Update it in the portal metadata: "AI Use and Risk Disclosure by
+   Investment Advisers". The cover letter flags the change for the editor.
+2. Enter the word count and float counts on the portal's first-page fields: about 8,435 words of
+   main text, 2 figures, 5 tables, no supplementary material.
+3. Data availability is final: the published Code Ocean capsule
+   (https://doi.org/10.24433/CO.3404788.v1) is the archive of record and is cited in the
+   manuscript.
+4. Add per-figure alt text in the portal, which is entered in the portal fields rather than in
+   the manuscript.
+5. Confirm the human verification numbers are the final coded ones, not the test pass. See
+   "Outstanding" in `README_package.md`.

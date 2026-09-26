@@ -1,8 +1,7 @@
 # Data (`/data` mount)
 
 Companion data package for the Frontiers in Artificial Intelligence manuscript
-*Disclosed Intelligence: A Large-Sample Measurement of AI Disclosure in U.S.
-Investment Adviser Fiduciary Filings*. See the repository root `README.md` for the
+*AI Use and Risk Disclosure by Investment Advisers*. See the repository root `README.md` for the
 full Data Availability statement. Executable Code Ocean capsule:
 https://doi.org/10.24433/CO.3404788.v1.
 
@@ -36,6 +35,14 @@ reproduce any result.
 | `venue/marketing_labels.csv` | 283 | Typology labels applied to marketing text. |
 | `venue/marketing_crawl_log.csv` | 400 | Marketing-text retrieval status and character counts (for the selection analysis). |
 | `venue/divergence_summary.json` | — | Precomputed venue summary (reference; recomputed by the code). |
+| `doc_lengths.csv` | 388 | Character count per classified brochure, for the venue length-conditioning analysis (Section 4.5). |
+| `aum_history.csv` | 400 | Regulatory AUM at 2020, 2022 and 2024 year-end, for the lagged-stratum falsification test (Section 4.6). |
+| `keyword_constructs.csv` | 400 | Literal-phrase and rubric-scope keyword flags plus character count, for the construct-sensitivity ladder (Section 4.1). |
+| `case_examples.csv` | 8 | The passages quoted in Table 4, keyed by `fid`. Only the passage text is carried; every label code in that table is derived at run time from the label files below, so the table is regenerated rather than restated. The passages are already printed verbatim in the article. |
+| `human_verification/frame.csv` | 158 | The targeted human-verification frame: `row_id, fid, stratum, kind`. 120 brochure cases (60 model-disagreement, 60 stratified agreement) plus 38 website cases. |
+| `human_verification/brochures.csv` | 120 | Human codes for the brochure cases, one code per row, both coders blind to the model labels. |
+| `human_verification/websites.csv` | 38 | Human codes for the website cases, drawn under their own single-phase design. |
+| `human_verification/design.json` | — | The verification design: stratum sizes and the two-phase weights (agreement 2.0, phase-1 negative 4.649, website negative 13.25). The scoring step refuses to run if the coded rows do not match this design. |
 | `prompts/typology_v1.md` | — | Frozen five-label classification rubric (the measurement instrument). |
 | `prompts/exposure_fingerprints_v1.md` | — | Frozen F1–F7 exposure-language fingerprint, distilled from SEC orders IA-6573/IA-6574. |
 
