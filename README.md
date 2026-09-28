@@ -46,7 +46,7 @@ those results, and the Frontiers manuscript package.
 | **Authors** | Samir Chincholikar, Robin Chawla |
 | **Affiliations** | Independent Researcher, New York, NY, United States; Independent Researcher, New York, NY, United States |
 | **Code repository** | https://github.com/samirrc2/AI-Use-and-Risk-Disclosure |
-| **Persistent DOI** | https://doi.org/10.24433/CO.3404788.v1 (`10.24433/CO.3404788.v1`) |
+| **Persistent DOI** | https://doi.org/10.24433/CO.3404788.v2 (`10.24433/CO.3404788.v2`) |
 | **Contact** | Samir Chincholikar: samir.chincholikar@gmail.com; Robin Chawla: robin.chawla.cse14@iitbhu.ac.in |
 | **ORCID** | Samir Chincholikar: 0009-0007-2779-3492; Robin Chawla: 0009-0007-2807-3948 |
 

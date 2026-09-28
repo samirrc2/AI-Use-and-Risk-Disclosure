@@ -10,7 +10,7 @@ Reproducibility artifact for a manuscript prepared for
 **ORCID:** Samir Chincholikar [0009-0007-2779-3492](https://orcid.org/0009-0007-2779-3492); Robin Chawla [0009-0007-2807-3948](https://orcid.org/0009-0007-2807-3948)  
 **Contact:** robin.chawla.cse14@iitbhu.ac.in; samir.chincholikar@gmail.com  
 **Repository:** https://github.com/samirrc2/AI-Use-and-Risk-Disclosure  
-**Code Ocean DOI:** https://doi.org/10.24433/CO.3404788.v1
+**Code Ocean DOI:** https://doi.org/10.24433/CO.3404788.v2
 
 This repository provides the frozen, pseudonymized analysis dataset and a deterministic
 pipeline that regenerates every quantitative result, table, and figure reported in the
@@ -64,7 +64,7 @@ compute capsule (persistent DOI below).
 | Pseudonymized analysis dataset | [`data/`](data/) (committed; see [`data/README.md`](data/README.md)) |
 | Measurement instruments (prompts) | [`data/prompts/`](data/prompts/) |
 | Design / provenance documentation | [`docs/`](docs/) |
-| Code Ocean capsule | https://doi.org/10.24433/CO.3404788.v1 |
+| Code Ocean capsule | https://doi.org/10.24433/CO.3404788.v2 |
 
 **Access conditions:** the released files are keyed by pseudonymous `fid`
 (`F0001`…`F0400`). Firm names and CRD numbers are withheld. All published statistics
@@ -101,7 +101,7 @@ keys** and **no network access**. Upstream SEC retrieval and LLM classification 
 [`docs/DATA_PROVENANCE.md`](docs/DATA_PROVENANCE.md)).
 
 Executable capsule (recommended for one-click review): **Code Ocean** at
-https://doi.org/10.24433/CO.3404788.v1 (Reproducible Run via `/code/run` in the
+https://doi.org/10.24433/CO.3404788.v2 (Reproducible Run via `/code/run` in the
 pinned environment `environment/Dockerfile`).
 
 ---
@@ -136,7 +136,7 @@ pytest==8.3.3
 
 ### Code Ocean
 
-Capsule: https://doi.org/10.24433/CO.3404788.v1
+Capsule: https://doi.org/10.24433/CO.3404788.v2
 
 1. Open the compute capsule.
 2. Click **Reproducible Run** (`/code/run` → `bash code/scripts/reproduce.sh`).
@@ -239,7 +239,7 @@ article Acknowledgements / Methods as required by Frontiers.
 
 Prefer `CITATION.cff` (GitHub “Cite this repository”) or the published Frontiers
 article once available. Cite the Code Ocean capsule alongside the article:
-https://doi.org/10.24433/CO.3404788.v1.
+https://doi.org/10.24433/CO.3404788.v2.
 
 ## License
 

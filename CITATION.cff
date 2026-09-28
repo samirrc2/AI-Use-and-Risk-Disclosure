@@ -16,9 +16,9 @@ authors:
 repository-code: "https://github.com/samirrc2/AI-Use-and-Risk-Disclosure"
 identifiers:
   - type: doi
-    value: "10.24433/CO.3404788.v1"
+    value: "10.24433/CO.3404788.v2"
     description: "Code Ocean compute capsule"
-url: "https://doi.org/10.24433/CO.3404788.v1"
+url: "https://doi.org/10.24433/CO.3404788.v2"
 license: MIT
 keywords:
   - artificial intelligence

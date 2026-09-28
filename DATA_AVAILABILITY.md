@@ -8,7 +8,7 @@ this article are openly available as an executable, deterministic Code Ocean cap
 source repository:
 
 - **Source repository:** https://github.com/samirrc2/AI-Use-and-Risk-Disclosure
-- **Executable capsule (Code Ocean):** https://doi.org/10.24433/CO.3404788.v1
+- **Executable capsule (Code Ocean):** https://doi.org/10.24433/CO.3404788.v2
 
 The Code Ocean capsule (DOI above) is the archived, executable version of record; the
 source repository is made public upon acceptance.

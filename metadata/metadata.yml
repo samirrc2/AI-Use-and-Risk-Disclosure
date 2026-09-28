@@ -10,7 +10,7 @@ description: >
   intervals, the independent cross-family validation (precision/recall/F1,
   Cohen's kappa, PABAK), the AI-washing exposure screen, and the
   brochure-vs-marketing venue comparison. Keys-free Reproducible Run via /code/run.
-  Code Ocean DOI: https://doi.org/10.24433/CO.3404788.v1
+  Code Ocean DOI: https://doi.org/10.24433/CO.3404788.v2
 authors:
   - name: "Samir Chincholikar"
   - name: "Robin Chawla"

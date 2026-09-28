@@ -3,7 +3,7 @@
 Companion data package for the Frontiers in Artificial Intelligence manuscript
 *AI Use and Risk Disclosure by Investment Advisers*. See the repository root `README.md` for the
 full Data Availability statement. Executable Code Ocean capsule:
-https://doi.org/10.24433/CO.3404788.v1.
+https://doi.org/10.24433/CO.3404788.v2.
 
 All files are **frozen intermediate artifacts**. The expensive, networked upstream
 steps — downloading SEC Form ADV bulk data, retrieving each brochure from IAPD, and

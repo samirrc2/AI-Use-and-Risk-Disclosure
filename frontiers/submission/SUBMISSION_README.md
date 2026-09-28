@@ -38,7 +38,7 @@ The reviewer response fields on the portal cap at 4,000 characters each.
 2. Enter the word count and float counts on the portal's first-page fields: about 8,435 words of
    main text, 2 figures, 5 tables, no supplementary material.
 3. Data availability is final: the published Code Ocean capsule
-   (https://doi.org/10.24433/CO.3404788.v1) is the archive of record and is cited in the
+   (https://doi.org/10.24433/CO.3404788.v2) is the archive of record and is cited in the
    manuscript.
 4. Add per-figure alt text in the portal, which is entered in the portal fields rather than in
    the manuscript.

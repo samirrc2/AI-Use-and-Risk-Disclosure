@@ -2,7 +2,7 @@
 
 ## Code Ocean
 
-Capsule DOI: https://doi.org/10.24433/CO.3404788.v1
+Capsule DOI: https://doi.org/10.24433/CO.3404788.v2
 
 `Dockerfile` uses Code Ocean `py-r` (Python 3.12.8) and pins
 `numpy==2.2.6`, `pandas==2.2.3`, `scipy==1.14.1`, `statsmodels==0.14.4`,
