@@ -80,3 +80,20 @@ frontiers/submission/response_reviewer_*.tex
 frontiers/submission/response_reviewer_*.pdf
 frontiers/submission/r1_portal.txt
 frontiers/submission/r3_portal.txt
+
+# Peer-review correspondence and review-era scaffolding. The paper is published; these
+# are the submission package, not the published artifact. They stay on disk and are not
+# republished: referee replies and the scripts that built and checked them, tracked-changes
+# copies, the version that was submitted, and the packaging notes that name the referees.
+frontiers/submission/build_responses.py
+frontiers/submission/build_tracked.sh
+frontiers/submission/fix_tracked.py
+frontiers/submission/verify_response_refs.py
+frontiers/submission/verify_letter_structure.py
+frontiers/submission/manuscript_tracked.*
+frontiers/submission/manuscript_v1_as_submitted.*
+frontiers/submission/references_v1_as_submitted.bib
+frontiers/submission/README_package.md
+frontiers/submission/SUBMISSION_README.md
+frontiers/submission/*_portal.txt
+frontiers/submission/response_reviewer_*

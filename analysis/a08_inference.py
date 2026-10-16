@@ -1,5 +1,5 @@
 """
-a08_inference.py — design-based inference for the disclosure results (reviewer #5).
+a08_inference.py — design-based inference for the disclosure results.
 
 Per-label and per-stratum Wilson 95% CIs, a linear-by-linear trend test of any-use across AUM
 quartiles (within type and overall), a firm-level logistic regression of any-use on AUM quartile

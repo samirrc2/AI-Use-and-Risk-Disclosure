@@ -1,5 +1,5 @@
 """
-a09_missingness.py — selection analysis for the marketing corpus (reviewer #7).
+a09_missingness.py — selection analysis for the marketing corpus.
 
 Compares firms WITH usable marketing text against those WITHOUT, on adviser type, AUM quartile,
 and regulatory AUM. Reports chi-square tests and a Mann-Whitney AUM comparison, so the venue

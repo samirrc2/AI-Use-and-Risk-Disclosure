@@ -90,8 +90,6 @@ run "a14 number provenance"       "$TPY" analysis/a14_number_audit.py
 run "a18 claims bound + coverage" "$TPY" analysis/a18_claims_bound.py
 run "a19 no retired names"        "$TPY" analysis/a19_no_stale_names.py
 run "capsule audit"               "$CPY" capsule/scripts/audit_manuscript.py
-run "response-letter references"  bash -c "cd frontiers && '$TPY' submission/verify_response_refs.py"
-run "response-letter structure"   bash -c "cd frontiers && '$TPY' submission/verify_letter_structure.py"
 run "submission package current"  bash frontiers/build_package.sh --check
 
 echo

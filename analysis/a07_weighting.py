@@ -1,5 +1,5 @@
 """
-a07_weighting.py — population-weighted disclosure prevalence with design-based CI (reviewer #2).
+a07_weighting.py — population-weighted disclosure prevalence with design-based CI.
 
 Reproduces the s02 stratification on the FULL Form ADV Part 1 frame to obtain the population
 count in each of the 8 strata (adviser type x AUM quartile), then combines those counts with the

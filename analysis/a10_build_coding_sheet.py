@@ -1,5 +1,5 @@
 """
-a10_build_coding_sheet.py — build a blinded HUMAN gold-standard coding sheet (reviewer #4).
+a10_build_coding_sheet.py — build a blinded HUMAN gold-standard coding sheet.
 
 Produces a 180-brochure validation set (all model-positive brochures + a random negative sample)
 with the AI-relevant excerpt and blank a-e columns, for two independent human coders. A hidden key
