@@ -4,7 +4,7 @@
 
 **Authors:** Samir Chincholikar and Robin Chawla · **Journal section:** AI in Finance · **Published:** 14 October 2026
 
-**Start here:** [Plain-language research FAQ: AI use, Form ADV disclosure, and AI-washing](RESEARCH_FAQ.md) · [Reproduce the study](#3-reproduce-the-published-results-offline-no-keys)
+**Start here:** [AI in wealth management: what firms tell investors](https://samirrc2.github.io/AI-Use-and-Risk-Disclosure/) · [Research FAQ](RESEARCH_FAQ.md) · [Reproduce the study](#3-reproduce-the-published-results-offline-no-keys)
 
 ### What does this study show?
 
