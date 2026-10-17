@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samirrc2.github.io/AI-Use-and-Risk-Disclosure/sitemap.xml

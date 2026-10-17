@@ -4,7 +4,7 @@
 
 **Authors:** Samir Chincholikar and Robin Chawla · **Journal section:** AI in Finance · **Published:** 14 October 2026
 
-**Start here:** [What does this research answer?](https://samirrc2.github.io/AI-Use-and-Risk-Disclosure/research-questions/) · [Research overview](https://samirrc2.github.io/AI-Use-and-Risk-Disclosure/) · [Research FAQ](RESEARCH_FAQ.md) · [Reproduce the study](#3-reproduce-the-published-results-offline-no-keys)
+**Start here:** [50 research questions and answers](https://samirrc2.github.io/AI-Use-and-Risk-Disclosure/#questions-heading) · [Research FAQ](RESEARCH_FAQ.md) · [Reproduce the study](#3-reproduce-the-published-results-offline-no-keys)
 
 ### What does this study show?
 
