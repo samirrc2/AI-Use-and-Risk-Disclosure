@@ -1,8 +1,24 @@
+# AI use and risk disclosure by investment advisers
 
+**Read and cite the peer-reviewed article:** [Frontiers in Artificial Intelligence (2026)](https://doi.org/10.3389/frai.2026.1969257) · DOI: **10.3389/frai.2026.1969257**
 
-**AI Use and Risk Disclosure by Investment Advisers**
+**Authors:** Samir Chincholikar and Robin Chawla · **Journal section:** AI in Finance · **Published:** 14 October 2026
 
-### Paper summary
+**Start here:** [Plain-language research FAQ: AI use, Form ADV disclosure, and AI-washing](RESEARCH_FAQ.md) · [Reproduce the study](#3-reproduce-the-published-results-offline-no-keys)
+
+### What does this study show?
+
+- **How many investment advisers disclose AI use?** Among 388 analyzable SEC Form ADV Part 2A brochures, **23.7%** disclosed AI use (**22.7% survey-weighted**). This measures *disclosure*, **not** actual AI adoption.
+- **Are risks discussed more often than AI capabilities?** **27.6%** included AI-related risk language, compared with **23.7%** disclosing any AI use.
+- **Does firm size matter?** Observed disclosure rose from **10.4%** in the smallest AUM quartile to **43.8%** in the largest.
+- **Why are AI adoption/disclosure statistics different?** This study's reported estimates vary from **9.9% to 23.7%** with the disclosure definition, study universe, and weighting. These are not all estimates of the same underlying quantity.
+- **Does this paper show that firms are AI-washing?** No. A textual screening method flagged five brochures for closer review; **none** was adjudicated as an unsubstantiated promotional claim.
+
+For the sampling design, classifier validation, limitations, and full interpretation, [read the published article](https://doi.org/10.3389/frai.2026.1969257). For answers to common questions, see the [research FAQ](RESEARCH_FAQ.md).
+
+---
+
+## Technical summary and reproducibility
 
 We measure how U.S. registered investment advisers disclose their use of artificial
 intelligence in the fiduciary documents clients actually receive — Form ADV Part 2A
