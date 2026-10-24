@@ -19,50 +19,225 @@
   <meta property="og:url" content="https://samirrc2.github.io/AI-Use-and-Risk-Disclosure/" />
   <meta name="twitter:card" content="summary" />
   <style>
-    :root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#182234;background:#f7f9fc;font-size:16px;line-height:1.65}
-    *{box-sizing:border-box} body{margin:0} a{color:#1552a2} a:hover{text-decoration-thickness:2px}
-    .wrap{width:min(100% - 36px,920px);margin-inline:auto}
-    header{border-bottom:1px solid #e1e7ef;background:#fff}
-    .header-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 0}
-    .brand{font-size:.88rem;letter-spacing:.09em;text-transform:uppercase;color:#415674;font-weight:750}
-    .header-link{font-size:.88rem}
-    main{padding:52px 0 60px}
-    .eyebrow{color:#1552a2;text-transform:uppercase;letter-spacing:.1em;font-weight:750;font-size:.8rem}
-    h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.13;letter-spacing:-.035em;margin:14px 0}
-    .dek{color:#41536b;font-size:1.19rem;max-width:780px;margin:18px 0 24px}
-    .authors{color:#53657d;font-size:.93rem}
-    .cta{display:inline-block;background:#164f9c;color:#fff;text-decoration:none;padding:12px 18px;border-radius:7px;font-weight:750;margin:12px 12px 12px 0}
-    .secondary-cta{display:inline-block;padding:11px 0;margin:12px 0;font-weight:650}
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:36px 0}
-    .metric{background:#fff;border:1px solid #dce4ee;padding:20px;border-radius:11px}
-    .metric .number{font-size:2.15rem;line-height:1.15;font-weight:800;color:#174a90}
-    .metric p{font-size:.95rem;color:#4a5d75;margin:7px 0 0}
-    .note{padding:17px 19px;background:#eaf0f8;border-left:4px solid #4068a6;border-radius:4px;color:#293d57}
-    article{background:#fff;border:1px solid #e1e7ee;border-radius:12px;padding:clamp(22px,5vw,43px)}
-    h2{line-height:1.25;margin:35px 0 10px;font-size:1.35rem;letter-spacing:-.012em}
-    h2:first-child{margin-top:0} p{margin:10px 0 18px}
-    .source{font-size:.9rem;color:#4d5e73}
-    .citation{padding:20px;border:1px solid #dce4ee;border-radius:8px;background:#f7f9fc;overflow-wrap:anywhere}
-    .citation p:last-child{margin-bottom:0}
-    footer{border-top:1px solid #e1e7ef;color:#58677a;font-size:.87rem;padding:23px 0 38px}
-    @media(max-width:650px){.metrics{grid-template-columns:1fr}.header-inner{align-items:flex-start;flex-direction:column}main{padding-top:34px}}
 
-    .questions-intro h2{margin-top:0}
-    .questions-intro{border-bottom:1px solid #dce4ee;padding-bottom:20px}
-    .question-list{border:1px solid #dce4ee;background:#f7f9fc;border-radius:8px;padding:12px 16px;margin:20px 0}
-    .question-list summary{cursor:pointer;color:#1552a2;font-weight:700}
-    .question-list ol{padding-left:22px;columns:2;column-gap:25px;margin:16px 0}
-    .question-list li{break-inside:avoid;margin:0 0 6px;font-size:.91rem}
-    .topic-section{padding:12px 0 20px;border-bottom:1px solid #e1e7ee;scroll-margin-top:20px}
-    .topic-section>h2{font-size:1.55rem;color:#174a90;letter-spacing:-.015em}
-    .answer-block{padding:8px 0;scroll-margin-top:24px}
-    .answer-block h3{line-height:1.35;font-size:1.08rem;margin:12px 0 7px}
-    .answer-block p{margin:0 0 14px;color:#33445b}
-    .question-number{color:#174a90;font-weight:800}
-    .topic-source{font-size:.89rem;margin:0}
-    .reference{background:#f7f9fc;border:1px solid #dce4ee;border-radius:8px;padding:20px;margin-top:20px;overflow-wrap:anywhere}
-    @media(max-width:650px){.question-list ol{columns:1}}
-  .generic-questions{border-top:2px solid #dae5f0;padding-top:20px;margin-top:35px;scroll-margin-top:20px}.generic-toc{background:#f3f7fc;border:1px solid #dbe7f0;border-radius:7px;padding:18px 21px;margin:23px 0}.generic-toc ol{columns:2;column-gap:29px;padding-left:23px}.generic-toc li{break-inside:avoid;margin:5px 0}.generic-topic{border-top:1px solid #dce6ef;padding:17px 0 7px;scroll-margin-top:20px}.generic-topic h3{font-size:1.19rem;color:#235489}.generic-qa{padding:5px 0;scroll-margin-top:20px}.generic-qa h4{font-size:1.065rem;line-height:1.46;margin:15px 0 9px}.generic-qa p{margin:0 0 10px}.generic-source{font-size:.82rem;color:#5c7086;padding-bottom:11px}.generic-index{font-size:.87rem;margin-right:3px;text-decoration:none}@media(max-width:690px){.generic-toc ol{columns:1}}</style>
+/*
+ * CLASSICAL ACADEMIC — shared visual template
+ * White paper, Georgia text, black typographic hierarchy, fine grey rules.
+ * No decorative card fills, pill buttons, gradients or branded accent colors.
+ */
+:root{
+  color-scheme:light;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:16px;line-height:1.74;
+  color:#252525;background:#fff;
+  font-synthesis: none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#252525;overflow-wrap:break-word}
+a{color:#1e1e1e;text-decoration:underline;text-decoration-color:#8e8e8e;text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:#000;text-decoration-color:#000}
+a:focus-visible,summary:focus-visible{outline:2px solid #222;outline-offset:4px}
+.wrap{width:min(100% - 44px,880px);margin-inline:auto}
+header{background:#fff;border-bottom:1px solid #bdbdbd;text-align:center}
+header .wrap,header .top,header .header-inner{
+  display:flex;align-items:center;justify-content:center;flex-direction:column;
+  gap:12px;padding:24px 0 18px
+}
+header .brand,header .header-inner .brand{
+  font:700 .77rem/1.4 Arial,Helvetica,sans-serif;
+  letter-spacing:.21em;text-transform:uppercase;color:#222
+}
+header nav{display:flex;justify-content:center;flex-wrap:wrap;gap:7px 20px;font:400 .72rem/1.45 Arial,Helvetica,sans-serif}
+header nav a,header .header-link{font:400 .72rem/1.45 Arial,Helvetica,sans-serif;text-transform:none}
+main.wrap,main{padding-top:45px;padding-bottom:72px}
+.eyebrow{
+  text-align:center;font:700 .67rem/1.6 Arial,Helvetica,sans-serif;
+  text-transform:uppercase;letter-spacing:.14em;color:#666;
+  margin:0 auto 17px;max-width:760px
+}
+h1{
+  font:400 clamp(2.1rem,4.8vw,3.45rem)/1.18 Georgia,"Times New Roman",serif;
+  letter-spacing:-.025em;color:#171717;
+  max-width:815px;margin:0 auto 16px;text-align:center
+}
+main > .authors,main > .meta,main > .dek{
+  text-align:center;max-width:790px;margin-left:auto;margin-right:auto
+}
+main > .authors{
+  font:400 .84rem/1.7 Arial,Helvetica,sans-serif;
+  color:#4e4e4e;margin-top:10px;margin-bottom:12px
+}
+main > .meta{
+  font:400 .76rem/1.75 Arial,Helvetica,sans-serif;
+  color:#5b5b5b;margin-top:9px;margin-bottom:13px
+}
+main > .dek{
+  font:400 1.04rem/1.64 Georgia,"Times New Roman",serif;
+  color:#3c3c3c;margin-top:14px;margin-bottom:17px
+}
+h2,h3,h4{color:#222;letter-spacing:normal}
+h2{
+  font:400 1.63rem/1.3 Georgia,"Times New Roman",serif;
+  margin:29px 0 15px
+}
+h3{
+  font:400 1.25rem/1.37 Georgia,"Times New Roman",serif;
+  margin:18px 0 9px
+}
+h4{
+  font:400 1.17rem/1.42 Georgia,"Times New Roman",serif;
+  margin:16px 0 9px
+}
+p{margin:11px 0 17px}
+strong,b{font-weight:700}
+.links,main > p:has(> .btn),main > p:has(> .link){
+  text-align:center;display:flex;justify-content:center;gap:8px 24px;
+  flex-wrap:wrap;align-items:baseline;margin:18px auto 20px
+}
+.links a,.links a.primary,.btn,.cta,.secondary-cta,.link,header .header-link{
+  display:inline-block;background:transparent;color:#222;
+  border:0;border-radius:0;box-shadow:none;
+  font:400 .76rem/1.55 Arial,Helvetica,sans-serif;
+  text-decoration:underline;text-underline-offset:4px;
+  text-decoration-color:#777;padding:5px 0;margin:0
+}
+.links a.primary,.btn,.cta{
+  font-weight:700;color:#171717;
+}
+.links a:hover,.btn:hover,.cta:hover,.secondary-cta:hover,.link:hover{background:transparent;color:#000}
+.metrics{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;
+  margin:35px 0 30px;padding:17px 0 18px;
+  border-top:1px solid #b1b1b1;border-bottom:1px solid #b1b1b1
+}
+.metric{
+  background:transparent;border:0;border-radius:0;box-shadow:none;
+  text-align:center;padding:10px 18px;min-width:0
+}
+.metric + .metric{border-left:1px solid #d4d4d4}
+.metric b,.metric strong,.metric .number{
+  display:block;margin:0 0 6px;
+  font:400 clamp(1.75rem,3.2vw,2.35rem)/1.2 Georgia,"Times New Roman",serif;
+  letter-spacing:-.018em;color:#202020
+}
+.metric span,.metric small,.metric p{
+  display:block;margin:0;
+  font:400 .72rem/1.55 Arial,Helvetica,sans-serif;color:#666
+}
+.metric p strong{font-weight:600;color:#4a4a4a}
+.scope,.note,.notice{
+  background:transparent;color:#404040;
+  border:0;border-radius:0;border-top:1px solid #d0d0d0;border-bottom:1px solid #d0d0d0;
+  box-shadow:none;margin:22px 0 40px;padding:17px 0;
+  font-size:.94rem;line-height:1.7
+}
+article,article.paper,.paper{
+  background:#fff;border:0;border-radius:0;
+  box-shadow:none;padding:0;margin:0
+}
+article section{scroll-margin-top:24px}
+article > section:first-child h2{margin-top:14px}
+.paper .abstract, .abstract{font-size:.98rem;line-height:1.77;color:#333}
+.intro,.questions-intro{padding-bottom:15px;border-bottom:1px solid #c5c5c5}
+.intro h2,.questions-intro h2{margin-top:10px}
+.fit,.citation-relevance,.sources,.reference,.citation,section.reference{
+  background:transparent;color:#282828;box-shadow:none;
+  border:0;border-radius:0;padding:0;margin:33px 0 25px
+}
+.fit,.citation-relevance{border-top:1px solid #bfbfbf;padding-top:14px}
+.fit ul{padding-left:23px;margin:10px 0 20px}
+.fit li{margin:7px 0}
+.toc,.generic-toc,.question-list{
+  background:transparent;color:#2b2b2b;box-shadow:none;
+  border:0;border-radius:0;border-top:1px solid #bfbfbf;border-bottom:1px solid #d1d1d1;
+  padding:18px 0 17px;margin:25px 0
+}
+.toc strong,.generic-toc strong{
+  font:700 .72rem/1.5 Arial,Helvetica,sans-serif;
+  text-transform:uppercase;letter-spacing:.13em;color:#515151
+}
+.toc ol,.generic-toc ol,.question-list ol{
+  padding-left:23px;columns:2;column-gap:40px;margin:10px 0 0
+}
+.toc li,.generic-toc li,.question-list li{
+  font:400 .85rem/1.55 Georgia,"Times New Roman",serif;
+  break-inside:avoid;margin:0 0 8px
+}
+.question-list summary{
+  color:#333;cursor:pointer;
+  font:700 .76rem/1.5 Arial,Helvetica,sans-serif;letter-spacing:.04em
+}
+.topic,.topic-section,.generic-topic{
+  background:transparent;
+  border:0;border-top:1px solid #c6c6c6;
+  padding:22px 0 6px;margin:29px 0 0;scroll-margin-top:22px
+}
+.topic h2,.topic-section > h2{
+  font:400 1.53rem/1.3 Georgia,"Times New Roman",serif;
+  letter-spacing:0;color:#222;margin:0 0 21px
+}
+.generic-topic h3{
+  font:400 1.53rem/1.3 Georgia,"Times New Roman",serif;
+  color:#222;margin:0 0 21px
+}
+.qa,.answer-block,.generic-qa{padding:5px 0 13px;scroll-margin-top:22px}
+.qa h3,.answer-block h3,.generic-qa h4{
+  font:400 1.17rem/1.44 Georgia,"Times New Roman",serif;
+  color:#191919;margin:6px 0 10px
+}
+.qa p,.answer-block p,.generic-qa p{color:#353535;margin:0 0 10px;line-height:1.75}
+.index,.question-number,.generic-index,.qlink{
+  font:400 .78rem/1.5 Arial,Helvetica,sans-serif;
+  color:#666;text-decoration:none;margin-right:5px
+}
+.reference, .generic-source,.topic-source,.more,.evidence{
+  font:400 .74rem/1.62 Arial,Helvetica,sans-serif;
+  color:#606060
+}
+.topic-source,.more{margin:14px 0 8px}
+.generic-source{padding-bottom:8px}
+.generic-questions{
+  border:0;border-top:2px solid #292929;
+  padding:20px 0 0;margin:49px 0 0;scroll-margin-top:22px
+}
+.generic-questions > h2{margin-top:0}
+.sources,section.sources,section.citation,section.reference{
+  border:0;border-top:2px solid #222;background:transparent;
+  padding:17px 0 0;margin-top:44px;overflow-wrap:anywhere
+}
+.sources h2:first-child,.reference h2:first-child,.citation h2:first-child{margin-top:0}
+.citecode,pre{
+  background:#fff;color:#242424;border:1px solid #c8c8c8;border-radius:0;
+  padding:14px 17px;white-space:pre-wrap;overflow-wrap:anywhere;
+  font:400 .76rem/1.65 "Courier New",monospace
+}
+footer{border-top:1px solid #c6c6c6;color:#626262;background:#fff;
+  font:400 .73rem/1.65 Arial,Helvetica,sans-serif;
+  padding:23px 0 36px
+}
+@media(max-width:700px){
+  .wrap{width:min(100% - 34px,880px)}
+  header .wrap,header .top,header .header-inner{padding:19px 0 16px}
+  header nav{gap:9px 15px}
+  main.wrap,main{padding-top:30px;padding-bottom:45px}
+  h1{font-size:clamp(1.9rem,7vw,2.65rem)}
+  .metrics{grid-template-columns:1fr;padding:4px 0}
+  .metric{padding:14px 6px}
+  .metric + .metric{border-left:0;border-top:1px solid #dadada}
+  .toc ol,.generic-toc ol,.question-list ol{columns:1}
+  .topic,.topic-section,.generic-topic{padding-top:18px}
+  .qa h3,.answer-block h3,.generic-qa h4{font-size:1.12rem}
+}
+@media print{
+  header nav{display:none}
+  main.wrap,main{padding-top:18px}
+  .wrap{width:100%}
+  article a{color:#111}
+  .qa,.answer-block,.generic-qa{break-inside:avoid}
+}
+
+</style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -89,7 +264,7 @@
 <body>
   <header>
     <div class="wrap header-inner">
-      <div class="brand">AI in Finance · Original Research</div>
+      <div class="brand">RESEARCH PAPERS</div>
       <a class="header-link" href="https://doi.org/10.3389/frai.2026.1969257">Published study in Frontiers ↗</a>
     </div>
   </header>
